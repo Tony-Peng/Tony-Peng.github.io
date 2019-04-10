@@ -17,8 +17,10 @@
   <link href="css/business-frontpage.css" rel="stylesheet">
   <script>
     function submit(){
+      localStorage.setItem("userID", document.getElementById("participantID").value)
       window.location = "consent.html";
     }
+
   </script>
 </head>
 
@@ -58,7 +60,7 @@
       <div class="col-md-8 mb-5">
         <h2 id="about">Please enter participant ID:</h2>
         <hr>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Participant ID:">
+          <input class="form-control" id="participantID" placeholder="Participant ID:">
         <br>
           <button type="submit" onclick = "submit()" class="btn btn-primary">Submit</button>
 

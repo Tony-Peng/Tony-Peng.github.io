@@ -3,91 +3,108 @@
 
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <title>SPUD Lab</title>
+    <title>SPUD Lab</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <!-- Custom styles for this template -->
+    <script>
+        function submit() {
+            window.location = "flashSurvey.html";
+        }
+        function open1(){
+            var bring = document.getElementById("bringbtn")
+            bring.disabled = true;
+            window.open("Security-Research/page.html");
+           var el =  document.getElementById("btn");
 
-  <!-- Custom styles for this template -->
-  <link href="css/business-frontpage.css" rel="stylesheet">
-  <script>
-    function submit(){
-      window.location = "flashSurvey.html";
-    }
-  </script>
+           el.disabled = false;
+        }
+    </script>
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">
-<h4> <img id="logo" src="ghost.png" width = "900px"> &nbsp; | &nbsp; SPUD</h4></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        
-          
-      </div>
-    </div>
-  </nav>
+        <a class="navbar-brand" href="#">
+            <h4><img id="logo" src="ghost.png" height="40px" width="40px"> &nbsp; | &nbsp; SPUD</h4></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
 
-  <!-- Header -->
-  <header class="bg-light py-5 mb-5">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col-lg-12">
-          <h1 class="display-4 text-black mt-5 mb-2">Part 2: Information Retained</h1>
-          <p class="lead mb-5 text-black-50">
-            You will be reading through some "interesting" facts on a web page.<Br/>
-            Video and text have the same information.<Br/>
-            Please pay attention to the content. You will be completing a couple of question related.<Br/>
-            You will not be timed, however, please try to just read through the page just once.
-            Please close the window when you are finished browsing.</p>
-            <br>
-            <br>
-            Ready? <a href="Security-Research/page.html" target = "_blank" class="btn btn-default" role="button">Bring me to page!</a>
+
         </div>
-      </div>
     </div>
-  </header>
+</nav>
 
-  <!-- Page Content -->
-  <div class="container">
+<!-- Header -->
+<header class="bg-light py-5 mb-5">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-lg-12">
+                <h1 class="display-4 text-black mt-5 mb-2">Part 2: Information Retained</h1>
+                <p class="lead mb-5 text-black-50">
+                    You will be reading through some "interesting" facts on a web page.<Br/><br>
+                    <strong>Video and text have the same information.</strong><Br/><br>
+                    Please pay attention to the content. You will be completing a couple of question related.<Br/>
+                    You will not be timed, however, please try to just read through the page just once.
+                    Please close the window when you are finished browsing.</p>
+                <br>
+                <br>
+                Ready?<br><br></br>
+                <button id = "bringbtn" onclick = "open1()" class="btn btn-primary"
+                        class="btn btn-default" role="button">Bring
+                    me to page!
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Page Content -->
+<div class="container">
 
     <div class="row">
-      <div class="col-md-8 mb-5">
-     
-        <br>
-          <button type="submit" onclick = "submit()" class="btn btn-primary">Next</button>
+        <div class="col-md-8 mb-5">
 
-      </div>
+            <br>
+            <button id="btn" type="submit" disabled="true" onclick="submit()" class="btn btn-primary">Next</button>
 
-    
+        </div>
+
+
     </div>
     <!-- /.row -->
 
-  </div>
-  <!-- /.container -->
+</div>
+<!-- /.container -->
 
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
+<!-- Footer -->
+<footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; SPUD 2019</p>
+        <p class="m-0 text-center text-white">Copyright &copy; SPUD 2019</p>
     </div>
     <!-- /.container -->
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</footer>
 
 </body>
 

@@ -1,273 +1,207 @@
 <head>
-<title> true facts that will SHOCK you</title>
-<script>
+    <title> true facts that will SHOCK you</title>
+    <script>
 
-function pause(){
-	document.shock.StopPlay();
-}
-function play(){
-	document.shock.Play();
-}
-function finish(){
-  window.location = "../flashquestions.html"
-}
+        function pause() {
+            document.shock.StopPlay();
+        }
 
-function myFunction(x) {
-  x.classList.toggle("change");
-}
-</script>
+        function play() {
+            document.shock.Play();
+        }
+
+        function finish() {
+            window.location = "../flashquestions.html"
+        }
+
+        function myFunction(x) {
+            x.classList.toggle("change");
+        }
+    </script>
 
 </head>
 
 
 <style>
-/* Style the body */
-body {
-  font-family: Arial;
-  margin: 0;
-}
+    /* Style the body */
+    body {
+        font-family: Arial;
+        margin: 0;
+    }
 
-/* Header/Logo Title */
-.header {
-  padding: 60px;
-  text-align: center;
-  background: #1abc9c;
-  color: white;
-  font-size: 30px;
-}
+    /* Header/Logo Title */
+    .header {
+        padding: 60px;
+        text-align: center;
+        background: #1abc9c;
+        color: white;
+        font-size: 30px;
+    }
 
-/* Page Content */
-.content {padding:20px;}
+    /* Page Content */
+    .content {
+        padding: 20px;
+    }
 
 
+    body {
+        margin: 0;
+    }
 
-body {margin:0;}
+    .navbar {
+        overflow: hidden;
+        background-color: #2F4F4F;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
 
-.navbar {
-  overflow: hidden;
-  background-color: #2F4F4F;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
+    .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 14px;
+    }
 
-.navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 14px;
-}
+    .navbar a:hover {
+        background: #ddd;
+        color: black;
+    }
 
-.navbar a:hover {
-  background: #ddd;
-  color: black;
-}
+    .main {
+        padding: 16px;
+        margin-top: 30px;
+        height: 1500px; /* Used in this example to enable scrolling */
+    }
 
-.main {
-  padding: 16px;
-  margin-top: 30px;
-  height: 1500px; /* Used in this example to enable scrolling */
-}
-.content {
-  max-width: 800px;
-  margin: auto;
-}
-.container {
-  display: inline-block;
-  cursor: pointer;
-}
+    .content {
+        max-width: 800px;
+        margin: auto;
+    }
 
-.bar1, .bar2, .bar3 {
-  width: 35px;
-  height: 5px;
-  background-color: #222;
-  margin: 6px 0;
-  transition: 0.4s;
-}
+    .container {
+        display: inline-block;
+        cursor: pointer;
+    }
 
-.change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
-}
+    .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: #222;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
 
-.change .bar2 {opacity: 0;}
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
 
-.change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px);
-}
+    .change .bar2 {
+        opacity: 0;
+    }
+
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+    }
 </style>
 
 
-
-<body onload = "pause()">
-
+<body onload="pause()">
 
 
 <div class="navbar">
-	<div class="container" onclick="myFunction(this)" style = "float: left;padding-left: 30px">
-  <div class="bar1"></div>
-  <div class="bar2"></div>
-  <div class="bar3"></div>
-</div>
-	<img style="float: left; width:55px;height:50px;padding-left: 30px"src = "resource/Word.png">
-<h1 style = "font-size: 20px;padding-left: 20px; color: white; float: left"> SPUD News</h1>
-  <a style = "padding-left: 100px" href="#home">Quizzes</a>
-  <a href="#news">Videos</a>
-  <a href="#contact">Animals</a>
-  <a href="#contact">Celebrity</a>
-  <a href="#contact">Shopping</a>
-  <a href="#contact">Do better 2019</a>
-  <button onclick = "finish()"style = "margin-left: 400px; height: 30px; width: 60px"> Finish </button>
+    <div class="container" onclick="myFunction(this)" style="float: left;padding-left: 30px">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <img style="float: left; width:55px;height:50px;padding-left: 30px" src="resource/Word.png">
+    <h1 style="font-size: 20px;padding-left: 20px; color: white; float: left"> SPUD News</h1>
+    <a style="padding-left: 100px" href="#home">Quizzes</a>
+    <a href="#news">Videos</a>
+    <a href="#contact">Animals</a>
+    <a href="#contact">Celebrity</a>
+    <a href="#contact">Shopping</a>
+    <a href="#contact">Do better 2019</a>
+    <button onclick="finish()" style="margin-left: 400px; height: 30px; width: 60px"> Finish</button>
 </div>
 
 <div class="main">
 
 
-<div class="content">
-  <!-- Page content -->
-  <h1 style = "font-size: 40px">True facts that will SHOCK you! <span style="color: #2b2301;"></span></h1>
-  <h2 style = "font-size: 15px">What? Really? -- You, reading the following post.</h2>
-<br><br>
-<div class="code_block">
-<p><object width="550" height="400"></p>
-<p><param name="movie" value="shock.swf"></p>
-<p><embed src="resource/shock.swf" name = "shock" width="550" height="400"></p>
-<p></embed></p>
-<p></object></p>
-<button onclick="play()"> play </button>&nbsp;&nbsp;
+    <div class="content">
+        <!-- Page content -->
+        <h1 style="font-size: 40px">True facts that will SHOCK you! <span style="color: #2b2301;"></span></h1>
+        <h2 style="font-size: 15px">What? Really? -- You, reading the following post.</h2>
+        <br><br>
+        <div class="code_block">
+            <p>
+                <object width="550" height="400">
+            </p>
+            <p>
+                <param name="movie" value="shock.swf">
+            </p>
+            <p>
+                <embed src="resource/shock.swf" name="shock" width="550" height="400">
+            </p>
+            <p></embed></p>
+            <p></object></p>
+            <button onclick="play()"> play</button>&nbsp;&nbsp;
 
-<button onclick="pause()"> pause</button>
-<br> 
-<br>
-<br>
-If the video couldn't play, here's the text version.
+            <button onclick="pause()"> pause</button>
+            <br>
+            <br>
+            <br>
+            If the video couldn't play, here's the text version.
+        </div>
+
+
+        <h2 style="color: #2e6c80;">1. Snails Has 14000 Thousand Teeth.<br> Yes! You seen that right, Snails!</h2>
+
+        <br>
+        <img src="resource/snails.png" alt="snails" style="width:700px;height:300px;">
+
+        <h2 style="color: #2e6c80;">2. The Immortal Food - Honey <br><br>
+
+            Honey never goes off, not after one year, never two, never. Archigologies have often found pots of honey
+            thousands of years that are yet still preserves. This food can last forever.</h2><br>
+
+        <img src="resource/honey.png" alt="honey" style="width:700px;height:300px">
+
+        <h2 style="color: #2e6c80;"> 3. Wonder Of Human Body -<br><br>
+            The human nose can remember 15000 difference scents. also human ears can differencitate millions of sounds
+            and our eyes can discriminate thousand of colors!</h2> <br>
+        <br>
+        <img src="resource/eyes.png" alt="eyes" style="width:700px;height:300px">
+        <h2 style="color: #2e6c80;"> 4. The Immortal -<br><br>
+            The Turritopsis Nutricula jellyfish is biologically immortal. They can live forever! The only way they can
+            die is to get consumed by other fish. </h2>
+        <br>
+        <img src="resource/jellyfish.png" alt="jellyfish" style="width:700px;height:300px">
+
+
+        <h2 style="color: #2e6c80;"> 5. The Biggest Heart On Earth -<br><br>
+            The heart of the blue whale is so massive that a human can swim through it's vein.
+            <br>
+            Also, blue whale is the largest animal that has ever lived. larger than the biggest dinosour.</h2>
+        <br>
+        <img src="resource/whale.png" alt="whale" style="width:700px;height:300px">
+        <img src="resource/whale2.png" alt="whale2" style="width:700px;height:300px">
+
+
+
+        <img src="resource/wrinkle.png" alt="eyes" style="width:700px;height:300px">
+        <img src="resource/wrinkle2.png" alt="eyes" style="width:700px;height:300px">
+        <h2 style="color: #2e6c80;"> 19. Just for kicks and giggles </h2>
+        <img src="resource/funfact.jpg" alt="eyes" style="width:700px;height:500px">
+
+    </div>
 </div>
-
-
-<h2 style="color: #2e6c80;">1. Snails Has 14000 Thousand Teeth.<br> Yes! You seen that right, Snails!</h2>
-
-<br>
-<img src = "resource/snails.png" alt = "snails" style="width:700px;height:300px;">
-
-<h2 style="color: #2e6c80;">2. The Immortal Food - Honey <br><br>
-
-Honey never goes off, not after one year, never two, never. Archigologies have often found pots of honey thousands of years that are yet still preserves. This food can last forever.</h2><br>
-
-<img src = "resource/honey.png" alt = "honey" style="width:700px;height:300px">
-
-<h2 style="color: #2e6c80;"> 3. Wonder Of Human Body -<br><br>
-The human nose can remember 15000 difference scents. also human ears can differencitate millions of sounds and our eyes can discriminate thousand of colors!</h2> <br>
-<br>
-<img src = "resource/eyes.png" alt = "eyes" style="width:700px;height:300px">
-<h2 style="color: #2e6c80;"> 4. The Immortal -<br><br>
-The Turritopsis Nutricula jellyfish is biologically immortal. They can live forever! The only way they can die is to get consumed by other fish. </h2>
-<br>
-<img src = "resource/jellyfish.png" alt = "jellyfish" style="width:700px;height:300px">
-
-
-<h2 style="color: #2e6c80;"> 5. The Biggest Heart On Earth -<br><br>
-The heart of the blue whale is so massive that a human can swim through it's vein. 
-<br>
-Also, blue whale is the largest animal that has ever lived. larger than the biggest dinosour.</h2>
-<br>
-<img src = "resource/whale.png" alt = "whale" style="width:700px;height:300px">
-<img src = "resource/whale2.png" alt = "whale2" style="width:700px;height:300px">
-
-
-
-<h2 style="color: #2e6c80;"> 6. Small Throat For A BIG Mouth -<br><br>
-Yet the throat of the blue whale is no bigger than a saucer. So it couldn't swallow anything bigger than a beach ball.
-<br></h2>
-
-<img src = "resource/throat.png" alt = "eyes" style="width:700px;height:300px">
-
-
-
-<h2 style="color: #2e6c80;"> 7. Ants Against Humanity -<br><br>
-
-for every person in the world there are about 1.6 million ants. The overall weight of these ants, is the same as the overall weight of human population
-<br></h2>
-<img src = "resource/ants.png" alt = "eyes" style="width:700px;height:300px">
-
-
-<h2 style="color: #2e6c80;"> 8. Animals With Multiple Hearts -<br><br>
-
-An octupus has three hearts, two of them move blood at the outer part of the octupus, while the thrid one keeps the circulation through body organ. Three hearts, what a lucky guy!
-<br></h2>
-<img src = "resource/heart.png" alt = "eyes" style="width:700px;height:300px">
-
-<h2 style="color: #2e6c80;"> 9. The Rain Of Riches -<br><br>
-
-On saturn and jupiter, rain is made from dimond. It sound like a fantacy but it's true. Unfortunately, this this miracle happens 1.2 billion kilometers away from us. </h2>
-<br>
-<img src = "resource/diamonds.png" alt = "eyes" style="width:700px;height:300px">
-
-<h2 style="color: #2e6c80;"> 10. If The Moon Was The Size Of Jupiter -<br><br>
-
-This is what the sky would look like if Jupiter was the same distance from the earth as the moon, just wow.
-<br></h2>
-<img src = "resource/moon.png" alt = "eyes" style="width:700px;height:400px">
-
-<h2 style="color: #2e6c80;"> 11. Bacteria In Body -<br><br>
-
-There are 10 times more bacteria in the human body than there are cells, fortualtely, bacteria do a lot to keep us healthy.
-It means that our body is linked closely more to the microbio world than we used to think.
-<br></h2>
-<img src = "resource/eyes.png" alt = "eyes" style="width:700px;height:300px">
-<h2 style="color: #2e6c80;"> 12. Dianasour Drank Your Water?<br><br>
-
-How many glasses of water do you drink per day? 3 ? 4? here's a surprising fact. the likelyhood that the glass of the water contains a water molecule that once pass through a dinosour is about 100%.
-<br></h2>
-<img src = "resource/water.png" alt = "eyes" style="width:700px;height:300px">
-
-<h2 style="color: #2e6c80;"> 13. Frankenstein Was NOT The Monster -<br><br>
-
-Frankenstein was the name of the creator not the monster. In the story victor frankenstein bulit the creature through a labortory through a method consisting chemistry and alchemy.
-<br></h2>
-<img src = "resource/eyes.png" alt = "eyes" style="width:700px;height:300px">
-
-<h2 style="color: #2e6c80;"> 14. The Common Crystals -<br><br>
-
-What do you think this is? any idea? this is what sand looks like under a microscope.
-<br></h2>
-<img src = "resource/sand.png" alt = "eyes" style="width:700px;height:300px">
-
-<h2 style="color: #2e6c80;"> 15. What Mother Says Is Not Always Right -<br><br>
-Reading is poor lightly or using a computer in dark does not in fact have any negative effect on your vision. The study in british medical journal revealed that reading in poor lighting does not damage your eyes. However, it might cause eyes strain.<br></h2>
-
-<img src = "resource/reading.jpg" alt = "eyes" style="width:700px;height:400px">
-
-<h2 style="color: #2e6c80;"> 16. Oxford Might Be Older Than You Know -<br><br>
-
-Oxford university is older than the aztec empire. oxfod university was found in 1096 and in the aztec civilzation in 1325. this means that oxfod univeristy is at least 200 years older than the aztec empire. 
-<br></h2>
-<img src = "resource/oxford.png" alt = "eyes" style="width:700px;height:300px">
-
-
-<h2 style="color: #2e6c80;"> 17. The Untamable Beast -<br><br>
-
-No one has managed to tame an african elephant, indian elephant has been domesticated for centries. However, african elephants are still wild. Hmm, I wonder why?
-<br></h2>
-<img src = "resource/elephant.png" alt = "eyes" style="width:700px;height:300px">
-<img src = "resource/elephant2.png" alt = "eyes" style="width:700px;height:300px">
-
-<h2 style="color: #2e6c80;"> 18. Wonder Of Human Body 2 -<br><br>
-
-The wrinkles that appears in your hands after taking a bath for example, play an important role. this phenonmon is caused by the fact that when yourbody encourter an increased amount of moisture it understand the enviornment might be slippery. So the skins on your hands immeiated begins to change in a way that will make it easier for you to grip smooth surfaces. 
-<br></h2>
-<img src = "resource/wrinkle.png" alt = "eyes" style="width:700px;height:300px">
-<img src = "resource/wrinkle2.png" alt = "eyes" style="width:700px;height:300px">
-<h2 style="color: #2e6c80;"> 19. Just for kicks and giggles </h2>
-<img src = "resource/funfact.jpg" alt = "eyes" style="width:700px;height:500px">
-
-</div>
-</div>
-
-
 
 
 </body>

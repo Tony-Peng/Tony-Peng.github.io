@@ -23,11 +23,7 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
 
-    <script>
-        function submit() {
-            window.location = "flash.html";
-        }
-    </script>
+
 </head>
 
 <body>
@@ -68,39 +64,49 @@
         <div class="col-md-8 mb-5">
             <p>From a scale of 1 to 10 (1 meaning very vague, 10 meaning very clear), how clear was the navigation bar
                 of Hollisterco.com?</p>
+
             <div class="d-flex justify-content-center my-4">
                 <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
                 <form class="range-field w-35">
-                    <input class="border-0" type="range" min="0" max="10"/>
+                    <input id = "range" class="border-0" type="range" min="0" max="10"/>
                 </form>
                 <span class="font-weight-bold indigo-text ml-2 mt-1">10</span>
+
             </div>
+            <h6 style = "margin-left: 5cm" id = "demo">123</h6>
+
             <p>From a scale of 1 to 10 (1 meaning very hard, 10 meaning very easy), how easy was it to navigate to a
                 product you would like to purchase?</p>
             <div class="d-flex justify-content-center my-4">
                 <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
                 <form class="range-field w-35">
-                    <input class="border-0" type="range" min="0" max="10"/>
+                    <input id = "range2" class="border-0" type="range" min="0" max="10"/>
                 </form>
                 <span class="font-weight-bold indigo-text ml-2 mt-1">10</span>
             </div>
+            <h6 style = "margin-left: 5cm" id = "demo2">123</h6>
+
             <p>From a scale of 1 to 10, how did you like your overall checkout experience?</p>
             <div class="d-flex justify-content-center my-4">
                 <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
                 <form class="range-field w-35">
-                    <input class="border-0" type="range" min="0" max="10"/>
+                    <input id = "range3" class="border-0" type="range" min="0" max="10"/>
                 </form>
                 <span class="font-weight-bold indigo-text ml-2 mt-1">10</span>
             </div>
+            <h6 style = "margin-left: 5cm" id = "demo3">123</h6>
+
             <p>From a scale of 1 to 10 (1 meaning very simple, 10 meaning very complicated), how complicated was the
                 checkout process</p>
             <div class="d-flex justify-content-center my-4">
                 <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
                 <form class="range-field w-35">
-                    <input class="border-0" type="range" min="0" max="10"/>
+                    <input id = "range4" class="border-0" type="range" min="0" max="10"/>
                 </form>
                 <span class="font-weight-bold indigo-text ml-2 mt-1">10</span>
             </div>
+            <h6 style = "margin-left: 5cm" id = "demo4">123</h6>
+
             <br>
             <button type="submit" onclick="submit()" class="btn btn-primary">Next</button>
 
@@ -121,10 +127,45 @@
     <!-- /.container -->
 </footer>
 
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+    function submit() {
+        window.location = "flash.html";
+    }
+    var slider = document.getElementById("range");
+    var output = document.getElementById("demo");
+    output.innerHTML ="Value: " +  slider.value; // Display the default slider value
 
+    // Update the current slider value (each time you drag the slider handle)
+    slider.oninput = function() {
+        output.innerHTML = "Value: " + this.value;
+    }
+    var slider2 = document.getElementById("range2");
+    var output2 = document.getElementById("demo2");
+    output2.innerHTML = "Value: " + slider2.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider2.oninput = function() {
+        output2.innerHTML = "Value: " + this.value;
+    }
+    var slider3 = document.getElementById("range3");
+    var output3 = document.getElementById("demo3");
+    output3.innerHTML = "Value: " + slider3.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider3.oninput = function() {
+        output3.innerHTML = "Value: " + this.value;
+    }
+    var slider4 = document.getElementById("range4");
+    var output4 = document.getElementById("demo4");
+    output4.innerHTML ="Value: " +  slider4.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider4.oninput = function() {
+        output4.innerHTML = "Value: " + this.value;
+    }
+
+
+</script>
 </body>
 
 </html>

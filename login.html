@@ -25,7 +25,15 @@
     <!-- Custom styles for this template -->
     <script>
         function submit() {
-            window.location = "audioRelease.html";
+            window.location = "login_survey.html";
+        }
+        function open1(){
+            var bring = document.getElementById("bringbtn")
+            bring.disabled = true;
+            window.open("login/login_main.html");
+            var el =  document.getElementById("btn");
+
+            el.disabled = false;
         }
     </script>
 </head>
@@ -53,8 +61,17 @@
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-lg-12">
-                <h1 class="display-4 text-black mt-5 mb-2">The Think Aloud Protocal</h1>
-                <p class="lead mb-5 text-black-50"></p>
+                <h1 class="display-4 text-black mt-5 mb-2">Part 3: Login </h1>
+                <p class="lead mb-5 text-black-50">
+                    <br>
+                    You will be testing a login page.<Br/><br>
+                    The webpage will ask you to sign in through facebook, all you need to do is sign in.</p>
+
+                Ready?<br><br>
+                <button id = "bringbtn" onclick = "open1()" class="btn btn-primary"
+                        class="btn btn-default" role="button">Bring
+                    me to page!
+                </button>
             </div>
         </div>
     </div>
@@ -65,11 +82,9 @@
 
     <div class="row">
         <div class="col-md-8 mb-5">
-            <h4 id="about">Please read through the think aloud protocal somewhere and let us know if there are any
-                questions.</h4>
-            <hr>
+
             <br>
-            <button type="submit" onclick="submit()" class="btn btn-primary">Next</button>
+            <button id="btn" type="submit" disabled="true" onclick="submit()" class="btn btn-primary">Next</button>
 
         </div>
 
@@ -87,10 +102,6 @@
     </div>
     <!-- /.container -->
 </footer>
-
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

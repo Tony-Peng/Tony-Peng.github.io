@@ -24,6 +24,10 @@
             crossorigin="anonymous"></script>
     <!-- Custom styles for this template -->
     <script>
+        window.onload = function () {
+            console.log(localStorage.getItem("id"))
+        }
+
         function submit() {
             window.location = "thinkAloud.html";
         }
@@ -87,10 +91,5 @@
     <!-- /.container -->
 </footer>
 
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
-
-</html>

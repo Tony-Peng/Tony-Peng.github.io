@@ -1,148 +1,39 @@
 
 
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i');
-
-html, body{
-  height:100%;
-  width:100%;
-  font-family: 'Raleway', sans-serif;
-  background-color:#efefef;
-  display: table;
-  text-align: center;
-
-}
-
-.toast__container {
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.toast__cell{
-  display:inline-block;
-}
-
-.add-margin{
-  margin-top:20px;
-}
-
-.toast__svg{
-  fill:#fff;
-}
-
-.toast {
-  text-align:left;
-    padding: 21px 0;
-    background-color:#fff;
-    border-radius:4px;
-    max-width: 500px;
-    top: 0px;
-    position:relative;
-    box-shadow: 1px 7px 14px -5px rgba(0,0,0,0.2);
-}
-
-
-.toast:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-  border-top-left-radius:4px;
-  border-bottom-left-radius: 4px;
-
-}
-
-.toast__icon{
-  position:absolute;
-  top:50%;
-  left:22px;
-  transform:translateY(-50%);
-  width:14px;
-  height:14px;
-  padding: 7px;
-  border-radius:50%;
-  display:inline-block;
-}
-
-.toast__type {
-  color: #3e3e3e;
-  font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 8px;
-}
-
-.toast__message {
-    font-size: 14px;
-    margin-top: 0;
-  margin-bottom: 0;
-    color: #878787;
-}
-
-.toast__content{
-  padding-left:70px;
-  padding-right:60px;
-}
-
-.toast__close {
-    position: absolute;
-    right: 22px;
-    top: 50%;
-    width: 14px;
-    cursor:pointer;
-    height: 0px;
-    fill:#878787;
-    transform: translateY(-50%);
-}
-
-.toast--blue .toast__icon{
-  background-color:#1D72F3;
-}
-
-.toast--blue:before{
-  background-color:#1D72F3;
-}
-
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
+
 @font-face {
-  font-family: Oswald-Regular;
-  src: url('../fonts/oswald/Oswald-Regular.ttf');
+  font-family: Roboto-Regular;
+  src: url('../fonts/roboto/Roboto-Regular.ttf'); 
 }
 
 @font-face {
-  font-family: Oswald-Medium;
-  src: url('../fonts/oswald/Oswald-Medium.ttf');
+  font-family: Roboto-Medium;
+  src: url('../fonts/roboto/Roboto-Medium.ttf'); 
 }
 
 @font-face {
-  font-family: Oswald-Bold;
-  src: url('../fonts/oswald/Oswald-Bold.ttf');
+  font-family: Roboto-Bold;
+  src: url('../fonts/roboto/Roboto-Bold.ttf'); 
 }
-
-
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
-
 * {
-	margin: 0px;
-	padding: 0px;
+	margin: 0px; 
+	padding: 0px; 
 	box-sizing: border-box;
 }
 
 body, html {
 	height: 100%;
-	font-family: Oswald-Regular, sans-serif;
+	font-family: sans-serif;
 }
 
-/*---------------------------------------------*/
+/* ------------------------------------ */
 a {
-	font-family: Oswald-Regular;
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
 	margin: 0px;
 	transition: all 0.4s;
 	-webkit-transition: all 0.4s;
@@ -156,21 +47,12 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #111111;
 }
 
-/*---------------------------------------------*/
-h1,h2,h3,h4,h5,h6 {
-	margin: 0px;
-}
+/* ------------------------------------ */
+h1,h2,h3,h4,h5,h6 {margin: 0px;}
 
-p {
-	font-family: Oswald-Regular;
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
-}
+p {margin: 0px;}
 
 ul, li {
 	margin: 0px;
@@ -178,44 +60,23 @@ ul, li {
 }
 
 
-/*---------------------------------------------*/
+/* ------------------------------------ */
 input {
+  display: block;
 	outline: none;
-	border: none;
-}
-
-input[type="number"] {
-    -moz-appearance: textfield;
-    appearance: none;
-    -webkit-appearance: none;
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+	border: none !important;
 }
 
 textarea {
+  display: block;
   outline: none;
-  border: none;
 }
 
 textarea:focus, input:focus {
   border-color: transparent !important;
 }
 
-
-input::-webkit-input-placeholder { color: #43383e;}
-input:-moz-placeholder { color: #43383e;}
-input::-moz-placeholder { color: #43383e;}
-input:-ms-input-placeholder { color: #43383e;}
-
-textarea::-webkit-input-placeholder { color: #43383e;}
-textarea:-moz-placeholder { color: #43383e;}
-textarea::-moz-placeholder { color: #43383e;}
-textarea:-ms-input-placeholder { color: #43383e;}
-
-/*---------------------------------------------*/
+/* ------------------------------------ */
 button {
 	outline: none !important;
 	border: none;
@@ -231,49 +92,69 @@ iframe {
 }
 
 /*//////////////////////////////////////////////////////////////////
-[ Utility ]*/
-.txt1 {
-  font-family: Oswald-Bold;
-  font-size: 20px;
-  color: #333333;
-  line-height: 1.2;
+[ Scroll bar ]*/
+.js-pscroll {
+  position: relative;
+  overflow: hidden;
 }
 
-.txt2 {
-  font-family: Oswald-Regular;
-  font-size: 16px;
-  color: #999999;
-  line-height: 1.4;
+
+.table100 .ps__rail-x {
+  z-index: 1010;
+  height: 6px;
+  background-color: transparent;
+  opacity: 1 !important;
+  bottom: 10px;
 }
 
-.txt3 {
-  font-family: Oswald-Regular;
-  font-size: 16px;
-  color: #333333;
-  line-height: 1.2;
-  text-transform: uppercase;
+.table100 .ps__rail-x::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #e6e6e6;
+  height: 100%;
+  width: calc(100% - 30px);
+  left: 15px;
+  top: 0px;
 }
 
-.bg1 {background-color: #3b5998;}
-.bg2 {background-color: #1da1f2;}
-
-.bo1 {border-bottom: 1px solid #929292;}
-
-.hov1:hover {
-  border-bottom: 1px solid #111111;
-  color: #111111;
+.table100 .ps__rail-x .ps__thumb-x {
+  height: 100%;
+  bottom: 0;
+  background-color: transparent;
+  opacity: 1 !important;
 }
+
+.table100 .ps__rail-x .ps__thumb-x::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #b3b3b3;
+  height: 100%;
+  width: calc(100% - 30px);
+  top: 0;
+  left: 15px;
+}
+
 
 /*//////////////////////////////////////////////////////////////////
-[ login ]*/
+[ Table ]*/
 
 .limiter {
   width: 100%;
   margin: 0 auto;
+  background: #fa71cd;
+  background: -webkit-linear-gradient(bottom, #c471f5, #fa71cd);
+  background: -o-linear-gradient(bottom, #c471f5, #fa71cd);
+  background: -moz-linear-gradient(bottom, #c471f5, #fa71cd);
+  background: linear-gradient(bottom, #c471f5, #fa71cd);
+
+
 }
 
-.container-login100 {
-  width: 100%;
+.container-table100 {
+  max-width: 1366px;
+  margin: 0 auto;
   min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -281,413 +162,147 @@ iframe {
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  padding: 15px;
-  position: relative;
-  background-color: #e6e6e6;
+  justify-content: center;
+  padding: 33px 100px;
 }
 
-.wrap-login100 {
-  width: 320px;
-  background: transparent;
-  border-radius: 0px;
+.wrap-table100 {
+  width: 100%;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ Table ]*/
+.table100 {
+  background-color: #fff;
+}
+
+table {
+  width: 100%;
+}
+
+th, td {
+  font-weight: unset;
+  padding-right: 10px;
+}
+
+.column1 {
+  width: 100%;
+  padding-left: 40px;
+}
+
+.column2 {
+  width: 225px;
+  padding-left: 55px;
+}
+
+.column3 {
+  width: 205px;
+}
+
+.column4 {
+  width: 195px;
+}
+
+.column5 {
+  width: 235px;
+}
+
+.column6 {
+  width: 170px;
+}
+
+.column7 {
+  width: 330px;
+}
+
+.column8 {
+  width: 305px;
+}
+
+.table100 th {
+  padding-top: 21px;
+  padding-bottom: 21px;
+}
+
+.table100 td {
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 
 /*==================================================================
-[ Form ]*/
-
-.login100-form {
+[ Fix col ]*/
+.table100 {
   width: 100%;
   position: relative;
 }
 
-.login100-form-title {
-  font-family: Oswald-Medium;
-  font-size: 30px;
-  color: #43383e;
-  line-height: 1.2;
-  text-align: center;
-
-  display: block;
-}
-
-
-/*------------------------------------------------------------------
-[ Button Login with ]*/
-
-.btn-login-with {
-  font-family: Oswald-Medium;
-  font-size: 16px;
-  color: #fff;
-  line-height: 1.2;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 50px;
-  border-radius: 25px;
-}
-
-.btn-login-with i {
-  font-size: 20px;
-  margin-right: 10px;
-}
-
-.btn-login-with:hover {
-  color: #fff;
-  background-color: #333333;
-}
-
-/*------------------------------------------------------------------
-[ Input ]*/
-
-.wrap-input100 {
-  width: 100%;
+.table100-firstcol {
   background-color: #fff;
-  border-radius: 31px;
-  position: relative;
-  z-index: 1;
-}
-
-.input100 {
-  font-family: Oswald-Medium;
-  font-size: 16px;
-  color: #43383e;
-  line-height: 1.2;
-
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 62px;
-  background: #fff;
-  border-radius: 31px;
-  padding: 0 35px 0 35px;
-}
-
-
-/*------------------------------------------------------------------
-[ Focus Input ]*/
-
-.focus-input100 {
-  display: block;
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
-  border-radius: 31px;
-  background-color: #fff;
-  pointer-events: none;
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-}
-
-.input100:focus + .focus-input100 {
-  width: calc(100% + 20px);
-}
-
-/*---------------------------------------------*/
-.btn-show-pass {
-  font-size: 15px;
-  color: #aaaaaa;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  z-index: 200;
-  height: 100%;
-  top: 0;
-  right: 25px;
-  padding: 0 5px;
-  cursor: pointer;
-  -webkit-transition: background 0.4s;
-  -o-transition: background 0.4s;
-  -moz-transition: background 0.4s;
-  transition: background 0.4s;
-}
-
-.btn-show-pass:hover {
-  color: #111111;
-}
-
-.btn-show-pass.active {
-  color: #111111;
-}
-
-/*------------------------------------------------------------------
-[ Button ]*/
-.container-login100-form-btn {
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.login100-form-btn {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-  min-width: 160px;
-  height: 62px;
-  background-color: transparent;
-  border-radius: 31px;
-
-  font-family: Oswald-Regular;
-  font-size: 16px;
-  color: #fff;
-  line-height: 1.2;
-  text-transform: uppercase;
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-  position: relative;
-  z-index: 1;
-}
-
-.login100-form-btn::before {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
-  border-radius: 31px;
-  background-color: #333333;
-  pointer-events: none;
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-}
-
-.login100-form-btn:hover:before {
-  background-color: #222222;
-  width: calc(100% + 20px);
-}
-
-
-/*------------------------------------------------------------------
-[ Alert validate ]*/
-.alert-validate .btn-show-pass {
-  visibility: hidden;
-}
-
-.validate-input {
-  position: relative;
-}
-
-.alert-validate::before {
-  content: attr(data-validate);
   position: absolute;
   z-index: 1000;
-  max-width: 70%;
-  background-color: #fff;
-  border: 1px solid #c80000;
-  border-radius: 14px;
-  padding: 4px 25px 4px 10px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: 10px;
-  pointer-events: none;
-
-  font-family: Oswald-Regular;
-  color: #c80000;
-  font-size: 13px;
-  line-height: 1.4;
-  text-align: left;
-
-  visibility: hidden;
-  opacity: 0;
-
-  -webkit-transition: opacity 0.4s;
-  -o-transition: opacity 0.4s;
-  -moz-transition: opacity 0.4s;
-  transition: opacity 0.4s;
-}
-
-.alert-validate::after {
-  content: "\f06a";
-  font-family: FontAwesome;
-  display: block;
-  position: absolute;
-  z-index: 1100;
-  color: #c80000;
-  font-size: 16px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: 16px;
-}
-
-.alert-validate:hover:before {
-  visibility: visible;
-  opacity: 1;
-}
-
-@media (max-width: 992px) {
-  .alert-validate::before {
-    visibility: visible;
-    opacity: 1;
-  }
-}
-
-/*//////////////////////////////////////////////////////////////////
-[ Responsive ]*/
-@media (max-width: 576px) {
-  .wrap-login100 {
-    padding-top: 20px
-  }
-}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-/* Add a background color when the inputs get focus */
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-button:hover {
-  opacity:1;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
-  float: left;
-  width: 50%;
-}
-
-/* Add padding to container elements */
-.container {
-  padding: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
+  width: 310px;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: #474e5d;
-  padding-top: 50px;
+  left: 0;
 }
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+.table100-firstcol table {
+  background-color: #fff;
 }
 
-/* Style the horizontal ruler */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+.wrap-table100-nextcols {
+  width: 100%;
+  overflow: auto;
+  padding-left: 310px;
+  padding-bottom: 28px;
 }
 
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 35px;
-  top: 15px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #f1f1f1;
+.table100-nextcols table{
+  table-layout: fixed;
 }
 
-.close:hover,
-.close:focus {
-  color: #f44336;
-  cursor: pointer;
+.shadow-table100-firstcol {
+  box-shadow: 8px 0px 10px 0px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 8px 0px 10px 0px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 8px 0px 10px 0px rgba(0, 0, 0, 0.05);
+  -o-box-shadow: 8px 0px 10px 0px rgba(0, 0, 0, 0.05);
+  -ms-box-shadow: 8px 0px 10px 0px rgba(0, 0, 0, 0.05);
 }
 
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
+.table100-firstcol table {
+  background-color: transparent;
 }
 
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-     width: 100%;
-  }
+/*==================================================================
+[ Ver1 ]*/
+
+.table100.ver1 th {
+  font-family: Roboto-Bold;
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.4;
+  text-transform: uppercase;
 }
+
+.table100.ver1 td {
+  font-family: Roboto-Medium;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.table100.ver1 .table100-firstcol td {
+  color: #666666;
+}
+
+.table100.ver1 .table100-nextcols td {
+  color: #999999;
+}
+
+
+.table100.ver1 tr {
+  border-bottom: 1px solid #f2f2f2;
+}
+
+
+

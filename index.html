@@ -25,7 +25,14 @@
     <!-- Custom styles for this template -->
     <script>
         function submit() {
-            window.location = "consent.html";
+            var id = document.getElementById("parID").value;
+            if(id == "" || id > "48" || id < "1") {
+                alert("Enter an valid ID");
+            } else {
+                window.localStorage.setItem("id", id);
+                window.location = "consent.html";
+
+            }
         }
     </script>
 </head>
@@ -67,7 +74,7 @@
         <div class="col-md-8 mb-5">
             <h2 id="about">Please enter participant ID:</h2>
             <hr>
-            <input class="form-control" id="participantID" placeholder="Participant ID:">
+            <input id = "parID" class="form-control" id="participantID" placeholder="Participant ID:">
             <br>
             <button type="submit" onclick="submit()" class="btn btn-primary">Submit</button>
 

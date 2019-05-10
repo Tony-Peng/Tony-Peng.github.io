@@ -1,6 +1,31 @@
 <head>
     <title> true facts that will SHOCK you</title>
     <script>
+        var id = localStorage.getItem("id");
+        var cookie = document.cookie;
+        console.log(cookie);
+        console.log(cookie.split("=")[1]);
+
+        if (id > 0 && id < 33) {
+            if(id == 1 || id == 3 || id == 9 || id == 11 || id == 17 || id == 19 || id == 25 || id == 27){
+                //Social cue high
+                alert("Flash objects found, enabling Flash will allow you watch this video, but could also increase your chances of being infected with malware." +
+                    " Here’s what other users did: 65% of the users selected to run Flash ")
+            } else if(id == 2 || id == 4 || id == 10 || id == 12 || id == 18 || id ==20 || id == 26 || id == 28) {
+                //Social cue low
+                alert("Flash objects found, enabling Flash will allow you watch this video, but could also increase your chances of being infected with malware." +
+                    " Here’s what other users did: 35% of the users selected to run Flash ")
+            } else if (id == 5 || id ==7 || id == 13 || id == 15 || id ==21 || id ==23 || id == 29 || id == 31) {
+                //Consequence high
+                alert("Flash objects found, enabling Flash will allow you watch this video, but could also increase your chances of being infected with malware." +
+                    " Here’s what happened to other users: 70% regretted their decision to run Flash")
+            } else {
+                //Consequence low
+                alert("Flash objects found, enabling Flash will allow you watch this video, but could also increase your chances of being infected with malware." +
+                    "Here’s what happened to other users: 15% regretted their decision to run Flash  ")
+            }
+
+        }
 
         function pause() {
             document.shock.StopPlay();
@@ -192,7 +217,6 @@
         <br>
         <img src="resource/whale.png" alt="whale" style="width:700px;height:300px">
         <img src="resource/whale2.png" alt="whale2" style="width:700px;height:300px">
-
 
 
         <img src="resource/wrinkle.png" alt="eyes" style="width:700px;height:300px">

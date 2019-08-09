@@ -23,23 +23,49 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
     <!-- Custom styles for this template -->
-    <script>
-        function submit() {
-            var id = document.getElementById("parID").value;
-            if(id === "" || id > 48 || id < 1) {
-                alert("Enter an valid ID");
-            } else {
-                document.cookie = "id=" + id;
-                console.log(document.cookie)
-                window.localStorage.setItem("id", id);
-                window.location = "consent.html";
 
-            }
-        }
-    </script>
 </head>
 
 <body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAiah2Ftz0OLENUxvx9VaaojDJsa936NII",
+    authDomain: "spud-93a30.firebaseapp.com",
+    databaseURL: "https://spud-93a30.firebaseio.com",
+    projectId: "spud-93a30",
+    storageBucket: "spud-93a30.appspot.com",
+    messagingSenderId: "111712193172",
+    appId: "1:111712193172:web:5a61fc378f4e2290"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script>
+    function submit() {
+        const db = firebase.firestore();
+        console.log("db: ",db);
+        console.log("collection: ",db.collection);
+        var id = document.getElementById("parID").value;
+        if(id === "" || id > 48 || id < 1) {
+            alert("Enter an valid ID");
+        } else {
+            document.cookie = "id=" + id;
+            console.log(document.cookie)
+            window.localStorage.setItem("id", id);
+            db.collection("test").add({id: id})
+                .then(function(docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                    window.location = "consent.html";
+                });
+        }
+    }
+</script>
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">

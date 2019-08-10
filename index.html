@@ -24,31 +24,28 @@
             crossorigin="anonymous"></script>
     <!-- Custom styles for this template -->
 
-</head>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
 
-<body>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAiah2Ftz0OLENUxvx9VaaojDJsa936NII",
+        authDomain: "spud-93a30.firebaseapp.com",
+        databaseURL: "https://spud-93a30.firebaseio.com",
+        projectId: "spud-93a30",
+        storageBucket: "spud-93a30.appspot.com",
+        messagingSenderId: "111712193172",
+        appId: "1:111712193172:web:5a61fc378f4e2290"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyAiah2Ftz0OLENUxvx9VaaojDJsa936NII",
-    authDomain: "spud-93a30.firebaseapp.com",
-    databaseURL: "https://spud-93a30.firebaseio.com",
-    projectId: "spud-93a30",
-    storageBucket: "spud-93a30.appspot.com",
-    messagingSenderId: "111712193172",
-    appId: "1:111712193172:web:5a61fc378f4e2290"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
-
-<script>
+    <script>
     function submit() {
-        const db = firebase.firestore();
         console.log("db: ",db);
         console.log("collection: ",db.collection);
         var id = document.getElementById("parID").value;
@@ -58,14 +55,19 @@
             document.cookie = "id=" + id;
             console.log(document.cookie)
             window.localStorage.setItem("id", id);
-            db.collection("test").add({id: id})
-                .then(function(docRef) {
-                    console.log("Document written with ID: ", docRef.id);
-                    window.location = "consent.html";
-                });
+            window.location = "consent.html";
+            // db.collection("test").add({id: id,})
+            //     .then(function(docRef) {
+            //         console.log("Document written with ID: ", docRef.id);
+            //         window.location = "consent.html";
+            //     });
         }
     }
 </script>
+
+</head>
+
+<body>
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">

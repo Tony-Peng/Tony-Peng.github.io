@@ -22,11 +22,64 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAiah2Ftz0OLENUxvx9VaaojDJsa936NII",
+        authDomain: "spud-93a30.firebaseapp.com",
+        databaseURL: "https://spud-93a30.firebaseio.com",
+        projectId: "spud-93a30",
+        storageBucket: "spud-93a30.appspot.com",
+        messagingSenderId: "111712193172",
+        appId: "1:111712193172:web:5a61fc378f4e2290"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+
     <!-- Custom styles for this template -->
     <script>
         function submit() {
-            window.location = "login.html";
+            var id = localStorage.getItem("id");
+            var mod = id % 6;
+            db.collection("order").where("mod", "==", mod).get()
+                .then((snapshot) => {
+                    snapshot.docs.forEach(doc => {nextPage(doc)});
+            });
         }
+
+        function nextPage(doc) {
+            var cur;
+            for (var key in doc.data()) {
+                if (doc.data()[key] == "flash") {
+                    cur = key;
+                }
+            }
+            if (cur == "first") {
+                jumpTo(doc.data().second);
+            } else if (cur == "second") {
+                jumpTo(doc.data().third);
+            } else {
+                window.location = "debreif.html";
+            }
+        }
+
+        function jumpTo(next) {
+            if (next == "card") {
+                window.location = "creditCard.html";
+            } else if (next == "flash") {
+                window.location = "flash.html";
+            } else {
+                window.location = "login.html";
+            }
+        }
+
     </script>
 </head>
 

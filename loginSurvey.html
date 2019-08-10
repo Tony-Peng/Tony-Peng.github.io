@@ -57,7 +57,7 @@
         function nextPage(doc) {
             var cur;
             for (var key in doc.data()) {
-                if (doc.data()[key] == "card") {
+                if (doc.data()[key] == "social") {
                     cur = key;
                 }
             }
@@ -81,6 +81,7 @@
         }
 
     </script>
+
 
 </head>
 
@@ -107,10 +108,9 @@
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-lg-12">
-                <h1 class="display-4 text-black mt-5 mb-2">Part 1 Evaluation</h1>
+                <h1 class="display-4 text-black mt-5 mb-2">Part 3 Evaluation</h1>
                 <p class="lead mb-5 text-black-50">
-                    Please answer the following questions about your experience with creating an account and purchasing
-                    an item with Hollister
+                    Here are some questions for you to evaluate the credit card page.
             </div>
         </div>
     </div>
@@ -121,50 +121,47 @@
 
     <div class="row">
         <div class="col-md-8 mb-5">
-            <p>From a scale of 1 to 10 (1 meaning very vague, 10 meaning very clear), how clear was the navigation bar
-                of Hollisterco.com?</p>
+            <p>From a scale of 1 to 10 (1 meaning not at all, 10 meaning very much) How did you like the color scheme?</p>
+            <div style="text-align: center">
+                <div class="d-flex justify-content-center my-4">
+                    <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
+                    <form class="range-field w-35">
+                        <input id="range" class="border-0" type="range" min="0" max="10"/>
+                    </form>
+                    <span class="font-weight-bold indigo-text ml-2 mt-1">10</span>
 
-            <div class="d-flex justify-content-center my-4">
-                <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
-                <form class="range-field w-35">
-                    <input id = "range" class="border-0" type="range" min="0" max="10"/>
-                </form>
-                <span class="font-weight-bold indigo-text ml-2 mt-1">10</span>
+                </div>
+
+                <h6 text-align id="demo">123</h6>
 
             </div>
-            <h6 style = "margin-left: 5cm" id = "demo">123</h6>
 
-            <p>From a scale of 1 to 10 (1 meaning very hard, 10 meaning very easy), how easy was it to navigate to a
-                product you would like to purchase?</p>
-            <div class="d-flex justify-content-center my-4">
-                <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
-                <form class="range-field w-35">
-                    <input id = "range2" class="border-0" type="range" min="0" max="10"/>
-                </form>
-                <span class="font-weight-bold indigo-text ml-2 mt-1">10</span>
-            </div>
-            <h6 style = "margin-left: 5cm" id = "demo2">123</h6>
 
-            <p>From a scale of 1 to 10, how did you like your overall checkout experience?</p>
-            <div class="d-flex justify-content-center my-4">
-                <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
-                <form class="range-field w-35">
-                    <input id = "range3" class="border-0" type="range" min="0" max="10"/>
-                </form>
-                <span class="font-weight-bold indigo-text ml-2 mt-1">10</span>
-            </div>
-            <h6 style = "margin-left: 5cm" id = "demo3">123</h6>
+            <p>From a scale of 1 to 10 (1 meaning very hard, 10 meaning very easy), how simple was the login/registration process?</p>
+            <div style="text-align:center">
+                <div class="d-flex justify-content-center my-4">
+                    <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
+                    <form class="range-field w-35">
+                        <input id="range2" class="border-0" type="range" min="0" max="10"/>
+                    </form>
+                    <span class="font-weight-bold indigo-text ml-2 mt-1">10</span>
+                </div>
+                <h6 id="demo2">123</h6></div>
 
-            <p>From a scale of 1 to 10 (1 meaning very simple, 10 meaning very complicated), how complicated was the
-                checkout process</p>
-            <div class="d-flex justify-content-center my-4">
-                <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
-                <form class="range-field w-35">
-                    <input id = "range4" class="border-0" type="range" min="0" max="10"/>
-                </form>
-                <span class="font-weight-bold indigo-text ml-2 mt-1">10</span>
+
+            <p>From a scale of 1 to 10 (1 meaning not confident, 10 meaning very confident) How confident were you in signing in with your Facebook?</p>
+            <div style="text-align:center">
+                <div class="d-flex justify-content-center my-4">
+                    <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
+                    <form class="range-field w-35">
+                        <input id="range3" class="border-0" type="range" min="0" max="10"/>
+                    </form>
+                    <span class="font-weight-bold indigo-text ml-2 mt-1">10</span>
+                </div>
+                <h6 id="demo3">123</h6>
+
             </div>
-            <h6 style = "margin-left: 5cm" id = "demo4">123</h6>
+
 
             <br>
             <button type="submit" onclick="submit()" class="btn btn-primary">Next</button>
@@ -190,10 +187,10 @@
 
     var slider = document.getElementById("range");
     var output = document.getElementById("demo");
-    output.innerHTML ="Value: " +  slider.value; // Display the default slider value
+    output.innerHTML = "Value: " + slider.value; // Display the default slider value
 
     // Update the current slider value (each time you drag the slider handle)
-    slider.oninput = function() {
+    slider.oninput = function () {
         output.innerHTML = "Value: " + this.value;
     }
     var slider2 = document.getElementById("range2");
@@ -201,8 +198,7 @@
     output2.innerHTML = "Value: " + slider2.value; // Display the default slider value
 
     // Update the current slider value (each time you drag the slider handle)
-
-    slider2.oninput = function() {
+    slider2.oninput = function () {
         output2.innerHTML = "Value: " + this.value;
     }
     var slider3 = document.getElementById("range3");
@@ -210,16 +206,15 @@
     output3.innerHTML = "Value: " + slider3.value; // Display the default slider value
 
     // Update the current slider value (each time you drag the slider handle)
-    slider3.oninput = function() {
+    slider3.oninput = function () {
         output3.innerHTML = "Value: " + this.value;
     }
     var slider4 = document.getElementById("range4");
     var output4 = document.getElementById("demo4");
-
-    output4.innerHTML ="Value: " +  slider4.value; // Display the default slider value
+    output4.innerHTML = "Value: " + slider4.value; // Display the default slider value
 
     // Update the current slider value (each time you drag the slider handle)
-    slider4.oninput = function() {
+    slider4.oninput = function () {
         output4.innerHTML = "Value: " + this.value;
     }
 

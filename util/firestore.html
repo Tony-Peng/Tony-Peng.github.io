@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Firestore</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <!-- Custom styles for this template -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAiah2Ftz0OLENUxvx9VaaojDJsa936NII",
+        authDomain: "spud-93a30.firebaseapp.com",
+        databaseURL: "https://spud-93a30.firebaseio.com",
+        projectId: "spud-93a30",
+        storageBucket: "spud-93a30.appspot.com",
+        messagingSenderId: "111712193172",
+        appId: "1:111712193172:web:5a61fc378f4e2290"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+
+    <script>
+
+    const inputData = [
+        {
+            "id": "1",
+            "social": "control",
+            "card": "66% elected to save their credit card information",
+            "flash": "64% elected to run Flash"
+        },
+        {
+            "id": "2",
+            "social": "control",
+            "card": "66% elected to save their credit card information",
+            "flash": "36% elected to run Flash"
+        },
+        {
+            "id": "3",
+            "social": "control",
+            "card": "34% elected to save their credit card information",
+            "flash": "64% elected to run Flash"
+        },
+        {
+            "id": "4",
+            "social": "control",
+            "card": "34% elected to save their credit card information",
+            "flash": "36% elected to run Flash"
+        },
+        {
+            "id": "5",
+            "social": "control",
+            "card": "69% reported that their credit card data was compromised, 84% regretted their decision to save their credit card information",
+            "flash": "70% reported suspicious activity after enabling Flash, 85% regretted their decision to run Flash"
+        },
+        {
+            "id": "6",
+            "social": "control",
+            "card": "69% reported that their credit card data was compromised, 84% regretted their decision to save their credit card information",
+            "flash": "30% reported suspicious activity after enabling Flash, 15% regretted their decision to run Flash"
+        },
+        {
+            "id": "7",
+            "social": "control",
+            "card": "31% reported that their credit card data was compromised, 16% regretted their decision to save their credit card information",
+            "flash": "70% reported suspicious activity after enabling Flash, 85% regretted their decision to run Flash"
+        },
+        {
+            "id": "8",
+            "social": "control",
+            "card": "31% reported that their credit card data was compromised, 16% regretted their decision to save their credit card information",
+            "flash": "30% reported suspicious activity after enabling Flash, 15% regretted their decision to run Flash"
+        },
+        {
+            "id": "9",
+            "social": "control",
+            "card": "69% reported that their credit card data was compromised, 84% regretted their decision to save their credit card information",
+            "flash": "64% elected to run Flash"
+        },
+        {
+            "id": "10",
+            "social": "control",
+            "card": "69% reported that their credit card data was compromised, 84% regretted their decision to save their credit card information",
+            "flash": "36% elected to run Flash"
+        },
+        {
+            "id": "11",
+            "social": "control",
+            "card": "31% reported that their credit card data was compromised, 16% regretted their decision to save their credit card information",
+            "flash": "64% elected to run Flash"
+        },
+        {
+            "id": "12",
+            "social": "control",
+            "card": "31% reported that their credit card data was compromised, 16% regretted their decision to save their credit card information",
+            "flash": "36% elected to run Flash"
+        },
+        {
+            "id": "13",
+            "social": "control",
+            "card": "66% elected to save their credit card information",
+            "flash": "70% reported suspicious activity after enabling Flash, 85% regretted their decision to run Flash"
+        },
+        {
+            "id": "14",
+            "social": "control",
+            "card": "66% elected to save their credit card information",
+            "flash": "30% reported suspicious activity after enabling Flash, 15% regretted their decision to run Flash"
+        },
+        {
+            "id": "15",
+            "social": "control",
+            "card": "34% elected to save their credit card information",
+            "flash": "70% reported suspicious activity after enabling Flash, 85% regretted their decision to run Flash"
+        },
+        {
+            "id": "16",
+            "social": "control",
+            "card": "34% elected to save their credit card information",
+            "flash": "30% reported suspicious activity after enabling Flash, 15% regretted their decision to run Flash"
+        },
+        {
+            "id": "17",
+            "social": "67% elected to sign in through Facebook",
+            "card": "control",
+            "flash": "64% elected to run Flash"
+        },
+        {
+            "id": "18",
+            "social": "67% elected to sign in through Facebook",
+            "card": "control",
+            "flash": "36% elected to run Flash"
+        },
+        {
+            "id": "19",
+            "social": "33% elected to sign in through Facebook",
+            "card": "control",
+            "flash": "64% elected to run Flash"
+        },
+        {
+            "id": "20",
+            "social": "33% elected to sign in through Facebook",
+            "card": "control",
+            "flash": "36% elected to run Flash"
+        },
+        {
+            "id": "21",
+            "social": "68% reported unauthorized access to their accounts after signing in through Facebook, 83% regretted their decision to sign in through Facebook",
+            "card": "control",
+            "flash": "70% reported suspicious activity after enabling Flash, 85% regretted their decision to run Flash"
+        },
+        {
+            "id": "22",
+            "social": "68% reported unauthorized access to their accounts after signing in through Facebook, 83% regretted their decision to sign in through Facebook",
+            "card": "control",
+            "flash": "30% reported suspicious activity after enabling Flash, 15% regretted their decision to run Flash"
+        },
+        {
+            "id": "23",
+            "social": "32% reported unauthorized access to their account after signing in through Facebook, 17% regretted their decision to sign through Facebook",
+            "card": "control",
+            "flash": "70% reported suspicious activity after enabling Flash, 85% regretted their decision to run Flash"
+        },
+        {
+            "id": "24",
+            "social": "32% reported unauthorized access to their account after signing in through Facebook, 17% regretted their decision to sign through Facebook",
+            "card": "control",
+            "flash": "30% reported suspicious activity after enabling Flash, 15% regretted their decision to run Flash"
+        },
+        {
+            "id": "25",
+            "social": "68% reported unauthorized access to their accounts after signing in through Facebook, 83% regretted their decision to sign in through Facebook",
+            "card": "control",
+            "flash": "64% elected to run Flash"
+        },
+        {
+            "id": "26",
+            "social": "68% reported unauthorized access to their accounts after signing in through Facebook, 83% regretted their decision to sign in through Facebook",
+            "card": "control",
+            "flash": "36% elected to run Flash"
+        },
+        {
+            "id": "27",
+            "social": "32% reported unauthorized access to their account after signing in through Facebook, 17% regretted their decision to sign through Facebook",
+            "card": "control",
+            "flash": "64% elected to run Flash"
+        },
+        {
+            "id": "28",
+            "social": "32% reported unauthorized access to their account after signing in through Facebook, 17% regretted their decision to sign through Facebook",
+            "card": "control",
+            "flash": "36% elected to run Flash"
+        },
+        {
+            "id": "29",
+            "social": "67% elected to sign in through Facebook",
+            "card": "control",
+            "flash": "70% reported suspicious activity after enabling Flash, 85% regretted their decision to run Flash"
+        },
+        {
+            "id": "30",
+            "social": "67% elected to sign in through Facebook",
+            "card": "control",
+            "flash": "30% reported suspicious activity after enabling Flash, 15% regretted their decision to run Flash"
+        },
+        {
+            "id": "31",
+            "social": "33% elected to sign in through Facebook",
+            "card": "control",
+            "flash": "70% reported suspicious activity after enabling Flash, 85% regretted their decision to run Flash"
+        },
+        {
+            "id": "32",
+            "social": "33% elected to sign in through Facebook",
+            "card": "control",
+            "flash": "30% reported suspicious activity after enabling Flash, 15% regretted their decision to run Flash"
+        },
+        {
+            "id": "33",
+            "social": "67% elected to sign in through Facebook",
+            "card": "66% elected to save their credit card information",
+            "flash": "control"
+        },
+        {
+            "id": "34",
+            "social": "67% elected to sign in through Facebook",
+            "card": "66% elected to save their credit card information",
+            "flash": "control"
+        },
+        {
+            "id": "35",
+            "social": "33% elected to sign in through Facebook",
+            "card": "34% elected to save their credit card information",
+            "flash": "control"
+        },
+        {
+            "id": "36",
+            "social": "33% elected to sign in through Facebook",
+            "card": "34% elected to save their credit card information",
+            "flash": "control"
+        },
+        {
+            "id": "37",
+            "social": "68% reported unauthorized access to their accounts after signing in through Facebook, 83% regretted their decision to sign in through Facebook",
+            "card": "69% reported that their credit card data was compromised, 84% regretted their decision to save their credit card information",
+            "flash": "control"
+        },
+        {
+            "id": "38",
+            "social": "68% reported unauthorized access to their accounts after signing in through Facebook, 83% regretted their decision to sign in through Facebook",
+            "card": "69% reported that their credit card data was compromised, 84% regretted their decision to save their credit card information",
+            "flash": "control"
+        },
+        {
+            "id": "39",
+            "social": "32% reported unauthorized access to their account after signing in through Facebook, 17% regretted their decision to sign through Facebook",
+            "card": "31% reported that their credit card data was compromised, 16% regretted their decision to save their credit card information",
+            "flash": "control"
+        },
+        {
+            "id": "40",
+            "social": "32% reported unauthorized access to their account after signing in through Facebook, 17% regretted their decision to sign through Facebook",
+            "card": "31% reported that their credit card data was compromised, 16% regretted their decision to save their credit card information",
+            "flash": "control"
+        },
+        {
+            "id": "41",
+            "social": "68% reported unauthorized access to their accounts after signing in through Facebook, 83% regretted their decision to sign in through Facebook",
+            "card": "69% reported that their credit card data was compromised, 84% regretted their decision to save their credit card information",
+            "flash": "control"
+        },
+        {
+            "id": "42",
+            "social": "68% reported unauthorized access to their accounts after signing in through Facebook, 83% regretted their decision to sign in through Facebook",
+            "card": "69% reported that their credit card data was compromised, 84% regretted their decision to save their credit card information",
+            "flash": "control"
+        },
+        {
+            "id": "43",
+            "social": "32% reported unauthorized access to their account after signing in through Facebook, 17% regretted their decision to sign through Facebook",
+            "card": "31% reported that their credit card data was compromised, 16% regretted their decision to save their credit card information",
+            "flash": "control"
+        },
+        {
+            "id": "44",
+            "social": "32% reported unauthorized access to their account after signing in through Facebook, 17% regretted their decision to sign through Facebook",
+            "card": "31% reported that their credit card data was compromised, 16% regretted their decision to save their credit card information",
+            "flash": "control"
+        },
+        {
+            "id": "45",
+            "social": "67% elected to sign in through Facebook",
+            "card": "66% elected to save their credit card information",
+            "flash": "control"
+        },
+        {
+            "id": "46",
+            "social": "67% elected to sign in through Facebook",
+            "card": "66% elected to save their credit card information",
+            "flash": "control"
+        },
+        {
+            "id": "47",
+            "social": "33% elected to sign in through Facebook",
+            "card": "34% elected to save their credit card information",
+            "flash": "control"
+        },
+        {
+            "id": "48",
+            "social": "33% elected to sign in through Facebook",
+            "card": "34% elected to save their credit card information",
+            "flash": "control"
+        }
+    ];
+
+    function submit() {
+        inputData.forEach(function(obj) {
+            db.collection("ghostTrails").add({
+                id: obj.id,
+                social: obj.social,
+                card: obj.card,
+                flash: obj.flash,
+            }).then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+            });
+        });
+    }
+
+</script>
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <h4><img id="logo" src="ghost.png" height="40px" width="40px"> &nbsp; | &nbsp; SPUD</h4></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+
+
+        </div>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="bg-light py-5 mb-5">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-lg-12">
+                <h1 class="display-4 text-black mt-5 mb-2">Web Usability Study</h1>
+                <p class="lead mb-5 text-black-50"></p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-8 mb-5">
+            <h2 id="about">Firestore:</h2>
+            <hr>
+            <input id = "parID" class="form-control" id="participantID" placeholder="Participant ID:">
+            <br>
+            <button type="submit" onclick="submit()" class="btn btn-primary">Submit</button>
+
+        </div>
+
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; SPUD 2019</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+</body>
+
+</html>

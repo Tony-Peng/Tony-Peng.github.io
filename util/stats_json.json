@@ -1,0 +1,290 @@
+[
+    {
+        "id": "1",
+        "social": "control",
+        "card": "66% elected to save their credit card information",
+        "flash": "64% elected to run Flash"
+    },
+    {
+        "id": "2",
+        "social": "control",
+        "card": "66% elected to save their credit card information",
+        "flash": "36% elected to run Flash"
+    },
+    {
+        "id": "3",
+        "social": "control",
+        "card": "34% elected to save their credit card information",
+        "flash": "64% elected to run Flash"
+    },
+    {
+        "id": "4",
+        "social": "control",
+        "card": "34% elected to save their credit card information",
+        "flash": "36% elected to run Flash"
+    },
+    {
+        "id": "5",
+        "social": "control",
+        "card": "69% reported that their credit card data was compromised, 84% regretted their decision to save their credit card information",
+        "flash": "70% reported suspicious activity after enabling Flash, 85% regretted their decision to run Flash"
+    },
+    {
+        "id": "6",
+        "social": "control",
+        "card": "69% reported that their credit card data was compromised, 84% regretted their decision to save their credit card information",
+        "flash": "30% reported suspicious activity after enabling Flash, 15% regretted their decision to run Flash"
+    },
+    {
+        "id": "7",
+        "social": "control",
+        "card": "31% reported that their credit card data was compromised, 16% regretted their decision to save their credit card information",
+        "flash": "70% reported suspicious activity after enabling Flash, 85% regretted their decision to run Flash"
+    },
+    {
+        "id": "8",
+        "social": "control",
+        "card": "31% reported that their credit card data was compromised, 16% regretted their decision to save their credit card information",
+        "flash": "30% reported suspicious activity after enabling Flash, 15% regretted their decision to run Flash"
+    },
+    {
+        "id": "9",
+        "social": "control",
+        "card": "69% reported that their credit card data was compromised, 84% regretted their decision to save their credit card information",
+        "flash": "64% elected to run Flash"
+    },
+    {
+        "id": "10",
+        "social": "control",
+        "card": "69% reported that their credit card data was compromised, 84% regretted their decision to save their credit card information",
+        "flash": "36% elected to run Flash"
+    },
+    {
+        "id": "11",
+        "social": "control",
+        "card": "31% reported that their credit card data was compromised, 16% regretted their decision to save their credit card information",
+        "flash": "64% elected to run Flash"
+    },
+    {
+        "id": "12",
+        "social": "control",
+        "card": "31% reported that their credit card data was compromised, 16% regretted their decision to save their credit card information",
+        "flash": "36% elected to run Flash"
+    },
+    {
+        "id": "13",
+        "social": "control",
+        "card": "66% elected to save their credit card information",
+        "flash": "70% reported suspicious activity after enabling Flash, 85% regretted their decision to run Flash"
+    },
+    {
+        "id": "14",
+        "social": "control",
+        "card": "66% elected to save their credit card information",
+        "flash": "30% reported suspicious activity after enabling Flash, 15% regretted their decision to run Flash"
+    },
+    {
+        "id": "15",
+        "social": "control",
+        "card": "34% elected to save their credit card information",
+        "flash": "70% reported suspicious activity after enabling Flash, 85% regretted their decision to run Flash"
+    },
+    {
+        "id": "16",
+        "social": "control",
+        "card": "34% elected to save their credit card information",
+        "flash": "30% reported suspicious activity after enabling Flash, 15% regretted their decision to run Flash"
+    },
+    {
+        "id": "17",
+        "social": "67% elected to sign in through Facebook",
+        "card": "control",
+        "flash": "64% elected to run Flash"
+    },
+    {
+        "id": "18",
+        "social": "67% elected to sign in through Facebook",
+        "card": "control",
+        "flash": "36% elected to run Flash"
+    },
+    {
+        "id": "19",
+        "social": "33% elected to sign in through Facebook",
+        "card": "control",
+        "flash": "64% elected to run Flash"
+    },
+    {
+        "id": "20",
+        "social": "33% elected to sign in through Facebook",
+        "card": "control",
+        "flash": "36% elected to run Flash"
+    },
+    {
+        "id": "21",
+        "social": "68% reported unauthorized access to their accounts after signing in through Facebook, 83% regretted their decision to sign in through Facebook",
+        "card": "control",
+        "flash": "70% reported suspicious activity after enabling Flash, 85% regretted their decision to run Flash"
+    },
+    {
+        "id": "22",
+        "social": "68% reported unauthorized access to their accounts after signing in through Facebook, 83% regretted their decision to sign in through Facebook",
+        "card": "control",
+        "flash": "30% reported suspicious activity after enabling Flash, 15% regretted their decision to run Flash"
+    },
+    {
+        "id": "23",
+        "social": "32% reported unauthorized access to their account after signing in through Facebook, 17% regretted their decision to sign through Facebook",
+        "card": "control",
+        "flash": "70% reported suspicious activity after enabling Flash, 85% regretted their decision to run Flash"
+    },
+    {
+        "id": "24",
+        "social": "32% reported unauthorized access to their account after signing in through Facebook, 17% regretted their decision to sign through Facebook",
+        "card": "control",
+        "flash": "30% reported suspicious activity after enabling Flash, 15% regretted their decision to run Flash"
+    },
+    {
+        "id": "25",
+        "social": "68% reported unauthorized access to their accounts after signing in through Facebook, 83% regretted their decision to sign in through Facebook",
+        "card": "control",
+        "flash": "64% elected to run Flash"
+    },
+    {
+        "id": "26",
+        "social": "68% reported unauthorized access to their accounts after signing in through Facebook, 83% regretted their decision to sign in through Facebook",
+        "card": "control",
+        "flash": "36% elected to run Flash"
+    },
+    {
+        "id": "27",
+        "social": "32% reported unauthorized access to their account after signing in through Facebook, 17% regretted their decision to sign through Facebook",
+        "card": "control",
+        "flash": "64% elected to run Flash"
+    },
+    {
+        "id": "28",
+        "social": "32% reported unauthorized access to their account after signing in through Facebook, 17% regretted their decision to sign through Facebook",
+        "card": "control",
+        "flash": "36% elected to run Flash"
+    },
+    {
+        "id": "29",
+        "social": "67% elected to sign in through Facebook",
+        "card": "control",
+        "flash": "70% reported suspicious activity after enabling Flash, 85% regretted their decision to run Flash"
+    },
+    {
+        "id": "30",
+        "social": "67% elected to sign in through Facebook",
+        "card": "control",
+        "flash": "30% reported suspicious activity after enabling Flash, 15% regretted their decision to run Flash"
+    },
+    {
+        "id": "31",
+        "social": "33% elected to sign in through Facebook",
+        "card": "control",
+        "flash": "70% reported suspicious activity after enabling Flash, 85% regretted their decision to run Flash"
+    },
+    {
+        "id": "32",
+        "social": "33% elected to sign in through Facebook",
+        "card": "control",
+        "flash": "30% reported suspicious activity after enabling Flash, 15% regretted their decision to run Flash"
+    },
+    {
+        "id": "33",
+        "social": "67% elected to sign in through Facebook",
+        "card": "66% elected to save their credit card information",
+        "flash": "control"
+    },
+    {
+        "id": "34",
+        "social": "67% elected to sign in through Facebook",
+        "card": "66% elected to save their credit card information",
+        "flash": "control"
+    },
+    {
+        "id": "35",
+        "social": "33% elected to sign in through Facebook",
+        "card": "34% elected to save their credit card information",
+        "flash": "control"
+    },
+    {
+        "id": "36",
+        "social": "33% elected to sign in through Facebook",
+        "card": "34% elected to save their credit card information",
+        "flash": "control"
+    },
+    {
+        "id": "37",
+        "social": "68% reported unauthorized access to their accounts after signing in through Facebook, 83% regretted their decision to sign in through Facebook",
+        "card": "69% reported that their credit card data was compromised, 84% regretted their decision to save their credit card information",
+        "flash": "control"
+    },
+    {
+        "id": "38",
+        "social": "68% reported unauthorized access to their accounts after signing in through Facebook, 83% regretted their decision to sign in through Facebook",
+        "card": "69% reported that their credit card data was compromised, 84% regretted their decision to save their credit card information",
+        "flash": "control"
+    },
+    {
+        "id": "39",
+        "social": "32% reported unauthorized access to their account after signing in through Facebook, 17% regretted their decision to sign through Facebook",
+        "card": "31% reported that their credit card data was compromised, 16% regretted their decision to save their credit card information",
+        "flash": "control"
+    },
+    {
+        "id": "40",
+        "social": "32% reported unauthorized access to their account after signing in through Facebook, 17% regretted their decision to sign through Facebook",
+        "card": "31% reported that their credit card data was compromised, 16% regretted their decision to save their credit card information",
+        "flash": "control"
+    },
+    {
+        "id": "41",
+        "social": "68% reported unauthorized access to their accounts after signing in through Facebook, 83% regretted their decision to sign in through Facebook",
+        "card": "69% reported that their credit card data was compromised, 84% regretted their decision to save their credit card information",
+        "flash": "control"
+    },
+    {
+        "id": "42",
+        "social": "68% reported unauthorized access to their accounts after signing in through Facebook, 83% regretted their decision to sign in through Facebook",
+        "card": "69% reported that their credit card data was compromised, 84% regretted their decision to save their credit card information",
+        "flash": "control"
+    },
+    {
+        "id": "43",
+        "social": "32% reported unauthorized access to their account after signing in through Facebook, 17% regretted their decision to sign through Facebook",
+        "card": "31% reported that their credit card data was compromised, 16% regretted their decision to save their credit card information",
+        "flash": "control"
+    },
+    {
+        "id": "44",
+        "social": "32% reported unauthorized access to their account after signing in through Facebook, 17% regretted their decision to sign through Facebook",
+        "card": "31% reported that their credit card data was compromised, 16% regretted their decision to save their credit card information",
+        "flash": "control"
+    },
+    {
+        "id": "45",
+        "social": "67% elected to sign in through Facebook",
+        "card": "66% elected to save their credit card information",
+        "flash": "control"
+    },
+    {
+        "id": "46",
+        "social": "67% elected to sign in through Facebook",
+        "card": "66% elected to save their credit card information",
+        "flash": "control"
+    },
+    {
+        "id": "47",
+        "social": "33% elected to sign in through Facebook",
+        "card": "34% elected to save their credit card information",
+        "flash": "control"
+    },
+    {
+        "id": "48",
+        "social": "33% elected to sign in through Facebook",
+        "card": "34% elected to save their credit card information",
+        "flash": "control"
+    }
+]

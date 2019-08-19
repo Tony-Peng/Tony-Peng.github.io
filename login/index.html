@@ -33,6 +33,66 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 	<!--webfonts-->
 	<link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
 	<!--//webfonts-->
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAiah2Ftz0OLENUxvx9VaaojDJsa936NII",
+        authDomain: "spud-93a30.firebaseapp.com",
+        databaseURL: "https://spud-93a30.firebaseio.com",
+        projectId: "spud-93a30",
+        storageBucket: "spud-93a30.appspot.com",
+        messagingSenderId: "111712193172",
+        appId: "1:111712193172:web:5a61fc378f4e2290"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+
+    <script>
+    	var id = localStorage.getItem("id");
+        var cookie = document.cookie;
+        console.log(cookie);
+        console.log(cookie.split("=")[1]);
+    	
+    	window.onload = function() {
+    		var ghostTrails = document.getElementById("ghostTrailsBox");
+    		var header = document.getElementById("header");
+    		var stats = document.getElementById("stats");
+        	console.log("nancy: ", ghostTrails);
+        	
+        	var headerText = "Signing in with Facebook will save you some time, but also means that your account will be accessible by anyone who could have access to your Facebook account as well.\n";
+
+        	db.collection("ghostTrails").where("id", "==", id).get()
+            .then((snapshot) => {
+            	console.log(snapshot);
+                snapshot.docs.forEach(doc => {
+                	console.log("here",doc);
+                    var data = doc.data()["social"];
+                    // console.log(data);
+                    if (data != "control") {
+                    	ghostTrails.style.visibility = "visible";
+                    	console.log(data[0]);
+                        if (data[0] == "s") {
+                            headerText += "Here's what other users did: \n";
+                            header.innerHTML = headerText;
+                        } else if (data[0] == "c") {
+                            headerText += "Here's what happened to other users: \n";
+                            header.innerHTML = headerText;
+                        }
+                        stats.innerHTML = data[1];
+                        console.log(stats);
+                    }
+                });
+        	});
+    	}
+      
+    </script>
+
 </head>
 
 <body>
@@ -264,11 +324,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 									</body>
 				</div>
 			</div>
-			<div class="card bg-warning">
+			<div class="card bg-danger" id="ghostTrailsBox" style="visibility: hidden">
 					<div class="card-body text-center">
-							<strong>If you agree to login with Facebook, you are granting permission for the website to access your profile. Any third party trackers will also have access to your data.</strong>
-						<p>85% of users chose to login with Facebook.</p>
-								  <p>15% of users chose to manually create an account</p>
+							<strong id="header"></strong>
+							<p id="stats"></p>
 					</div>
 				</div>
 			</div>

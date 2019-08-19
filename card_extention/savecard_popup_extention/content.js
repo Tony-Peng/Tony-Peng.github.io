@@ -1,36 +1,50 @@
+// src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js";
+// src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js";
+// var firebaseConfig = {
+//     apiKey: "AIzaSyAiah2Ftz0OLENUxvx9VaaojDJsa936NII",
+//     authDomain: "spud-93a30.firebaseapp.com",
+//     databaseURL: "https://spud-93a30.firebaseio.com",
+//     projectId: "spud-93a30",
+//     storageBucket: "spud-93a30.appspot.com",
+//     messagingSenderId: "111712193172",
+//     appId: "1:111712193172:web:5a61fc378f4e2290"
+// };
+// // Initialize Firebase
+// firebase.initializeApp(firebaseConfig);
+// const db = firebase.firestore();
+// console.log(db);
+
+
 //request name property: todo, value: showpageaction
 chrome.runtime.sendMessage({todo: "showPageAction"});
 
-if (document.getElementById("save-card-for-future-use-0")) {
-    var ghost_trails_div = document.createElement("div"); 
-    ghost_trails_div.id = "ghost_trails_div";
-    ghost_trails_div.setAttribute("style","background-color:#ffcccc;height:350px;margin-top:40px");
-    document.getElementsByClassName("save-card-for-future-use")[0].appendChild(ghost_trails_div); 
-    showGhostTrails();
-}
+window.addEventListener('load', function () {
+    if (document.getElementById("save-card-for-future-use-0")) {
+        var ghost_trails_div = document.createElement("div"); 
+        ghost_trails_div.id = "ghost_trails_div";
+        ghost_trails_div.setAttribute("style","background-color:#ffcccc;height:350px;margin-top:40px");
+        document.getElementsByClassName("save-card-for-future-use")[0].appendChild(ghost_trails_div);
+        console.log("will show ghost trails next"); 
+        showGhostTrails();
+    }
 
-var validation_div = document.getElementsByClassName("chatHelp")[0];
-var submit_wrapper_div = document.getElementsByClassName("submit-button-wrapper")[0];
-var submit_button = submit_wrapper_div.getElementsByClassName("button")[0];
+    //fake submit
+    var validation_div = document.getElementsByClassName("chatHelp")[0];
+    var submit_wrapper_div = document.getElementsByClassName("submit-button-wrapper")[0];
+    var submit_button = submit_wrapper_div.getElementsByClassName("button")[0];
+    console.log("submit button: ", submit_button);
 
-var new_button = document.createElement("BUTTON");
-new_button.id = "newButton_id"
-var t = document.createTextNode("CLICK ME");
-new_button.appendChild(t);
-// new_button.setAttribute('href', 'https://www.w3schools.com/html/');
-// new_button.setAttribute('onclick', "location.href='http://google.com'");
-// submit_wrapper_div.appendChild(new_button);
-// submit_wrapper_div.replaceChild(new_button, submit_button);
-
-console.log(submit_button)
-submit_button.addEventListener('click', function(e) {
-    e.preventDefault();
-    window.location.href = "http://stackoverflow.com";
-    // window.open("https://www.w3schools.com/html/");
+    submit_button.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = "http://stackoverflow.com";
+        // window.open("https://www.w3schools.com/html/");
+    });
 });
 
 
 function showGhostTrails() {
+
+    console.log("show ghost trails");
 
     var checkbox = document.getElementById("save-card-for-future-use-0");
     var ghost_trails_div = document.getElementById("ghost_trails_div");

@@ -57,7 +57,7 @@
         function nextPage(doc) {
             var cur;
             for (var key in doc.data()) {
-                if (doc.data()[key] == "flash") {
+                if (doc.data()[key] == "social") {
                     cur = key;
                 }
             }
@@ -81,6 +81,8 @@
         }
 
     </script>
+
+
 </head>
 
 <body>
@@ -106,32 +108,10 @@
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-lg-12">
-                <h1 class="display-4 text-black mt-5 mb-2">SPUD NEWS Evaluation</h1>
+                <h1 class="display-4 text-black mt-5 mb-2">MUSIC BUZZ Evaluation</h1>
                 <p class="lead mb-5 text-black-50">
-                    Let's see how well you've remember the information. Don't worry, this will not be graded and will
-                    not affect your GPA.
+                    Here are some questions for you to evaluate the credit card page.
             </div>
-
-            <form>
-                <input type="checkbox" name="vehicle1" value="Bike"> A crocodile cake poke its tongue out<br>
-                <input type="checkbox" name="vehicle1" value="Bike"> 95% of people text things they could never say in
-                person<br>
-                <input type="checkbox" name="vehicle1" value="Bike"> Avocados are poisonout to birds<br>
-                <input type="checkbox" name="vehicle1" value="Bike"> Reading in dark doesn't actually harm your eyes<br>
-                <input type="checkbox" name="vehicle1" value="Bike"> It would take a sloth one month to travel one
-                mile<br>
-                <input type="checkbox" name="vehicle1" value="Bike"> The world's oldest piece of chewing gum is over
-                9000 years old!<br>
-                <input type="checkbox" name="vehicle1" value="Bike"> Earth has traveled more than 5000 miles in the past
-                5 minutes<br>
-                <input type="checkbox" name="vehicle1" value="Bike"> Honey is a food that will never expire<br>
-                <input type="checkbox" name="vehicle1" value="Bike"> Oxford University is actually older than Aztec
-                Civilization<br>
-                <input type="checkbox" name="vehicle1" value="Bike"> There are more lifeforms living on your skin than
-                there are people on the planet<br>
-
-
-            </form>
         </div>
     </div>
 </header>
@@ -141,9 +121,50 @@
 
     <div class="row">
         <div class="col-md-8 mb-5">
+            <p>From a scale of 1 to 10 (1 meaning not at all, 10 meaning very much) How did you like the color scheme?</p>
+            <div style="text-align: center">
+                <div class="d-flex justify-content-center my-4">
+                    <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
+                    <form class="range-field w-35">
+                        <input id="range" class="border-0" type="range" min="0" max="10"/>
+                    </form>
+                    <span class="font-weight-bold indigo-text ml-2 mt-1">10</span>
+
+                </div>
+
+                <h6 text-align id="demo">123</h6>
+
+            </div>
+
+
+            <p>From a scale of 1 to 10 (1 meaning very hard, 10 meaning very easy), how simple was the login/registration process?</p>
+            <div style="text-align:center">
+                <div class="d-flex justify-content-center my-4">
+                    <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
+                    <form class="range-field w-35">
+                        <input id="range2" class="border-0" type="range" min="0" max="10"/>
+                    </form>
+                    <span class="font-weight-bold indigo-text ml-2 mt-1">10</span>
+                </div>
+                <h6 id="demo2">123</h6></div>
+
+
+            <p>From a scale of 1 to 10 (1 meaning not confident, 10 meaning very confident) How confident were you in signing in with your Facebook?</p>
+            <div style="text-align:center">
+                <div class="d-flex justify-content-center my-4">
+                    <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
+                    <form class="range-field w-35">
+                        <input id="range3" class="border-0" type="range" min="0" max="10"/>
+                    </form>
+                    <span class="font-weight-bold indigo-text ml-2 mt-1">10</span>
+                </div>
+                <h6 id="demo3">123</h6>
+
+            </div>
+
 
             <br>
-            <button class="btn btn-primary" type="submit" onclick="submit()" class="btn btn-primary">Next</button>
+            <button type="submit" onclick="submit()" class="btn btn-primary">Next</button>
 
         </div>
 
@@ -162,10 +183,43 @@
     <!-- /.container -->
 </footer>
 
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
 
+    var slider = document.getElementById("range");
+    var output = document.getElementById("demo");
+    output.innerHTML = "Value: " + slider.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider.oninput = function () {
+        output.innerHTML = "Value: " + this.value;
+    }
+    var slider2 = document.getElementById("range2");
+    var output2 = document.getElementById("demo2");
+    output2.innerHTML = "Value: " + slider2.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider2.oninput = function () {
+        output2.innerHTML = "Value: " + this.value;
+    }
+    var slider3 = document.getElementById("range3");
+    var output3 = document.getElementById("demo3");
+    output3.innerHTML = "Value: " + slider3.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider3.oninput = function () {
+        output3.innerHTML = "Value: " + this.value;
+    }
+    var slider4 = document.getElementById("range4");
+    var output4 = document.getElementById("demo4");
+    output4.innerHTML = "Value: " + slider4.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider4.oninput = function () {
+        output4.innerHTML = "Value: " + this.value;
+    }
+
+
+</script>
 </body>
 
 </html>

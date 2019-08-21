@@ -1,31 +1,49 @@
 <head>
     <title> true facts that will SHOCK you</title>
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAiah2Ftz0OLENUxvx9VaaojDJsa936NII",
+        authDomain: "spud-93a30.firebaseapp.com",
+        databaseURL: "https://spud-93a30.firebaseio.com",
+        projectId: "spud-93a30",
+        storageBucket: "spud-93a30.appspot.com",
+        messagingSenderId: "111712193172",
+        appId: "1:111712193172:web:5a61fc378f4e2290"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
     <script>
         var id = localStorage.getItem("id");
         var cookie = document.cookie;
         console.log(cookie);
         console.log(cookie.split("=")[1]);
 
-        if (id > 0 && id < 33) {
-            if(id == 1 || id == 3 || id == 9 || id == 11 || id == 17 || id == 19 || id == 25 || id == 27){
-                //Social cue high
-                alert("Flash objects found, enabling Flash will allow you watch this video, but could also increase your chances of being infected with malware." +
-                    " Here’s what other users did: 65% of the users selected to run Flash ")
-            } else if(id == 2 || id == 4 || id == 10 || id == 12 || id == 18 || id ==20 || id == 26 || id == 28) {
-                //Social cue low
-                alert("Flash objects found, enabling Flash will allow you watch this video, but could also increase your chances of being infected with malware." +
-                    " Here’s what other users did: 35% of the users selected to run Flash ")
-            } else if (id == 5 || id ==7 || id == 13 || id == 15 || id ==21 || id ==23 || id == 29 || id == 31) {
-                //Consequence high
-                alert("Flash objects found, enabling Flash will allow you watch this video, but could also increase your chances of being infected with malware." +
-                    " Here’s what happened to other users: 70% regretted their decision to run Flash")
-            } else {
-                //Consequence low
-                alert("Flash objects found, enabling Flash will allow you watch this video, but could also increase your chances of being infected with malware." +
-                    "Here’s what happened to other users: 15% regretted their decision to run Flash  ")
-            }
+        var ghostTrails = "Enabling Flash will allow you watch this video, but could also increase your chances of being infected with malware.\n";
 
-        }
+        db.collection("ghostTrails").where("id", "==", id).get()
+                .then((snapshot) => {
+                    snapshot.docs.forEach(doc => {
+                        var data = doc.data()["flash"];
+                        if (data != "control") {
+                            if (data[0] == "s") {
+                                ghostTrails += "Here's what other users did: \n";
+                            } else if (data[0] == "c") {
+                                ghostTrails += "Here's what happened to other users: \n";
+                            }
+                            ghostTrails += data[1];
+                            console.log(ghostTrails);
+                            alert(ghostTrails);
+                        }
+                    });
+            });
 
         function pause() {
             document.shock.StopPlay();
@@ -36,7 +54,7 @@
         }
 
         function finish() {
-            window.location = "../flashquestions.html"
+            window.location = "../flashsurvey.html"
         }
 
         function myFunction(x) {
@@ -162,7 +180,7 @@
     <div class="content">
         <!-- Page content -->
         <h1 style="font-size: 40px">True facts that will SHOCK you! <span style="color: #2b2301;"></span></h1>
-        <h2 style="font-size: 15px">What? Really? -- You, reading the following post.</h2>
+        <h2 style="font-size: 15px">Note: You may choose to watch the video or read the text version of your choice. Both content contains the same information.</h2>
         <br><br>
         <div class="code_block">
             <p>
@@ -182,7 +200,7 @@
             <br>
             <br>
             <br>
-            If the video couldn't play, here's the text version.
+            Here's the text version:
         </div>
 
 

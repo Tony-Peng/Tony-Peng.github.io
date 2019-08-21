@@ -25,16 +25,7 @@
     <!-- Custom styles for this template -->
     <script>
         function submit() {
-            window.location = "flashUsability.html";
-        }
-
-        function open1() {
-            var bring = document.getElementById("bringbtn")
-            bring.disabled = true;
-            window.open("Security-Research/page.html");
-            var el = document.getElementById("btn");
-
-            el.disabled = false;
+            window.location = "flashSurvey.html";
         }
     </script>
 </head>
@@ -56,27 +47,15 @@
         </div>
     </div>
 </nav>
-
 <!-- Header -->
 <header class="bg-light py-5 mb-5">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-lg-12">
-                <h1 class="display-4 text-black mt-5 mb-2">Scenario: SPUD NEWS</h1>
+                <h1 class="display-4 text-black mt-5 mb-2">Web Usability Survey</h1>
                 <p class="lead mb-5 text-black-50">
-                    For this task, we’d like you to either watch an informational video or read through the content of
-                    this web page. <strong>The video and the text content contain the same information.</strong>
-                    Once you are done, please close the window and return to this page. You will be asked a few
-                    questions about about what you watched and / or read.
-                    You will not be timed, however, please try to just read through the page just once.
-                    Ready?”</p>
-                <br>
-                <br>
-                Ready?<br><br></br>
-                <button id="bringbtn" onclick="open1()" class="btn btn-primary"
-                        class="btn btn-default" role="button">Take
-                    me to page!
-                </button>
+                    Now you will complete some questions on how well the SPUD NEWS webpage is structured to help us improve our webs in the future.
+                </p>
             </div>
         </div>
     </div>
@@ -86,29 +65,75 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-md-8 mb-5">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">System Usability Scale</th>
+                <th scope="col">1</th>
+                <th scope="col">2</th>
+                <th scope="col">3</th>
+                <th scope="col">4</th>
+                <th scope="col">5</th>
 
-            <br>
-            <div >
-                <button style = "display: inline-block" id="btn" disabled="true" type="submit" onclick="submit()" class="btn btn-primary">Next</button>
-                <p class = "ml-3" style = "display: inline-block">-button will be enbaled once you have finished the task on News</p>
-            </div>
-        </div>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>I think that i would like to use this website</td>
+                <td><input name="radio1" type="radio" group="1">  </td>
+                <td><input name="radio1" type="radio" group="1">  </td>
+                <td><input name="radio1" type="radio" group="1">  </td>
+                <td><input name="radio1" type="radio" group="1">  </td>
+                <td><input name="radio1" type="radio" group="1">  </td>
 
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>I thought there was too much inconsistency in this website</td>
+                <td><input name="radio3" type="radio" group="3">  </td>
+                <td><input name="radio3" type="radio" group="3">  </td>
+                <td><input name="radio3" type="radio" group="3">  </td>
+                <td><input name="radio3" type="radio" group="3">  </td>
+                <td><input name="radio3" type="radio" group="3">  </td>
+
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>I found the website unnecessarily complex</td>
+                <td><input name="radio4" type="radio">  </td>
+                <td><input name="radio4" type="radio">  </td>
+                <td><input name="radio4" type="radio">  </td>
+                <td><input name="radio4" type="radio">  </td>
+                <td><input name="radio4" type="radio">  </td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <button type="submit" onclick="submit()" class="btn btn-primary">Next</button>
 
     </div>
-    <!-- /.row -->
+
+
+</div>
+<!-- /.row -->
 
 </div>
 <!-- /.container -->
 
 <!-- Footer -->
+<br>
 <footer class="py-5 bg-dark">
     <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; SPUD 2019</p>
     </div>
     <!-- /.container -->
 </footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

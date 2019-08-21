@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SPUD Lab v2</title>
+    <title>SPUD Lab</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -23,48 +23,9 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
     <!-- Custom styles for this template -->
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
-
     <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyAiah2Ftz0OLENUxvx9VaaojDJsa936NII",
-        authDomain: "spud-93a30.firebaseapp.com",
-        databaseURL: "https://spud-93a30.firebaseio.com",
-        projectId: "spud-93a30",
-        storageBucket: "spud-93a30.appspot.com",
-        messagingSenderId: "111712193172",
-        appId: "1:111712193172:web:5a61fc378f4e2290"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      const db = firebase.firestore();
+
     </script>
-
-    <script>
-    function submit() {
-        console.log("db: ",db);
-        console.log("collection: ",db.collection);
-        var id = document.getElementById("parID").value;
-        if(id === "" || id > 48 || id < 1) {
-            alert("Enter an valid ID");
-        } else {
-            document.cookie = "id=" + id;
-            console.log(document.cookie)
-            window.localStorage.setItem("id", id);
-            window.location = "consent.html";
-            // db.collection("test").add({id: id,})
-            //     .then(function(docRef) {
-            //         console.log("Document written with ID: ", docRef.id);
-            //         window.location = "consent.html";
-            //     });
-        }
-    }
-</script>
-
 </head>
 
 <body>
@@ -90,8 +51,8 @@
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-lg-12">
-                <h1 class="display-4 text-black mt-5 mb-2">Welcome to the Web Usability Study</h1>
-                <p class="lead mb-5 text-black-50"></p>
+                <h1 class="display-4 text-black mt-5 mb-2">Part 4: Short Interview</h1>
+                <p class="lead mb-5 text-black-50">This is the last part of the lab study. We will do a short 5 minute interview with you. </p><br>
             </div>
         </div>
     </div>
@@ -102,11 +63,11 @@
 
     <div class="row">
         <div class="col-md-8 mb-5">
-            <h2 id="about">Please enter participant ID:</h2>
-            <hr>
-            <input id = "parID" class="form-control" id="participantID" placeholder="Participant ID:">
+            <p>Once you finish, researchers will let you know about the Amazon Giftcards.</p><br> 
+            <p>Please let us know if you have further question, and thank you for participating in the resarch study.</p><br>
+
             <br>
-            <button type="submit" onclick="submit()" class="btn btn-primary">Submit</button>
+            <button type="submit" onclick="submit()" class="btn btn-primary">Finish</button>
 
         </div>
 
@@ -125,6 +86,46 @@
     <!-- /.container -->
 </footer>
 
-</body>
+<script>
+    function submit() {
+        window.location = "index.html";
+    }
+
+    var slider = document.getElementById("range");
+    var output = document.getElementById("demo");
+    output.innerHTML = "Value: " + slider.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider.oninput = function () {
+        output.innerHTML = "Value: " + this.value;
+    }
+    var slider2 = document.getElementById("range2");
+    var output2 = document.getElementById("demo2");
+    output2.innerHTML = "Value: " + slider2.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider2.oninput = function () {
+        output2.innerHTML = "Value: " + this.value;
+    }
+    var slider3 = document.getElementById("range3");
+    var output3 = document.getElementById("demo3");
+    output3.innerHTML = "Value: " + slider3.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider3.oninput = function () {
+        output3.innerHTML = "Value: " + this.value;
+    }
+    var slider4 = document.getElementById("range4");
+    var output4 = document.getElementById("demo4");
+    output4.innerHTML = "Value: " + slider4.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider4.oninput = function () {
+        output4.innerHTML = "Value: " + this.value;
+    }
+
+
+</script>
+
 
 </html>

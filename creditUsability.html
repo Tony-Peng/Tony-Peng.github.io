@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SPUD Lab v2</title>
+    <title>SPUD Lab</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -23,48 +23,11 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
     <!-- Custom styles for this template -->
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
-
     <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyAiah2Ftz0OLENUxvx9VaaojDJsa936NII",
-        authDomain: "spud-93a30.firebaseapp.com",
-        databaseURL: "https://spud-93a30.firebaseio.com",
-        projectId: "spud-93a30",
-        storageBucket: "spud-93a30.appspot.com",
-        messagingSenderId: "111712193172",
-        appId: "1:111712193172:web:5a61fc378f4e2290"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      const db = firebase.firestore();
-    </script>
-
-    <script>
-    function submit() {
-        console.log("db: ",db);
-        console.log("collection: ",db.collection);
-        var id = document.getElementById("parID").value;
-        if(id === "" || id > 48 || id < 1) {
-            alert("Enter an valid ID");
-        } else {
-            document.cookie = "id=" + id;
-            console.log(document.cookie)
-            window.localStorage.setItem("id", id);
-            window.location = "consent.html";
-            // db.collection("test").add({id: id,})
-            //     .then(function(docRef) {
-            //         console.log("Document written with ID: ", docRef.id);
-            //         window.location = "consent.html";
-            //     });
+        function submit() {
+            window.location = "creditSurvey.html";
         }
-    }
-</script>
-
+    </script>
 </head>
 
 <body>
@@ -84,14 +47,15 @@
         </div>
     </div>
 </nav>
-
 <!-- Header -->
 <header class="bg-light py-5 mb-5">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-lg-12">
-                <h1 class="display-4 text-black mt-5 mb-2">Welcome to the Web Usability Study</h1>
-                <p class="lead mb-5 text-black-50"></p>
+                <h1 class="display-4 text-black mt-5 mb-2">Web Usability Survey</h1>
+                <p class="lead mb-5 text-black-50">
+                    Now you will complete some questions on how well the Hollister webpage is structured to help us improve our webs in the future.
+                </p>
             </div>
         </div>
     </div>
@@ -101,29 +65,62 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-md-8 mb-5">
-            <h2 id="about">Please enter participant ID:</h2>
-            <hr>
-            <input id = "parID" class="form-control" id="participantID" placeholder="Participant ID:">
-            <br>
-            <button type="submit" onclick="submit()" class="btn btn-primary">Submit</button>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="row">1</th>
+                <td>I would imagine that most people can be comfortable navigating around this website</td>
+                <td><input name="radio5" type="radio" group="5">  </td>
+                <td><input name="radio5" type="radio" group="5">  </td>
+                <td><input name="radio5" type="radio" group="5">  </td>
+                <td><input name="radio5" type="radio" group="5">  </td>
+                <td><input name="radio5" type="radio" group="5">  </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>I think that i would like to use this website</td>
+                <td><input name="radio1" type="radio" group="1">  </td>
+                <td><input name="radio1" type="radio" group="1">  </td>
+                <td><input name="radio1" type="radio" group="1">  </td>
+                <td><input name="radio1" type="radio" group="1">  </td>
+                <td><input name="radio1" type="radio" group="1">  </td>
 
-        </div>
-
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>I found the website unnecessarily complex</td>
+                <td><input name="radio4" type="radio">  </td>
+                <td><input name="radio4" type="radio">  </td>
+                <td><input name="radio4" type="radio">  </td>
+                <td><input name="radio4" type="radio">  </td>
+                <td><input name="radio4" type="radio">  </td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <button type="submit" onclick="submit()" class="btn btn-primary">Next</button>
 
     </div>
-    <!-- /.row -->
+
+
+</div>
+<!-- /.row -->
 
 </div>
 <!-- /.container -->
 
 <!-- Footer -->
+<br>
 <footer class="py-5 bg-dark">
     <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; SPUD 2019</p>
     </div>
     <!-- /.container -->
 </footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

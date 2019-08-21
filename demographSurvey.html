@@ -22,67 +22,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
-
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyAiah2Ftz0OLENUxvx9VaaojDJsa936NII",
-        authDomain: "spud-93a30.firebaseapp.com",
-        databaseURL: "https://spud-93a30.firebaseio.com",
-        projectId: "spud-93a30",
-        storageBucket: "spud-93a30.appspot.com",
-        messagingSenderId: "111712193172",
-        appId: "1:111712193172:web:5a61fc378f4e2290"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      const db = firebase.firestore();
-    </script>
-
     <!-- Custom styles for this template -->
     <script>
-        function submit() {
-            var id = localStorage.getItem("id");
-            var mod = id % 6;
-            db.collection("order").where("mod", "==", mod).get()
-                .then((snapshot) => {
-                    snapshot.docs.forEach(doc => {nextPage(doc)});
-            });
-        }
-
-        function nextPage(doc) {
-            var cur;
-            for (var key in doc.data()) {
-                if (doc.data()[key] == "social") {
-                    cur = key;
-                }
-            }
-            if (cur == "first") {
-                jumpTo(doc.data().second);
-            } else if (cur == "second") {
-                jumpTo(doc.data().third);
-            } else {
-                window.location = "debreif.html";
-            }
-        }
-
-        function jumpTo(next) {
-            if (next == "card") {
-                window.location = "creditCard.html";
-            } else if (next == "flash") {
-                window.location = "flash.html";
-            } else {
-                window.location = "login.html";
-            }
-        }
 
     </script>
-
-
 </head>
 
 <body>
@@ -108,9 +51,7 @@
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-lg-12">
-                <h1 class="display-4 text-black mt-5 mb-2">MUSIC BUZZ Evaluation</h1>
-                <p class="lead mb-5 text-black-50">
-                    Here are some questions for you to evaluate the MUSIC BUZZ webpage.
+                <h1 class="display-4 text-black mt-5 mb-2">Part 3: Demographics Survey</h1>
             </div>
         </div>
     </div>
@@ -121,47 +62,70 @@
 
     <div class="row">
         <div class="col-md-8 mb-5">
-            <p>From a scale of 1 to 10 (1 meaning not at all, 10 meaning very much) How did you like the color scheme?</p>
-            <div style="text-align: center">
-                <div class="d-flex justify-content-center my-4">
-                    <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
-                    <form class="range-field w-35">
-                        <input id="range" class="border-0" type="range" min="0" max="10"/>
-                    </form>
-                    <span class="font-weight-bold indigo-text ml-2 mt-1">10</span>
 
-                </div>
+            <b>1. What is your age? </b><br>
+            <input type="radio" name="update" value="never"> Under 18 <br>
+            <input type="radio" name="update" value="rarely"> 18 - 22 <br>
+            <input type="radio" name="update" value="sometimes"> 23 - 26 <br>
+            <input type="radio" name="update" value="often"> 27 - 30 <br>
+            <input type="radio" name="update" value="always"> 31 - 35 <br>
+            <input type="radio" name="update" value="always"> 36 - 40 <br>
+            <input type="radio" name="update" value="always"> 40 - 50 <br>
+            <input type="radio" name="update" value="always"> Above 50 <br>
 
-                <h6 text-align id="demo">123</h6>
+            <br>
 
-            </div>
+            <b>2. What would you identify as your race? </b><br>
+            <input type="radio" name="update" value="never"> White <br>
+            <input type="radio" name="update" value="rarely"> Black or African-American<br>
+            <input type="radio" name="update" value="sometimes"> American Indian or Alaskan Native<br>
+            <input type="radio" name="update" value="often"> Asian <br>
+            <input type="radio" name="update" value="always"> Native Hawaiian or other Pacific islander <br>
+            <input type="radio" name="update" value="always"> From multiple races (please specify)<br>
+            <input type="radio" name="update" value="always"> Some other race (please specify)<br>
+            <input type="radio" name="update" value="always"> Prefer not to answer<br>
 
+            <br>
 
-            <p>From a scale of 1 to 10 (1 meaning very hard, 10 meaning very easy), how simple was the login/registration process?</p>
-            <div style="text-align:center">
-                <div class="d-flex justify-content-center my-4">
-                    <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
-                    <form class="range-field w-35">
-                        <input id="range2" class="border-0" type="range" min="0" max="10"/>
-                    </form>
-                    <span class="font-weight-bold indigo-text ml-2 mt-1">10</span>
-                </div>
-                <h6 id="demo2">123</h6></div>
+            <b>3. What is your gener? </b><br>
+            <input type="radio" name="update" value="never"> Female <br>
+            <input type="radio" name="update" value="rarely"> Male <br>
+            <input type="radio" name="update" value="sometimes"> Other (please specify) <br>
+            <input type="radio" name="update" value="often"> Prefer not to answer <br>
 
+            <br>
 
-            <p>From a scale of 1 to 10 (1 meaning not confident, 10 meaning very confident) How confident were you in signing in with your Facebook?</p>
-            <div style="text-align:center">
-                <div class="d-flex justify-content-center my-4">
-                    <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
-                    <form class="range-field w-35">
-                        <input id="range3" class="border-0" type="range" min="0" max="10"/>
-                    </form>
-                    <span class="font-weight-bold indigo-text ml-2 mt-1">10</span>
-                </div>
-                <h6 id="demo3">123</h6>
+            <b>4. Are you now married, widowed, divorced, separated, or never married? </b><br>
+            <input type="radio" name="update" value="never"> Married <br>
+            <input type="radio" name="update" value="rarely"> Widowed <br>
+            <input type="radio" name="update" value="sometimes"> Divorced <br>
+            <input type="radio" name="update" value="often"> Separated <br>
+            <input type="radio" name="update" value="often"> Never Married <br>
+            <input type="radio" name="update" value="often"> Perfer not to answer <br>
 
-            </div>
+            <br>
 
+            <b>5. What is the highest level of school you have completed or the highest degree you have received? </b><br>
+            <input type="radio" name="update" value="never"> Less than high school degree<br>
+            <input type="radio" name="update" value="rarely"> High school degree or equivalent (e.g., GED) <br>
+            <input type="radio" name="update" value="sometimes"> Some college but no degree<br>
+            <input type="radio" name="update" value="often"> Associate degree <br>
+            <input type="radio" name="update" value="often"> Bachelor degree <br>
+            <input type="radio" name="update" value="often"> Graduate degree<br>
+            <input type="radio" name="update" value="often"> Employment<br>
+            <input type="radio" name="update" value="often"> Prefer not to answer<br>
+
+            <br>
+
+            <b>6. Which of the following categories best describes your employment status?</b>><br>
+            <input type="radio" name="update" value="never"> Employed<br>
+            <input type="radio" name="update" value="rarely"> Not employed (not a student) <br>
+            <input type="radio" name="update" value="sometimes"> Retired<br>
+            <input type="radio" name="update" value="often"> Disabled, not able to work <br>
+            <input type="radio" name="update" value="often"> Student <br>
+            <input type="radio" name="update" value="often"> Prefer not to answer<br>
+
+            <br>
 
             <br>
             <button type="submit" onclick="submit()" class="btn btn-primary">Next</button>
@@ -184,6 +148,9 @@
 </footer>
 
 <script>
+    function submit() {
+        window.location = "interview.html";
+    }
 
     var slider = document.getElementById("range");
     var output = document.getElementById("demo");
@@ -220,6 +187,6 @@
 
 
 </script>
-</body>
+
 
 </html>

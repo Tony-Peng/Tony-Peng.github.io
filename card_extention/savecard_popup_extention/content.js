@@ -1,7 +1,10 @@
 
+chrome.runtime.sendMessage({todo: "connectFirebase"}, function (response) {
+    console.log("nancy: ", response);
+})
+
 //request name property: todo, value: showpageaction
 chrome.runtime.sendMessage({todo: "showPageAction"});
-chrome.runtime.sendMessage({todo: "connectFirebase"});
 
 window.addEventListener('load', function () {
     var id = localStorage.getItem("id");
@@ -48,7 +51,7 @@ function showGhostTrails() {
             "<div style='padding:20px'>" +
                 "<b style='font-size:20px;color:red'>NOTICE: You Chose to Save Your Bank Card!</b><br/><br/>" + 
                 "<p style='font-size:13px;color:black'>Saving your credit card will make future purchases with Hollister easier, but could also make your credit card information more vulnerable to being leaked.</p><br/>" + 
-                "<p style='font-size:13px;color:red'>Here’s what happened to other users: </p><br/>" + 
+                "<b style='font-size:13px;color:red'>Here’s what happened to other users: </b><br/>" + 
                 "<ul'><li style='display:list-item;font-size:16px;color:black'><u>Most users</u> regretted their decision to save their credit card information </li>" +
                 "<li style='display:list-item;font-size:16px;color:black'><u>Most users</u> reported that their credit card data was compromised</li></ul>" +
             "</div>";

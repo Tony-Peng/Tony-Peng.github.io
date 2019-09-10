@@ -1,6 +1,9 @@
 
 chrome.runtime.sendMessage({todo: "connectFirebase"}, function (response) {
     console.log("nancy: ", response);
+    chrome.storage.local.get(['id'], function(result) {
+      console.log('Value currently is ' + result.id);
+    });
 })
 
 //request name property: todo, value: showpageaction

@@ -18,19 +18,18 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     
     //highlight the extension icon
     if (request.todo == "showPageAction") {
-        console.log("Nancy at showpageaction");
         chrome.tabs.query({active:true,currentWindow: true}, function(tabs) {
             chrome.pageAction.show(tabs[0].id);
         });
     }
 
     else if (request.todo == "connectFirebase") {
-        console.log("Nancy at firebase");
         db.collection("extensionTest").add({
-                id: "nancytest",
+                id: "nancytest2",
             }).then(function(docRef) {
-                console.log("stored to firebase");
+                chrome.storage.local.set({'id': 999});
             });
+
         sendResponse({response: "success"});
     }
 

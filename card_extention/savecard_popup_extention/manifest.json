@@ -19,6 +19,7 @@
     "permissions": [
         "contextMenus",
         "tabs",
+        "storage",
         "https://www.hollisterco.com/webapp/wcs/stores/servlet/*"
     ],
     "content_scripts":[

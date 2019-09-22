@@ -1,6 +1,6 @@
 <head>
     <title> true facts that will SHOCK you</title>
-    
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
@@ -40,7 +40,9 @@
                             }
                             ghostTrails += data[1];
                             console.log(ghostTrails);
-                            alert(ghostTrails);
+                            text = document.getElementById("header-text")
+                            text.innerHTML = ghostTrails;
+
                         }
                     });
             });
@@ -198,6 +200,19 @@
             <button onclick="pause()"> pause</button>
             <br>
             <br>
+            <div class="col-md-5" style="display: inline-block;  background-color: #efa2a9">
+                <p style='display:inline-block;font-size:13px;color:black' id = "header-text"></p><br/>
+                <p style='display:inline-block; font-size:13px;color:red'>Here’s what happened to other users: </p>
+                <ul>
+                    <li style='display:list-item;font-size:16px;color:black'><u>Most users</u> regretted their decision to
+                        enable flash.
+                    </li>
+                    <li style='display:list-item;font-size:16px;color:black'><u>Most users</u> reported that their hardware
+                        was compromised in some way.
+                    </li>
+                </ul>
+
+            </div>
             <br>
             Here's the text version:
         </div>

@@ -24,13 +24,24 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     }
 
     else if (request.todo == "connectFirebase") {
-        db.collection("ghostTrails").where("id", "==", 1).get()
-        .then((snapshot) => {console.log(snapshot);})
-        // db.collection("extensionTest").add({
-        //         id: "nancytest2",
-        //     }).then(function(docRef) {
-        //         chrome.storage.local.set({'id': 999});
-        //     });
+        db.collection("ghostTrails").where("id", "==", "4").get()
+        .then((snapshot) => {
+            chrome.storage.local.set({'db': snapshot});
+            snapshot.docs.forEach(doc => {
+                    var data = doc.data()["card"];
+                    if (data != "control") {
+                        chrome.storage.local.set({'ghost': true});
+                        if (data[0] == "s") {
+                            chrome.storage.local.set({'social': true});
+                        } else if (data[0] == "c") {
+                            chrome.storage.local.set({'consequence': true});
+                        }
+                        chrome.storage.local.set({'stats': data[1]});
+                    } else {
+                        chrome.storage.local.set({'ghost': false});
+                    }
+                });
+        })
 
         sendResponse({response: "success"});
     }

@@ -1,14 +1,31 @@
 
-window.addEventListener('load', function () {
+window.addEventListener('load', function () {  
+    connectDatabaseThenShowGhostTrails();
+});
+
+function connectDatabaseThenShowGhostTrails() {
     //request name property: todo, value: showpageaction
     chrome.runtime.sendMessage({todo: "showPageAction"});
     chrome.runtime.sendMessage({todo: "connectFirebase"});
 
-    chrome.storage.local.get(['id'], function(result) {
-      console.log('Value currently is ' + result.id);
+    var ghost = false;
+    var social = false;
+    var stats = "";
+
+    chrome.storage.local.get(['ghost','social','stats'],function(result){
+        ghost = result.ghost;
+        social = result.social;
+        stats = result.stats;
+        console.log('ghost: ' + ghost);
+        console.log('social: ' + social);
+        console.log('stats: ' + stats);
+        webManipulation(ghost, social, stats);
     });
 
-    if (document.getElementById("save-card-for-future-use-0")) {
+}
+
+function webManipulation(ghost, social, stats) {
+    if (document.getElementById("save-card-for-future-use-0") && ghost == true) {
         var ghost_trails_div = document.createElement("div"); 
         ghost_trails_div.id = "ghost_trails_div";
         ghost_trails_div.setAttribute("style","background-color:#ffcccc;height:170px;margin-top:30px");
@@ -26,7 +43,7 @@ window.addEventListener('load', function () {
         window.location.href = "http://stackoverflow.com";
         // window.open("https://www.w3schools.com/html/");
     });
-});
+}
 
 
 function showGhostTrails() {

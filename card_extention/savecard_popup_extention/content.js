@@ -20,7 +20,7 @@ window.addEventListener('load', function () {
     if (document.getElementById("save-card-for-future-use-0")) {
         var ghost_trails_div = document.createElement("div"); 
         ghost_trails_div.id = "ghost_trails_div";
-        ghost_trails_div.setAttribute("style","background-color:#ffcccc;height:170px;margin-top:10px");
+        ghost_trails_div.setAttribute("style","background-color:#ffcccc;height:170px;margin-top:30px");
         document.getElementsByClassName("save-card-for-future-use")[0].appendChild(ghost_trails_div);
         console.log("will show ghost trails next"); 
         showGhostTrails();

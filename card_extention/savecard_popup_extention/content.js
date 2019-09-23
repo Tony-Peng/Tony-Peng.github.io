@@ -1,12 +1,7 @@
 
 window.addEventListener('load', function () {
-    //request name property: todo, value: showpageaction
-    chrome.runtime.sendMessage({todo: "showPageAction"});
-    chrome.runtime.sendMessage({todo: "connectFirebase"});
-
-    chrome.storage.local.get(['id'], function(result) {
-      console.log('Value currently is ' + result.id);
-    });
+    
+    load();
 
     if (document.getElementById("save-card-for-future-use-0")) {
         var ghost_trails_div = document.createElement("div"); 
@@ -27,6 +22,25 @@ window.addEventListener('load', function () {
         // window.open("https://www.w3schools.com/html/");
     });
 });
+
+function load() {
+    //request name property: todo, value: showpageaction
+    chrome.runtime.sendMessage({todo: "showPageAction"});
+    chrome.runtime.sendMessage({todo: "connectFirebase"});
+
+    var ghost = false;
+    var social = false;
+    var stats = "";
+
+    chrome.storage.local.get(['ghost','social','stats'],function(result){
+        ghost = result.ghost;
+        social = result.social;
+        stats = result.stats;
+        console.log('ghost: ' + ghost);
+        console.log('social: ' + social);
+        console.log('stats: ' + stats);
+    });
+}
 
 
 function showGhostTrails() {

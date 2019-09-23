@@ -24,11 +24,13 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     }
 
     else if (request.todo == "connectFirebase") {
-        db.collection("extensionTest").add({
-                id: "nancytest2",
-            }).then(function(docRef) {
-                chrome.storage.local.set({'id': 999});
-            });
+        db.collection("ghostTrails").where("id", "==", 1).get()
+        .then((snapshot) => {console.log(snapshot);})
+        // db.collection("extensionTest").add({
+        //         id: "nancytest2",
+        //     }).then(function(docRef) {
+        //         chrome.storage.local.set({'id': 999});
+        //     });
 
         sendResponse({response: "success"});
     }

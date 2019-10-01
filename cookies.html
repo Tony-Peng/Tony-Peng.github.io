@@ -26,13 +26,67 @@
             color: white;
         }
     </style>
+
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAiah2Ftz0OLENUxvx9VaaojDJsa936NII",
+        authDomain: "spud-93a30.firebaseapp.com",
+        databaseURL: "https://spud-93a30.firebaseio.com",
+        projectId: "spud-93a30",
+        storageBucket: "spud-93a30.appspot.com",
+        messagingSenderId: "111712193172",
+        appId: "1:111712193172:web:5a61fc378f4e2290"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+
+    <script>
+        var id = localStorage.getItem("id");
+        var cookie = document.cookie;
+        console.log(cookie);
+        console.log(cookie.split("=")[1]);
+
+        var type = "";
+        var stats = "";
+        var statement = "";
+
+        db.collection("ghostTrails").where("id", "==", id).get()
+                .then((snapshot) => {
+                    snapshot.docs.forEach(doc => {
+                        var data = doc.data()["cookie"];
+                        if (data != "control") {
+                            stats = data[1];
+                            if (data[0] == "s") {
+                                type = "Here's what other users did: \n";
+                                statement = data[2];
+                            } else if (data[0] == "c") {
+                                type = "Here's what happened to other users: \n";
+                                statement = data[2];
+                            }
+                            console.log(type, " ", stats, " ", statement);
+
+                            document.getElementById("type-text").innerHTML = type;
+                            var statementtext = document.getElementById("statement-text")
+                            var statementHTML = "<u>" + stats + "</u>" + " " + statement;
+                            statementtext.innerHTML = statementHTML;
+
+                            document.getElementById("ghostTrails").style.display = "inline-block"
+                        }
+                    });
+            });
+    </script>
 </head>
 
 <body>
 
 
-<!-- <nav class="navbar navbar-expand-md navbar-dark fixed-bottom bg-dark" style="mask-image:bg-dark 50%"> -->
-<nav class="navbar navbar-expand-md fixed-bottom" style="background-color:#5D5D5D; opacity:0.95;">
+<nav class="navbar navbar-expand-md fixed-bottom" style="background-color:#5D5D5D; opacity:0.95;>
     <div style="width:100%; margin:5px;">
         <div style="float:left; margin-left: 3%; width: 40%; height: 170px;">
             <b style='font-size:14px;color:white'>We and our partners use technology such as cookies on our site to personalise content and ads, provide social media features, and analyse our traffic. Click below to consent to the use of this technology across the web. You can change your mind and change your consent choices at anytime by returning to this site.</b>
@@ -41,18 +95,14 @@
             </div>
         </div>
 
-        <div style="display: inline-block; float:right; background-color:#ffcccc; height: 170px; width:50%">
+        <div id="ghostTrails" style="display:none; float:right; background-color:#ffcccc; height: 170px; width:50%">
             <div style='padding:20px; font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;'>
                 <b style='font-size:20px;color:red'>NOTICE: Cookie Agreement Detected!</b><br/>
                 <p style='font-size:13px;color:black'>Enabling cookies will enhance browsing experience, but you are allowing them to track your browsing activites.</p>
-                <b style='font-size:13px;color:red'>Here’s what happened to other users:</b>
+                <b id="type-text" style='font-size:13px;color:red'></b>
                 <ul>
                     <li style='display:list-item;font-size:15px;color:black'>
-                        <b><u>Most users</u> regretted their decision to
-                        enable cookies</b>
-                    </li>
-                    <li style='display:list-item;font-size:15px;color:black'>
-                        <b><u>Most users</u> reported that their browsing data is shared among third-party applications</b>
+                        <b id="statement-text"></b>
                     </li>
                 </ul>
             </div>

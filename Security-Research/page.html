@@ -26,22 +26,30 @@
         console.log(cookie);
         console.log(cookie.split("=")[1]);
 
-        var ghostTrails = "Enabling Flash will allow you watch this video, but could also increase your chances of being infected with malware.\n";
+        var type = "";
+        var stats = "";
+        var statement1 = "";
+        var statement2 = "";
 
         db.collection("ghostTrails").where("id", "==", id).get()
                 .then((snapshot) => {
                     snapshot.docs.forEach(doc => {
                         var data = doc.data()["flash"];
                         if (data != "control") {
+                            stats = data[1];
                             if (data[0] == "s") {
-                                ghostTrails += "Here's what other users did: \n";
+                                type = "Here's what other users did: \n";
+                                statement1 = data[2];
                             } else if (data[0] == "c") {
-                                ghostTrails += "Here's what happened to other users: \n";
+                                type = "Here's what happened to other users: \n";
+                                statement1 = data[2];
+                                statement2 = data[3];
                             }
-                            ghostTrails += data[1];
-                            console.log(ghostTrails);
-                            text = document.getElementById("header-text")
-                            text.innerHTML = ghostTrails;
+                            console.log(type, " ", stats, " ", statement1);
+                            typetext = document.getElementById("type-text")
+                            typetext.innerHTML = type;
+                            statstext = document.getElementById("stats-text")
+                            statstext.innerHTML = stats;
 
                         }
                     });
@@ -187,13 +195,13 @@
             <div style='padding:20px; font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;'>
                 <b style='font-size:20px;color:red'>NOTICE: Flash Agreement Detected!</b><br/>
                 <p style='font-size:13px;color:black'>Enabling Flash will allow you watch this video, but could also increase your chances of being infected with malware.</p>
-                <b style='font-size:13px;color:red'>Here's what happened to other users:</b>
+                <b id="type-text" style='font-size:13px;color:red'>Here's what happened to other users:</b>
                 <ul>
                     <li style='display:list-item;font-size:15px;color:black'>
-                        <b><u>Most users</u> regretted their decision to enable flash</b>
+                        <b id="statement1-text"><u id="stats-text">Most users</u> regretted their decision to enable flash</b>
                     </li>
                     <li style='display:list-item;font-size:15px;color:black'>
-                        <b><u>Most users</u> reported that their hardware was somehow compromised</b>
+                        <b id="statement2-text"><u id="stats-text">Most users</u> reported that their hardware was somehow compromised</b>
                     </li>
                 </ul>
             </div>

@@ -32,11 +32,12 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
                     if (data != "control") {
                         chrome.storage.local.set({'ghost': true});
                         if (data[0] == "s") {
-                            chrome.storage.local.set({'social': true});
+                            chrome.storage.local.set({'type': "Here's what other users did:"});
                         } else if (data[0] == "c") {
-                            chrome.storage.local.set({'consequence': true});
+                            chrome.storage.local.set({'type': "Here’s what happened to other users:"});
                         }
                         chrome.storage.local.set({'stats': data[1]});
+                        chrome.storage.local.set({'statement': data[2]});
                     } else {
                         chrome.storage.local.set({'ghost': false});
                     }

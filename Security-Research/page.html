@@ -46,11 +46,12 @@
                                 statement2 = data[3];
                             }
                             console.log(type, " ", stats, " ", statement1);
-                            typetext = document.getElementById("type-text")
+                            var typetext = document.getElementById("type-text")
                             typetext.innerHTML = type;
-                            statstext = document.getElementById("stats-text")
-                            statstext.innerHTML = stats;
-
+                            var statstext1 = document.getElementById("stats-text1")
+                            statstext1.innerHTML = stats;
+                            var statstext2 = document.getElementById("stats-text2")
+                            statstext2.innerHTML = stats;
                         }
                     });
             });
@@ -198,10 +199,10 @@
                 <b id="type-text" style='font-size:13px;color:red'>Here's what happened to other users:</b>
                 <ul>
                     <li style='display:list-item;font-size:15px;color:black'>
-                        <b id="statement1-text"><u id="stats-text">Most users</u> regretted their decision to enable flash</b>
+                        <b id="statement1-text"><u id="stats-text1"></u> regretted their decision to enable flash</b>
                     </li>
                     <li style='display:list-item;font-size:15px;color:black'>
-                        <b id="statement2-text"><u id="stats-text">Most users</u> reported that their hardware was somehow compromised</b>
+                        <b id="statement2-text"><u id="stats-text2"></u> reported that their hardware was somehow compromised</b>
                     </li>
                 </ul>
             </div>

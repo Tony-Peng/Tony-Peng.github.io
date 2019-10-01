@@ -9,28 +9,33 @@ function connectDatabaseThenShowGhostTrails() {
     chrome.runtime.sendMessage({todo: "connectFirebase"});
 
     var ghost = false;
-    var social = false;
+    var type = "";
     var stats = "";
+    var statement = "";
 
-    chrome.storage.local.get(['ghost','social','stats'],function(result){
+
+    chrome.storage.local.get(['ghost','type','stats','statement'],function(result){
         ghost = result.ghost;
-        social = result.social;
+        type = result.type;
         stats = result.stats;
+        statement = result.statement;
+
         console.log('ghost: ' + ghost);
-        console.log('social: ' + social);
+        console.log('type: ' + type);
         console.log('stats: ' + stats);
-        webManipulation(ghost, social, stats);
+        console.log('statement: ' + statement);
+        webManipulation(ghost, type, stats, statement);
     });
 
 }
 
-function webManipulation(ghost, social, stats) {
+function webManipulation(ghost, type, stats, statement) {
     if (document.getElementById("save-card-for-future-use-0") && ghost == true) {
         var ghost_trails_div = document.createElement("div"); 
         ghost_trails_div.id = "ghost_trails_div";
-        ghost_trails_div.setAttribute("style","background-color:#ffcccc;height:170px;margin-top:30px");
+        ghost_trails_div.setAttribute("style","background-color:#ffcccc;height:150px;margin-top:30px");
         document.getElementsByClassName("save-card-for-future-use")[0].appendChild(ghost_trails_div);
-        showGhostTrails();
+        showGhostTrails(ghost, type, stats, statement);
     }
 
     //fake submit
@@ -46,45 +51,41 @@ function webManipulation(ghost, social, stats) {
 }
 
 
-function showGhostTrails() {
+function showGhostTrails(ghost, type, stats, statement) {
 
     var checkbox = document.getElementById("save-card-for-future-use-0");
     var ghost_trails_div = document.getElementById("ghost_trails_div");
-    
-    if(checkbox.checked == true) {
-        //fill in ghost trails content
-        ghost_trails_div.innerHTML= 
+
+    var checkedHTML = 
             "<div style='padding:20px'>" +
                 "<b style='font-size:20px;color:red'>NOTICE: You Chose to Save Your Bank Card!</b><br/>" + 
                 "<p style='font-size:13px;color:black'>Saving your credit card will make future purchases with Hollister easier, but could also make your credit card information more vulnerable to being leaked.</p>" + 
-                "<b style='font-size:13px;color:red'>Here’s what happened to other users: </b><br/>" + 
-                "<ul'><li style='display:list-item;font-size:15px;color:black'><b><u>Most users</u> regretted the decision to save credit card info</b></li>" +
-                "<li style='display:list-item;font-size:15px;color:black'><b><u>Most users</u> reported their credit card data was compromised</b></li></ul>" +
+                "<b style='font-size:13px;color:red'>" + type + "</b><br/>" + 
+                "<ul'><li style='display:list-item;font-size:15px;color:black'><b><u>" + stats + "</u>" + statement + " </b></li></ul>" +
             "</div>";
+
+    var uncheckedHTML = 
+            "<div style='padding:20px'>" +
+                "<b style='font-size:20px;color:black'>You Chose to Not Save Your Bank Card</b><br/>" + 
+                "<p style='font-size:13px;color:black'>Saving your credit card will make future purchases with Hollister easier, but could also make your credit card information more vulnerable to being leaked.</p>" + 
+                "<b style='font-size:13px;color:red'>" + type + "</b><br/>" + 
+                "<ul'><li style='display:list-item;font-size:15px;color:black'><b><u>" + stats + "</u>" + statement + " </b></li></ul>" +
+            "</div>";
+
+    
+    if(checkbox.checked == true) {
+        //fill in ghost trails content
+        ghost_trails_div.innerHTML= checkedHTML;
     }
 
     checkbox.addEventListener('change', function() {
         if(this.checked) {
             // Checkbox is checked..
-            ghost_trails_div.innerHTML= 
-            "<div style='padding:20px'>" +
-                "<b style='font-size:20px;color:red'>NOTICE: You Chose to Save Your Bank Card!</b><br/>" + 
-                "<p style='font-size:13px;color:black'>Saving your credit card will make future purchases with Hollister easier, but could also make your credit card information more vulnerable to being leaked.</p>" + 
-                "<b style='font-size:13px;color:red'>Here’s what happened to other users: </b><br/>" + 
-                "<ul'><li style='display:list-item;font-size:15px;color:black'><b><u>Most users</u> regretted the decision to save credit card info</b></li>" +
-                "<li style='display:list-item;font-size:15px;color:black'><b><u>Most users</u> reported their credit card data was compromised</b></li></ul>" +
-            "</div>";
+            ghost_trails_div.innerHTML= checkedHTML;
 
         } else {
             // Checkbox is not checked..
-            ghost_trails_div.innerHTML= 
-            "<div style='padding:20px'>" +
-                "<b style='font-size:20px;color:black'>You Chose to Not Save Your Bank Card</b><br/>" + 
-                "<p style='font-size:13px;color:black'>Saving your credit card will make future purchases with Hollister easier, but could also make your credit card information more vulnerable to being leaked.</p>" + 
-                "<b style='font-size:13px;color:red'>Here’s what happened to other users: </b><br/>" + 
-                "<ul'><li style='display:list-item;font-size:15px;color:black'><b><u>Most users</u> regretted the decision to save credit card info</b></li>" +
-                "<li style='display:list-item;font-size:15px;color:black'><b><u>Most users</u> reported their credit card data was compromised</b></li></ul>" +
-            "</div>";
+            ghost_trails_div.innerHTML= uncheckedHTML;
         }
     });
 }

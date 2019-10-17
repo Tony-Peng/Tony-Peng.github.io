@@ -45,7 +45,7 @@ function webManipulation(ghost, type, stats, statement) {
 
     submit_button.addEventListener('click', function(e) {
         e.preventDefault();
-        window.location.href = "http://stackoverflow.com";
+        window.location.href = "http://localhost:8888/Tony-Peng.github.io/payment_success.html";
         // window.open("https://www.w3schools.com/html/");
     });
 }
@@ -57,11 +57,11 @@ function showGhostTrails(ghost, type, stats, statement) {
     var ghost_trails_div = document.getElementById("ghost_trails_div");
 
     var checkedHTML = 
-            "<div style='padding:20px'>" +
-                "<b style='font-size:20px;color:red'>NOTICE: You Chose to Save Your Bank Card!</b><br/>" + 
+            "<div style='padding:20px;font-family:'Palatino Linotype','Book Antiqua',Palatino, serif;'>" +
+                "<b style='font-size:20px;color:red;font-family:'Palatino Linotype','Book Antiqua',Palatino, serif;'>NOTICE: You Chose to Save Your Bank Card!</b><br/>" + 
                 "<p style='font-size:13px;color:black'>Saving your credit card will make future purchases with Hollister easier, but could also make your credit card information more vulnerable to being leaked.</p>" + 
                 "<b style='font-size:13px;color:red'> " + type + "</b><br/>" + 
-                "<ul'><li style='display:list-item;font-size:15px;color:black'><b><u>" + stats + "</u>" + statement + " </b></li></ul>" +
+                "<ul'><li style='display:list-item;font-size:15px;color:black'><b><u>" + stats + "</u> " + statement + " </b></li></ul>" +
             "</div>";
 
     var uncheckedHTML = 
@@ -69,7 +69,7 @@ function showGhostTrails(ghost, type, stats, statement) {
                 "<b style='font-size:20px;color:black'>You Chose to Not Save Your Bank Card</b><br/>" + 
                 "<p style='font-size:13px;color:black'>Saving your credit card will make future purchases with Hollister easier, but could also make your credit card information more vulnerable to being leaked.</p>" + 
                 "<b style='font-size:13px;color:red'> " + type + "</b><br/>" + 
-                "<ul'><li style='display:list-item;font-size:15px;color:black'><b><u>" + stats + "</u>" + statement + " </b></li></ul>" +
+                "<ul'><li style='display:list-item;font-size:15px;color:black'><b><u>" + stats + "</u> " + statement + " </b></li></ul>" +
             "</div>";
 
     

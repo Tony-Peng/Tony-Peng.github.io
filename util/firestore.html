@@ -47,295 +47,295 @@
     <script>
 
     const inputData = [
-        {
-            "id": "1",
-            "cookie": "control",
-            "card": ["s","Most users","elected to save their credit card information"],
-            "flash": ["s","Most users","elected to run Flash"]
-        },
-        {
-            "id": "2",
-            "cookie": "control",
-            "card": ["s","Most users","elected to save their credit card information"],
-            "flash": ["s","Few users","elected to run Flash"]
-        },
-        {
-            "id": "3",
-            "cookie": "control",
-            "card": ["s","Few users","elected to save their credit card information"],
-            "flash": ["s","Most users","elected to run Flash"]
-        },
-        {
-            "id": "4",
-            "cookie": "control",
-            "card": ["s","Few users","elected to save their credit card information"],
-            "flash": ["s","Few users","elected to run Flash"]
-        },
-        {
-            "id": "5",
-            "cookie": "control",
-            "card": ["c","Most users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
-            "flash": ["c","Most users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
-        },
-        {
-            "id": "6",
-            "cookie": "control",
-            "card": ["c","Most users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
-            "flash": ["c","Few users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
-        },
-        {
-            "id": "7",
-            "cookie": "control",
-            "card": ["c","Few users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
-            "flash": ["c","Most users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
-        },
-        {
-            "id": "8",
-            "cookie": "control",
-            "card": ["c","Few users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
-            "flash": ["c","Few users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
-        },
-        {
-            "id": "9",
-            "cookie": "control",
-            "card": ["c","Most users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
-            "flash": ["s","Most users", "elected to run Flash"]
-        },
-        {
-            "id": "10",
-            "cookie": "control",
-            "card": ["c","Most users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
-            "flash": ["s","Few users", "elected to run Flash"]
-        },
-        {
-            "id": "11",
-            "cookie": "control",
-            "card": ["c","Few users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
-            "flash": ["s","Most users", "elected to run Flash"]
-        },
-        {
-            "id": "12",
-            "cookie": "control",
-            "card": ["c","Few users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
-            "flash": ["s","Few users", "elected to run Flash"]
-        },
-        {
-            "id": "13",
-            "cookie": "control",
-            "card": ["s","Most users", "elected to save their credit card information"],
-            "flash": ["c","Most users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
-        },
-        {
-            "id": "14",
-            "cookie": "control",
-            "card": ["s","Most users", "elected to save their credit card information"],
-            "flash": ["c","Few users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
-        },
-        {
-            "id": "15",
-            "cookie": "control",
-            "card": ["s","Few users", "elected to save their credit card information"],
-            "flash": ["c","Most users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
-        },
-        {
-            "id": "16",
-            "cookie": "control",
-            "card": ["s","Few users", "elected to save their credit card information"],
-            "flash": ["c","Few users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
-        },
-        {
-            "id": "17",
-            "cookie": ["s","Most users","elected to allow cookies"],
-            "card": "control",
-            "flash": ["s","Most users", "elected to run Flash"]
-        },
-        {
-            "id": "18",
-            "cookie": ["s","Most users","elected to allow cookies"],
-            "card": "control",
-            "flash": ["s","Few users", "elected to run Flash"]
-        },
-        {
-            "id": "19",
-            "cookie": ["s","Few users","elected to allow cookies"],
-            "card": "control",
-            "flash": ["s","Most users", "elected to run Flash"]
-        },
-        {
-            "id": "20",
-            "cookie": ["s","Few users","elected to allow cookies"],
-            "card": "control",
-            "flash": ["s","Few users", "elected to run Flash"]
-        },
-        {
-            "id": "21",
-            "cookie": ["c","Most users","reported that their browsing data is shared among third-party applications","regretted their decision to enable cookies"],
-            "card": "control",
-            "flash": ["c","Most users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
-        },
-        {
-            "id": "22",
-            "cookie": ["c","Most users","reported that their browsing data is shared among third-party applications","regretted their decision to enable cookies"],
-            "card": "control",
-            "flash": ["c","Few users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
-        },
-        {
-            "id": "23",
-            "cookie": ["c","Few users","reported that their browsing data is shared among third-party applications","regretted their decision to enable cookies"],
-            "card": "control",
-            "flash": ["c","Most users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
-        },
-        {
-            "id": "24",
-            "cookie": ["c","Few users","reported that their browsing data is shared among third-party applications","regretted their decision to enable cookies"],
-            "card": "control",
-            "flash": ["c","Few users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
-        },
-        {
-            "id": "25",
-            "cookie": ["c","Most users","reported that their browsing data is shared among third-party applications","regretted their decision to enable cookies"],
-            "card": "control",
-            "flash": ["s","Most users", "elected to run Flash"]
-        },
-        {
-            "id": "26",
-            "cookie": ["c","Most users","reported that their browsing data is shared among third-party applications","regretted their decision to enable cookies"],
-            "card": "control",
-            "flash": ["s","Few users", "elected to run Flash"]
-        },
-        {
-            "id": "27",
-            "cookie": ["c","Few users","reported that their browsing data is shared among third-party applications","regretted their decision to enable cookies"],
-            "card": "control",
-            "flash": ["s","Most users", "elected to run Flash"]
-        },
-        {
-            "id": "28",
-            "cookie": ["c","Few users","reported that their browsing data is shared among third-party applications","regretted their decision to enable cookies"],
-            "card": "control",
-            "flash": ["s","Few users", "elected to run Flash"]
-        },
-        {
-            "id": "29",
-            "cookie": ["s","Most users","elected to allow cookies"],
-            "card": "control",
-            "flash": ["c","Most users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
-        },
-        {
-            "id": "30",
-            "cookie": ["s","Most users","elected to allow cookies"],
-            "card": "control",
-            "flash": ["c","Few users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
-        },
-        {
-            "id": "31",
-            "cookie": ["s","Few users","elected to allow cookies"],
-            "card": "control",
-            "flash": ["c","Most users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
-        },
-        {
-            "id": "32",
-            "cookie": ["s","Few users","elected to allow cookies"],
-            "card": "control",
-            "flash": ["c","Few users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
-        },
-        {
-            "id": "33",
-            "cookie": ["s","Most users","elected to allow cookies"],
-            "card": ["s","Most users", "elected to save their credit card information"],
-            "flash": "control"
-        },
-        {
-            "id": "34",
-            "cookie": ["s","Most users","elected to allow cookies"],
-            "card": ["s","Most users", "elected to save their credit card information"],
-            "flash": "control"
-        },
-        {
-            "id": "35",
-            "cookie": ["s","Few users","elected to allow cookies"],
-            "card": ["s","Few users", "elected to save their credit card information"],
-            "flash": "control"
-        },
-        {
-            "id": "36",
-            "cookie": ["s","Few users","elected to allow cookies"],
-            "card": ["s","Few users", "elected to save their credit card information"],
-            "flash": "control"
-        },
-        {
-            "id": "37",
-            "cookie": ["c","Most users","reported that their browsing data is shared among third-party applications","regretted their decision to enable cookies"],
-            "card": ["c","Most users", "reported that their credit card data was compromised","regretted their decision to save their credit card information"],
-            "flash": "control"
-        },
-        {
-            "id": "38",
-            "cookie": ["c","Most users","reported that their browsing data is shared among third-party applications","regretted their decision to enable cookies"],
-            "card": ["c","Most users", "reported that their credit card data was compromised","regretted their decision to save their credit card information"],
-            "flash": "control"
-        },
-        {
-            "id": "39",
-            "cookie": ["c","Few users","reported that their browsing data is shared among third-party applications","regretted their decision to enable cookies"],
-            "card": ["c","Few users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
-            "flash": "control"
-        },
-        {
-            "id": "40",
-            "cookie": ["c","Few users","reported that their browsing data is shared among third-party applications","regretted their decision to enable cookies"],
-            "card": ["c","Few users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
-            "flash": "control"
-        },
-        {
-            "id": "41",
-            "cookie": ["c","Most users","reported that their browsing data is shared among third-party applications","regretted their decision to enable cookies"],
-            "card": ["c","Most users", "reported that their credit card data was compromised","regretted their decision to save their credit card information"],
-            "flash": "control"
-        },
-        {
-            "id": "42",
-            "cookie": ["c","Most users","reported that their browsing data is shared among third-party applications","regretted their decision to enable cookies"],
-            "card": ["c","Most users", "reported that their credit card data was compromised","regretted their decision to save their credit card information"],
-            "flash": "control"
-        },
-        {
-            "id": "43",
-            "cookie": ["c","Few users","reported that their browsing data is shared among third-party applications","regretted their decision to enable cookies"],
-            "card": ["c","Few users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
-            "flash": "control"
-        },
-        {
-            "id": "44",
-            "cookie": ["c","Few users","reported that their browsing data is shared among third-party applications","regretted their decision to enable cookies"],
-            "card": ["c","Few users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
-            "flash": "control"
-        },
-        {
-            "id": "45",
-            "cookie": ["s","Most users","elected to allow cookies"],
-            "card": ["s","Most users", "elected to save their credit card information"],
-            "flash": "control"
-        },
-        {
-            "id": "46",
-            "cookie": ["s","Most users","elected to allow cookies"],
-            "card": ["s","Most users", "elected to save their credit card information"],
-            "flash": "control"
-        },
-        {
-            "id": "47",
-            "cookie": ["s","Few users","elected to allow cookies"],
-            "card": ["s","Few users", "elected to save their credit card information"],
-            "flash": "control"
-        },
-        {
-            "id": "48",
-            "cookie": ["s","Few users","elected to allow cookies"],
-            "card": ["s","Few users", "elected to save their credit card information"],
-            "flash": "control"
-        }
-    ];
+    {
+        "id": "1",
+        "cookie": "control",
+        "card": ["s","Most users","elected to save their credit card information"],
+        "flash": ["s","Most users","elected to run Flash"]
+    },
+    {
+        "id": "2",
+        "cookie": "control",
+        "card": ["s","Most users","elected to save their credit card information"],
+        "flash": ["s","Few users","elected to run Flash"]
+    },
+    {
+        "id": "3",
+        "cookie": "control",
+        "card": ["s","Few users","elected to save their credit card information"],
+        "flash": ["s","Most users","elected to run Flash"]
+    },
+    {
+        "id": "4",
+        "cookie": "control",
+        "card": ["s","Few users","elected to save their credit card information"],
+        "flash": ["s","Few users","elected to run Flash"]
+    },
+    {
+        "id": "5",
+        "cookie": "control",
+        "card": ["c","Most users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
+        "flash": ["c","Most users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
+    },
+    {
+        "id": "6",
+        "cookie": "control",
+        "card": ["c","Most users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
+        "flash": ["c","Few users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
+    },
+    {
+        "id": "7",
+        "cookie": "control",
+        "card": ["c","Few users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
+        "flash": ["c","Most users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
+    },
+    {
+        "id": "8",
+        "cookie": "control",
+        "card": ["c","Few users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
+        "flash": ["c","Few users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
+    },
+    {
+        "id": "9",
+        "cookie": "control",
+        "card": ["c","Most users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
+        "flash": ["s","Most users", "elected to run Flash"]
+    },
+    {
+        "id": "10",
+        "cookie": "control",
+        "card": ["c","Most users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
+        "flash": ["s","Few users", "elected to run Flash"]
+    },
+    {
+        "id": "11",
+        "cookie": "control",
+        "card": ["c","Few users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
+        "flash": ["s","Most users", "elected to run Flash"]
+    },
+    {
+        "id": "12",
+        "cookie": "control",
+        "card": ["c","Few users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
+        "flash": ["s","Few users", "elected to run Flash"]
+    },
+    {
+        "id": "13",
+        "cookie": "control",
+        "card": ["s","Most users", "elected to save their credit card information"],
+        "flash": ["c","Most users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
+    },
+    {
+        "id": "14",
+        "cookie": "control",
+        "card": ["s","Most users", "elected to save their credit card information"],
+        "flash": ["c","Few users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
+    },
+    {
+        "id": "15",
+        "cookie": "control",
+        "card": ["s","Few users", "elected to save their credit card information"],
+        "flash": ["c","Most users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
+    },
+    {
+        "id": "16",
+        "cookie": "control",
+        "card": ["s","Few users", "elected to save their credit card information"],
+        "flash": ["c","Few users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
+    },
+    {
+        "id": "17",
+        "cookie": ["s","Most users","elected to allow cookies"],
+        "card": "control",
+        "flash": ["s","Most users", "elected to run Flash"]
+    },
+    {
+        "id": "18",
+        "cookie": ["s","Most users","elected to allow cookies"],
+        "card": "control",
+        "flash": ["s","Few users", "elected to run Flash"]
+    },
+    {
+        "id": "19",
+        "cookie": ["s","Few users","elected to allow cookies"],
+        "card": "control",
+        "flash": ["s","Most users", "elected to run Flash"]
+    },
+    {
+        "id": "20",
+        "cookie": ["s","Few users","elected to allow cookies"],
+        "card": "control",
+        "flash": ["s","Few users", "elected to run Flash"]
+    },
+    {
+        "id": "21",
+        "cookie": ["c","Most users","reported their browsing data shared among third-party apps","regretted their decision to enable cookies"],
+        "card": "control",
+        "flash": ["c","Most users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
+    },
+    {
+        "id": "22",
+        "cookie": ["c","Most users","reported their browsing data shared among third-party apps","regretted their decision to enable cookies"],
+        "card": "control",
+        "flash": ["c","Few users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
+    },
+    {
+        "id": "23",
+        "cookie": ["c","Few users","reported their browsing data shared among third-party apps","regretted their decision to enable cookies"],
+        "card": "control",
+        "flash": ["c","Most users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
+    },
+    {
+        "id": "24",
+        "cookie": ["c","Few users","reported their browsing data shared among third-party apps","regretted their decision to enable cookies"],
+        "card": "control",
+        "flash": ["c","Few users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
+    },
+    {
+        "id": "25",
+        "cookie": ["c","Most users","reported their browsing data shared among third-party apps","regretted their decision to enable cookies"],
+        "card": "control",
+        "flash": ["s","Most users", "elected to run Flash"]
+    },
+    {
+        "id": "26",
+        "cookie": ["c","Most users","reported their browsing data shared among third-party apps","regretted their decision to enable cookies"],
+        "card": "control",
+        "flash": ["s","Few users", "elected to run Flash"]
+    },
+    {
+        "id": "27",
+        "cookie": ["c","Few users","reported their browsing data shared among third-party apps","regretted their decision to enable cookies"],
+        "card": "control",
+        "flash": ["s","Most users", "elected to run Flash"]
+    },
+    {
+        "id": "28",
+        "cookie": ["c","Few users","reported their browsing data shared among third-party apps","regretted their decision to enable cookies"],
+        "card": "control",
+        "flash": ["s","Few users", "elected to run Flash"]
+    },
+    {
+        "id": "29",
+        "cookie": ["s","Most users","elected to allow cookies"],
+        "card": "control",
+        "flash": ["c","Most users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
+    },
+    {
+        "id": "30",
+        "cookie": ["s","Most users","elected to allow cookies"],
+        "card": "control",
+        "flash": ["c","Few users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
+    },
+    {
+        "id": "31",
+        "cookie": ["s","Few users","elected to allow cookies"],
+        "card": "control",
+        "flash": ["c","Most users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
+    },
+    {
+        "id": "32",
+        "cookie": ["s","Few users","elected to allow cookies"],
+        "card": "control",
+        "flash": ["c","Few users","reported suspicious activity after enabling Flash","regretted their decision to run Flash"]
+    },
+    {
+        "id": "33",
+        "cookie": ["s","Most users","elected to allow cookies"],
+        "card": ["s","Most users", "elected to save their credit card information"],
+        "flash": "control"
+    },
+    {
+        "id": "34",
+        "cookie": ["s","Most users","elected to allow cookies"],
+        "card": ["s","Most users", "elected to save their credit card information"],
+        "flash": "control"
+    },
+    {
+        "id": "35",
+        "cookie": ["s","Few users","elected to allow cookies"],
+        "card": ["s","Few users", "elected to save their credit card information"],
+        "flash": "control"
+    },
+    {
+        "id": "36",
+        "cookie": ["s","Few users","elected to allow cookies"],
+        "card": ["s","Few users", "elected to save their credit card information"],
+        "flash": "control"
+    },
+    {
+        "id": "37",
+        "cookie": ["c","Most users","reported their browsing data shared among third-party apps","regretted their decision to enable cookies"],
+        "card": ["c","Most users", "reported that their credit card data was compromised","regretted their decision to save their credit card information"],
+        "flash": "control"
+    },
+    {
+        "id": "38",
+        "cookie": ["c","Most users","reported their browsing data shared among third-party apps","regretted their decision to enable cookies"],
+        "card": ["c","Most users", "reported that their credit card data was compromised","regretted their decision to save their credit card information"],
+        "flash": "control"
+    },
+    {
+        "id": "39",
+        "cookie": ["c","Few users","reported their browsing data shared among third-party apps","regretted their decision to enable cookies"],
+        "card": ["c","Few users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
+        "flash": "control"
+    },
+    {
+        "id": "40",
+        "cookie": ["c","Few users","reported their browsing data shared among third-party apps","regretted their decision to enable cookies"],
+        "card": ["c","Few users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
+        "flash": "control"
+    },
+    {
+        "id": "41",
+        "cookie": ["c","Most users","reported their browsing data shared among third-party apps","regretted their decision to enable cookies"],
+        "card": ["c","Most users", "reported that their credit card data was compromised","regretted their decision to save their credit card information"],
+        "flash": "control"
+    },
+    {
+        "id": "42",
+        "cookie": ["c","Most users","reported their browsing data shared among third-party apps","regretted their decision to enable cookies"],
+        "card": ["c","Most users", "reported that their credit card data was compromised","regretted their decision to save their credit card information"],
+        "flash": "control"
+    },
+    {
+        "id": "43",
+        "cookie": ["c","Few users","reported their browsing data shared among third-party apps","regretted their decision to enable cookies"],
+        "card": ["c","Few users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
+        "flash": "control"
+    },
+    {
+        "id": "44",
+        "cookie": ["c","Few users","reported their browsing data shared among third-party apps","regretted their decision to enable cookies"],
+        "card": ["c","Few users","reported that their credit card data was compromised","regretted their decision to save their credit card information"],
+        "flash": "control"
+    },
+    {
+        "id": "45",
+        "cookie": ["s","Most users","elected to allow cookies"],
+        "card": ["s","Most users", "elected to save their credit card information"],
+        "flash": "control"
+    },
+    {
+        "id": "46",
+        "cookie": ["s","Most users","elected to allow cookies"],
+        "card": ["s","Most users", "elected to save their credit card information"],
+        "flash": "control"
+    },
+    {
+        "id": "47",
+        "cookie": ["s","Few users","elected to allow cookies"],
+        "card": ["s","Few users", "elected to save their credit card information"],
+        "flash": "control"
+    },
+    {
+        "id": "48",
+        "cookie": ["s","Few users","elected to allow cookies"],
+        "card": ["s","Few users", "elected to save their credit card information"],
+        "flash": "control"
+    }
+];
 
     function submit() {
         inputData.forEach(function(obj) {

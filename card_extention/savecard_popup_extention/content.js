@@ -45,7 +45,7 @@ function webManipulation(ghost, type, stats, statement) {
 
     submit_button.addEventListener('click', function(e) {
         e.preventDefault();
-        window.location.href = "http://stackoverflow.com";
+        window.location.href = "http://localhost:8888/Tony-Peng.github.io/payment_success.html";
         // window.open("https://www.w3schools.com/html/");
     });
 }

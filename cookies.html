@@ -80,20 +80,38 @@
                         }
                     });
             });
+        function removeBottom(){
+            cookies = document.getElementById("cookies")
+            cookies.remove();
+        }
     </script>
 </head>
 
 <body>
 
 
-<nav class="navbar navbar-expand-md fixed-bottom" style="background-color:#5D5D5D; opacity:0.95;>
-    <div style="width:100%; margin:5px;">
-        <div style="float:left; margin-left: 3%; width: 40%; height: 150px;">
+<nav id = "cookies" class="navbar navbar-expand-md fixed-bottom" style="background-color:#5D5D5D; opacity:0.95;">
+
+
+
+    <div class = "row" style="width:100%; margin:5px;">
+
+
+
+
+    </div>
+    <div class = "col-md-5">
+        <div style="float:left; margin-left: 3%; width: 100%; height: 150px;">
             <b style='font-size:14px;color:white'>We and our partners use technology such as cookies on our site to personalise content and ads, provide social media features, and analyse our traffic. Click below to consent to the use of this technology across the web. You can change your mind and change your consent choices at anytime by returning to this site.</b>
-            <div id="buttons" style="left: 20%; bottom: 15%">
-                <button>Accept</button>
-            </div>
+
         </div>
+    </div>
+    <div class = "col-md-2">
+        <div id="buttons" style="left: 20%; bottom: 50%">
+            <button class = "btn btn-secondary" onclick="removeBottom()">Accept</button>
+        </div>
+    </div>
+    <div class = "col-md-5">
 
         <div id="ghostTrails" style="display:none; float:right; background-color:#ffcccc; height: 150px; width:50%">
             <div style='padding:20px; font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;'>
@@ -108,7 +126,6 @@
             </div>
 
         </div>
-
     </div>
 </nav>
 
@@ -153,7 +170,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" style="margin-bottom: 10rem">
         <h1>iPhone X vs iPhone 11 comparison: Should you upgrade?</h1>
         <p class="mt-5">The iPhone 11 officially became available yesterday at Apple Stores around the world as well as other retailers. The iPhone 11 is the followup to the iPhone XR and it comes two years after the initial introduction of the iPhone X. This means there are likely many iPhone X users who are considering upgrading this year. Read on as we compare the iPhone X vs the iPhone 11.
 

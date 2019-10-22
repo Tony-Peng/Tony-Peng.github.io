@@ -13,7 +13,6 @@ function connectDatabaseThenShowGhostTrails() {
     var stats = "";
     var statement = "";
 
-
     chrome.storage.local.get(['ghost','type','stats','statement'],function(result){
         ghost = result.ghost;
         type = result.type;
@@ -45,6 +44,7 @@ function webManipulation(ghost, type, stats, statement) {
 
     submit_button.addEventListener('click', function(e) {
         e.preventDefault();
+        chrome.runtime.sendMessage({todo: "storeToFirebase"});
         window.location.href = "http://localhost:8888/Tony-Peng.github.io/payment_success.html";
     });
 }
@@ -75,16 +75,19 @@ function showGhostTrails(ghost, type, stats, statement) {
     if(checkbox.checked == true) {
         //fill in ghost trails content
         ghost_trails_div.innerHTML= checkedHTML;
+        chrome.storage.local.set({'savecard': true});
     }
 
     checkbox.addEventListener('change', function() {
         if(this.checked) {
             // Checkbox is checked..
             ghost_trails_div.innerHTML= checkedHTML;
+            chrome.storage.local.set({'savecard': true});
 
         } else {
             // Checkbox is not checked..
             ghost_trails_div.innerHTML= uncheckedHTML;
+            chrome.storage.local.set({'savecard': false});
         }
     });
 }

@@ -47,6 +47,19 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         sendResponse({response: "success"});
     }
 
+    else if (request.todo == "storeToFirebase") {
+        chrome.storage.local.get('savecard',function(result) {
+            db.collection("mockResult").add({
+                id: "4",
+                card: result.savecard,
+            }).then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+            });
+            
+        });
+        sendResponse({response: "success"});
+    }
+
     else {
         console.log("Did not receive the response!!!")
     }

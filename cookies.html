@@ -81,6 +81,13 @@
                     });
             });
         function removeBottom(){
+            console.log("cookie button clicked")
+            db.collection("mockResult").add({
+                id: id,
+                cookie: true,
+            }).then(function(docRef) {
+                console.log("Document written with ID: ", docRef.id);
+            });
             cookies = document.getElementById("cookies")
             cookies.remove();
         }

@@ -27,6 +27,42 @@
         }
     </style>
 
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAiah2Ftz0OLENUxvx9VaaojDJsa936NII",
+        authDomain: "spud-93a30.firebaseapp.com",
+        databaseURL: "https://spud-93a30.firebaseio.com",
+        projectId: "spud-93a30",
+        storageBucket: "spud-93a30.appspot.com",
+        messagingSenderId: "111712193172",
+        appId: "1:111712193172:web:5a61fc378f4e2290"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+
+    <script>
+        function submitid(){
+            console.log("id button clicked");
+            var participantid = document.getElementById("participantid").value;
+            console.log(chrome)
+            chrome.storage.local.get('savecard',function(result) {
+                db.collection("mockResult").add({
+                    id: participantid,
+                    card: result.savecard,
+                }).then(function(docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                });
+                
+            });
+        }
+    </script>
+
 </head>
 
 <body>
@@ -43,6 +79,14 @@
             <p>Your order has been successfully placed. Thank you for shopping with Hollister.</p>
             <p>Order number: 46298489</p>
         </div>
+
+        <!-- <div class="container" style="margin-top:10%">
+            <p>Please enter your participant ID for later reimbursement:</p>
+            <div class="form-inline justify-content-center">
+                    <input id="participantid"class="form-control mb-2" type="text" placeholder="Your participant ID" style="width:30%">
+                    <button type="submit" class="btn btn-primary mb-2" style="margin-left:10px" onclick="submitid()">Submit</button>
+            </div>
+        </div> -->
     </div>
 
 </main>

@@ -55,12 +55,39 @@
             document.cookie = "id=" + id;
             console.log(document.cookie)
             window.localStorage.setItem("id", id);
-            window.location = "consent.html";
-            // db.collection("test").add({id: id,})
-            //     .then(function(docRef) {
-            //         console.log("Document written with ID: ", docRef.id);
-            //         window.location = "consent.html";
+
+            db.collection("mockResult").where("id", "==", id.toString()).get()
+                .then((snapshot) => {
+                        if (snapshot.empty) {
+                            db.collection("mockResult")
+                            .add({id: id, time: firebase.firestore.FieldValue.serverTimestamp()})
+                            .then(function(docRef) {
+                                console.log(docRef);
+                                console.log("Document added");
+                                window.location = "consent.html";
+                            });
+                        } else {
+                            snapshot.docs.forEach(doc => {
+                                doc.ref.update({time: firebase.firestore.FieldValue.serverTimestamp()})
+                                .then(function(docRef) {
+                                    console.log("Document modified");
+                                    window.location = "consent.html";
+                                });
+                            });
+                        }
+                        
+                });
+
+            //test most recent id
+
+            // db.collection("mockResult").orderBy("time", "desc").limit(1).get()
+            // .then((snapshot) => {
+            //     console.log(snapshot)
+            //     snapshot.docs.forEach(doc => {
+            //         console.log(doc.data()['id'])
             //     });
+            // });
+
         }
     }
 </script>

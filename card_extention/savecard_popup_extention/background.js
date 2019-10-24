@@ -13,6 +13,13 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
+var id;
+
+function setId(participantId) {
+    id = participantId;
+    console.log("id from firebase: ", id);
+}
+
 // listen to all messages
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     
@@ -24,7 +31,17 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     }
 
     else if (request.todo == "connectFirebase") {
-        db.collection("ghostTrails").where("id", "==", "4").get()
+
+        db.collection("mockResult").orderBy("time", "desc").limit(1).get()
+            .then((snapshot) => {
+                console.log(snapshot)
+                snapshot.docs.forEach(doc => {
+                    console.log(doc.data()['id']);
+                    setId(doc.data()['id']);
+                });
+            });
+
+        db.collection("ghostTrails").where("id", "==", id).get()
         .then((snapshot) => {
             chrome.storage.local.set({'db': snapshot});
             snapshot.docs.forEach(doc => {
@@ -41,6 +58,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
                     } else {
                         chrome.storage.local.set({'ghost': false});
                     }
+                    chrome.storage.local.set({'partId': id});
                 });
         })
 
@@ -50,13 +68,23 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     else if (request.todo == "storeToFirebase") {
         chrome.storage.local.get('savecard',function(result) {
             db.collection("mockResult").add({
-                id: "4",
+                id: id,
                 card: result.savecard,
             }).then(function(docRef) {
                 console.log("Document written with ID: ", docRef.id);
             });
             
         });
+
+        // db.collection("mockResult").where("id", "==", id).get()
+        //     .then((snapshot) => {
+        //         snapshot.docs.forEach(doc => {
+        //             doc.ref.update({card: result.savecard})
+        //             .then(function(docRef) {
+        //                 console.log("Document written with ID: ", docRef.id);
+        //             });
+        //         });         
+        //     });
         sendResponse({response: "success"});
     }
 

@@ -13,6 +13,12 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
+var id;
+function setId(participantId) {
+    id = participantId;
+    console.log("id from firebase: ", id);
+}
+
 // listen to all messages
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     
@@ -24,6 +30,14 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     }
 
     else if (request.todo == "connectFirebase") {
+
+        db.collection("ideas").orderBy("date", Query.Direction.ASCENDING).limit(1)
+        .then((snapshot) => {
+            snapshot.docs.forEach(doc => { 
+                setId(doc.data()['id']);
+            });
+        })
+
         db.collection("ghostTrails").where("id", "==", "4").get()
         .then((snapshot) => {
             chrome.storage.local.set({'db': snapshot});

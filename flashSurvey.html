@@ -51,7 +51,7 @@
             db.collection("order").where("mod", "==", mod).get()
                 .then((snapshot) => {
                     snapshot.docs.forEach(doc => {nextPage(doc)});
-            });
+                });
         }
 
         function nextPage(doc) {

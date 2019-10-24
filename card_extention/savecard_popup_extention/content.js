@@ -43,8 +43,7 @@ function webManipulation(ghost, type, stats, statement) {
     //fake submit
     var submit_wrapper_div = document.getElementsByClassName("submit-button-wrapper")[0];
     var submit_button = submit_wrapper_div.getElementsByClassName("button")[0];
-    console.log("submit wrapper div", submit_wrapper_div);
-    console.log("submit button", submit_button);
+    // console.log("submit button", submit_button);
 
     submit_button.addEventListener('click', function(e) {
         console.log("pressed submit button")

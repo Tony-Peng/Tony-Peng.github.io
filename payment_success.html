@@ -50,6 +50,7 @@
         function submitid(){
             console.log("id button clicked");
             var participantid = document.getElementById("participantid").value;
+            console.log(chrome)
             chrome.storage.local.get('savecard',function(result) {
                 db.collection("mockResult").add({
                     id: participantid,

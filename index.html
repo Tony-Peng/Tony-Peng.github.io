@@ -62,18 +62,31 @@
                             db.collection("mockResult")
                             .add({id: id, time: firebase.firestore.FieldValue.serverTimestamp()})
                             .then(function(docRef) {
+                                console.log(docRef);
                                 console.log("Document added");
                                 window.location = "consent.html";
                             });
                         } else {
                             snapshot.docs.forEach(doc => {
-                                console.log("Document modified");
-                                doc.ref.update({time: firebase.firestore.FieldValue.serverTimestamp()});
-                                window.location = "consent.html";
+                                doc.ref.update({time: firebase.firestore.FieldValue.serverTimestamp()})
+                                .then(function(docRef) {
+                                    console.log("Document modified");
+                                    window.location = "consent.html";
+                                });
                             });
                         }
                         
                 });
+
+            //test most recent id
+
+            // db.collection("mockResult").orderBy("time", "desc").limit(1).get()
+            // .then((snapshot) => {
+            //     console.log(snapshot)
+            //     snapshot.docs.forEach(doc => {
+            //         console.log(doc.data()['id'])
+            //     });
+            // });
 
         }
     }

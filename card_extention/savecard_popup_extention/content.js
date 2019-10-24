@@ -8,17 +8,20 @@ function connectDatabaseThenShowGhostTrails() {
     chrome.runtime.sendMessage({todo: "showPageAction"});
     chrome.runtime.sendMessage({todo: "connectFirebase"});
 
+    var id = "";
     var ghost = false;
     var type = "";
     var stats = "";
     var statement = "";
 
-    chrome.storage.local.get(['ghost','type','stats','statement'],function(result){
+    chrome.storage.local.get(['partId','ghost','type','stats','statement'],function(result){
+        id = result.partId;
         ghost = result.ghost;
         type = result.type;
         stats = result.stats;
         statement = result.statement;
 
+        console.log('id: ' + id);
         console.log('ghost: ' + ghost);
         console.log('type: ' + type);
         console.log('stats: ' + stats);
@@ -32,7 +35,7 @@ function webManipulation(ghost, type, stats, statement) {
 
     var ghost_trails_div = document.createElement("div"); 
     ghost_trails_div.id = "ghost_trails_div";
-    ghost_trails_div.setAttribute("style","background-color:#ffcccc;height:170px;margin-top:30px;margin-bottom:30px");
+    ghost_trails_div.setAttribute("style","background-color:#ffcccc;height:180px;margin-top:20px;margin-bottom:30px");
 
     if (document.getElementById("save-card-for-future-use-") && ghost == true) {
         console.log("in ghost trails");
@@ -47,6 +50,7 @@ function webManipulation(ghost, type, stats, statement) {
 
     submit_button.addEventListener('click', function(e) {
         console.log("pressed submit button")
+        chrome.runtime.sendMessage({todo: "storeToFirebase"});
         e.preventDefault();
         window.location.href = "http://localhost:8888/Tony-Peng.github.io/payment_success.html";
     });

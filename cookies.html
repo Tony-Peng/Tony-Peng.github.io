@@ -82,11 +82,14 @@
             });
         function removeBottom(){
             console.log("cookie button clicked")
-            db.collection("mockResult").add({
-                id: id,
-                cookie: true,
-            }).then(function(docRef) {
-                console.log("Document written with ID: ", docRef.id);
+            db.collection("mockResult").where("id", "==", id.toString()).get()
+            .then((snapshot) => {
+                snapshot.docs.forEach(doc => {
+                    doc.ref.update({cookie: true})
+                    .then(function(docRef) {
+                        console.log("Document updated with ID: ", docRef.id);
+                    });
+                });         
             });
             cookies = document.getElementById("cookies")
             cookies.remove();

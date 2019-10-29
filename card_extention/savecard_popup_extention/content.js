@@ -52,7 +52,8 @@ function webManipulation(ghost, type, stats, statement) {
         console.log("pressed submit button")
         chrome.runtime.sendMessage({todo: "storeToFirebase"});
         e.preventDefault();
-        window.location.href = "http://localhost:8888/Tony-Peng.github.io/payment_success.html";
+        window.location.href = "Tony-Peng.github.io/payment_success.html";
+        // window.location.href = "http://localhost:8888/Tony-Peng.github.io/payment_success.html";
     });
 }
 

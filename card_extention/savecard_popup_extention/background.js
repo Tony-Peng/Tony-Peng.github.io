@@ -17,7 +17,6 @@ var id;
 
 function setId(participantId) {
     id = participantId;
-    console.log("id from firebase: ", id);
 }
 
 // listen to all messages

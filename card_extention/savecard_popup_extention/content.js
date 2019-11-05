@@ -35,9 +35,13 @@ function webManipulation(ghost, type, stats, statement) {
 
     var ghost_trails_div = document.createElement("div"); 
     ghost_trails_div.id = "ghost_trails_div";
-    ghost_trails_div.setAttribute("style","background-color:#ffcccc;height:180px;margin-top:20px;margin-bottom:30px");
+    if (ghost == true) {
+        ghost_trails_div.setAttribute("style","background-color:#ffcccc;height:180px;margin-top:20px;margin-bottom:30px");
+    } else {
+        ghost_trails_div.setAttribute("style","background-color:#ffcccc;height:120px;margin-top:20px;margin-bottom:30px");
+    }
 
-    if (document.getElementById("save-card-for-future-use-") && ghost == true) {
+    if (document.getElementById("save-card-for-future-use-")) {
         console.log("in ghost trails");
         document.getElementsByClassName("save-card-for-future-use")[0].appendChild(ghost_trails_div);
         showGhostTrails(ghost, type, stats, statement);
@@ -65,8 +69,8 @@ function showGhostTrails(ghost, type, stats, statement) {
 
     var checkedHTML = 
             "<div style='padding:20px;'>" +
-                "<b style='font-size:20px;color:red;'>NOTICE: You Chose to Save Your Bank Card!</b><br/>" + 
-                "<p style='font-size:13px;color:black'>Saving your credit card will make future purchases with Hollister easier, but could also make your credit card information more vulnerable to being leaked.</p>" + 
+                "<b style='font-size:20px;color:black;'>NOTICE: Bank Card Saving Option Detected </b><br/>" + 
+                "<p style='font-size:13px;color:black'>Saving your credit card will make future purchases with Hollister easier, but could also make your credit card information more vulnerable to being leaked.</p><br/>" + 
                 "<b style='font-size:13px;color:red'> " + type + "</b><br/>" + 
                 "<ul'><li style='display:list-item;font-size:15px;color:black'><b><u>" + stats + "</u> " + statement + " </b></li></ul>" +
             "</div>";
@@ -74,14 +78,21 @@ function showGhostTrails(ghost, type, stats, statement) {
     var uncheckedHTML = 
             "<div style='padding:20px'>" +
                 "<b style='font-size:20px;color:black'>You Chose to Not Save Your Bank Card</b><br/>" + 
-                "<p style='font-size:13px;color:black'>Saving your credit card will make future purchases with Hollister easier, but could also make your credit card information more vulnerable to being leaked.</p>" + 
+                "<p style='font-size:13px;color:black'>Saving your credit card will make future purchases with Hollister easier, but could also make your credit card information more vulnerable to being leaked.</p><br>" + 
                 "<b style='font-size:13px;color:red'> " + type + "</b><br/>" + 
                 "<ul'><li style='display:list-item;font-size:15px;color:black'><b><u>" + stats + "</u> " + statement + " </b></li></ul>" +
             "</div>";
 
+    var controlHTML = 
+            "<div style='padding:20px;'>" +
+                "<b style='font-size:20px;color:black;'>NOTICE: Bank Card Saving Option Detected </b><br/>" + 
+                "<p style='font-size:13px;color:black'>Saving your credit card will make future purchases with Hollister easier, but could also make your credit card information more vulnerable to being leaked.</p><br/>" + 
+            "</div>";
     
-    if(checkbox.checked == true) {
-        //fill in ghost trails content
+    if (ghost == false) {
+        ghost_trails_div.innerHTML= controlHTML;
+        print("experiment group? ", ghost)
+    } else {
         ghost_trails_div.innerHTML= checkedHTML;
         chrome.storage.local.set({'savecard': true});
         console.log('savecard: ' + true);
@@ -90,13 +101,13 @@ function showGhostTrails(ghost, type, stats, statement) {
     checkbox.addEventListener('change', function() {
         if(this.checked) {
             // Checkbox is checked..
-            ghost_trails_div.innerHTML= checkedHTML;
+            // ghost_trails_div.innerHTML= checkedHTML;
             chrome.storage.local.set({'savecard': true});
             console.log('savecard: ' + true);
 
         } else {
             // Checkbox is not checked..
-            ghost_trails_div.innerHTML= uncheckedHTML;
+            // ghost_trails_div.innerHTML= uncheckedHTML;
             chrome.storage.local.set({'savecard': false});
             console.log('savecard: ' + false);
         }

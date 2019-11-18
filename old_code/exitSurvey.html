@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Web Study</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <!-- Custom styles for this template -->
+    <script>
+
+    </script>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <h4><img id="logo" src="ghost.png" height="40px" width="40px"> &nbsp; | &nbsp; Web Study</h4></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+
+
+        </div>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="bg-light py-5 mb-5">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-lg-12">
+                <h1 class="display-4 text-black mt-5 mb-2">Part 1: Ghost Trails Survey</h1>
+                <p class="lead mb-5 text-black-50">
+                    This survey helps us analyze how useful Ghost Trails is to help you make a more confident and informed decision.
+                </p>
+                
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-8 mb-5">
+
+            <p>From a scale of 1 to 10 (1 meaning not confident, 10 meaning very confident) How confident/secure were you in your decision?</p>
+            <div style="text-align: center">
+                <div class="d-flex justify-content-center my-4">
+                    <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
+                    <form class="range-field w-35">
+                        <input id="range" class="border-0" type="range" min="0" max="10"/>
+                    </form>
+                    <span class="font-weight-bold indigo-text ml-2 mt-1">10</span>
+
+                </div>
+
+                <h6 text-align id="demo">123</h6>
+
+            </div>
+
+
+            <p>Please explain your rationale for making that decision.</p>
+            <div style="text-align:center">
+                <div class="d-flex justify-content-center my-4">
+                    <span class="font-weight-bold indigo-text mr-2 mt-1">place holder</span>
+                </div>
+            </div>
+
+            <p>Did ghost-trail plays a part in making the decision?</p>
+            <div style="text-align:center">
+                <div class="d-flex justify-content-center my-4">
+                    <span class="font-weight-bold indigo-text mr-2 mt-1">place holder</span>
+                </div>
+            </div>
+
+            <p>From a scale of 1 to 10 (1 meaning not effective, 10 meaning very effective), how effective would you rate ghost-trail's effectiveness</p>
+            <div style="text-align:center">
+                <div class="d-flex justify-content-center my-4">
+                    <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
+                    <form class="range-field w-35">
+                        <input id="range2" class="border-0" type="range" min="0" max="10"/>
+                    </form>
+                    <span class="font-weight-bold indigo-text ml-2 mt-1">10</span>
+                </div>
+                <h6 id="demo2">123</h6></div>
+
+            <p>Would you use ghost trails in the future?</p>
+            <div style="text-align:center">
+                <div class="d-flex justify-content-center my-4">
+                    <span class="font-weight-bold indigo-text mr-2 mt-1">place holder</span>
+                </div>
+            </div>
+
+
+            <br>
+            <button type="submit" onclick="submit()" class="btn btn-primary">Next</button>
+
+        </div>
+
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Web Study</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<script>
+    function submit() {
+        window.location = "sebisSurvey.html";
+    }
+
+    var slider = document.getElementById("range");
+    var output = document.getElementById("demo");
+    output.innerHTML = "Value: " + slider.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider.oninput = function () {
+        output.innerHTML = "Value: " + this.value;
+    }
+    var slider2 = document.getElementById("range2");
+    var output2 = document.getElementById("demo2");
+    output2.innerHTML = "Value: " + slider2.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider2.oninput = function () {
+        output2.innerHTML = "Value: " + this.value;
+    }
+    var slider3 = document.getElementById("range3");
+    var output3 = document.getElementById("demo3");
+    output3.innerHTML = "Value: " + slider3.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider3.oninput = function () {
+        output3.innerHTML = "Value: " + this.value;
+    }
+    var slider4 = document.getElementById("range4");
+    var output4 = document.getElementById("demo4");
+    output4.innerHTML = "Value: " + slider4.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider4.oninput = function () {
+        output4.innerHTML = "Value: " + this.value;
+    }
+
+
+</script>
+
+
+</html>

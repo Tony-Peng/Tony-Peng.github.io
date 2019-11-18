@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SPUD Lab</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <!-- Custom styles for this template -->
+    <script>
+        function submit() {
+            window.location = "loginSurvey.html";
+        }
+    </script>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <h4><img id="logo" src="ghost.png" height="40px" width="40px"> &nbsp; | &nbsp; SPUD</h4></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+
+
+        </div>
+    </div>
+</nav>
+<!-- Header -->
+<header class="bg-light py-5 mb-5">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-lg-12">
+                <h1 class="display-4 text-black mt-5 mb-2">Web Usability Survey</h1>
+                <p class="lead mb-5 text-black-50">
+                    Now you will complete some questions on how well the Daily Feed webpage is structured to help us improve our webs in the future.
+                </p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">System Usability Scale</th>
+                <th scope="col">1</th>
+                <th scope="col">2</th>
+                <th scope="col">3</th>
+                <th scope="col">4</th>
+                <th scope="col">5</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>I felt confident using this website</td>
+                <td><input name="radio2" type="radio" group="2">  </td>
+                <td><input name="radio2" type="radio" group="2">  </td>
+                <td><input name="radio2" type="radio" group="2">  </td>
+                <td><input name="radio2" type="radio" group="2">  </td>
+                <td><input name="radio2" type="radio" group="2">  </td>
+
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>I thought there was too much inconsistency in this website</td>
+                <td><input name="radio3" type="radio" group="3">  </td>
+                <td><input name="radio3" type="radio" group="3">  </td>
+                <td><input name="radio3" type="radio" group="3">  </td>
+                <td><input name="radio3" type="radio" group="3">  </td>
+                <td><input name="radio3" type="radio" group="3">  </td>
+
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>I would imagine that most people can be comfortable navigating around this website</td>
+                <td><input name="radio5" type="radio" group="5">  </td>
+                <td><input name="radio5" type="radio" group="5">  </td>
+                <td><input name="radio5" type="radio" group="5">  </td>
+                <td><input name="radio5" type="radio" group="5">  </td>
+                <td><input name="radio5" type="radio" group="5">  </td>
+
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <button type="submit" onclick="submit()" class="btn btn-primary">Next</button>
+
+    </div>
+
+
+</div>
+<!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<br>
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Web Study 2019</p>
+    </div>
+    <!-- /.container -->
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

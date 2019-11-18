@@ -71,7 +71,7 @@ function showGhostTrails(ghost, type, stats, statement) {
             "<div style='padding:20px;'>" +
                 "<b style='font-size:20px;color:black;'>NOTICE: Bank Card Saving Option Detected </b><br/>" + 
                 "<p style='font-size:13px;color:black'>Saving your credit card will make future purchases with Hollister easier, but could also make your credit card information more vulnerable to being leaked.</p><br/>" + 
-                "<b style='font-size:13px;color:red'> " + type + "</b><br/>" + 
+                "<b style='font-size:13px;color:black'> " + type + "</b><br/>" + 
                 "<ul'><li style='display:list-item;font-size:15px;color:black'><b><u>" + stats + "</u> " + statement + " </b></li></ul>" +
             "</div>";
 
@@ -79,7 +79,7 @@ function showGhostTrails(ghost, type, stats, statement) {
             "<div style='padding:20px'>" +
                 "<b style='font-size:20px;color:black'>You Chose to Not Save Your Bank Card</b><br/>" + 
                 "<p style='font-size:13px;color:black'>Saving your credit card will make future purchases with Hollister easier, but could also make your credit card information more vulnerable to being leaked.</p><br>" + 
-                "<b style='font-size:13px;color:red'> " + type + "</b><br/>" + 
+                "<b style='font-size:13px;color:black'> " + type + "</b><br/>" + 
                 "<ul'><li style='display:list-item;font-size:15px;color:black'><b><u>" + stats + "</u> " + statement + " </b></li></ul>" +
             "</div>";
 

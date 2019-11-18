@@ -1,0 +1,486 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+	<title>Music Buzz</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Music Buzz Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<!-- Custom CSS -->
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<!-- font-awesome icons -->
+	<link href="css/fontawesome-all.min.css" rel="stylesheet">
+	<!-- //Custom Theme files -->
+	<!--webfonts-->
+	<link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+	<!--//webfonts-->
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAiah2Ftz0OLENUxvx9VaaojDJsa936NII",
+        authDomain: "spud-93a30.firebaseapp.com",
+        databaseURL: "https://spud-93a30.firebaseio.com",
+        projectId: "spud-93a30",
+        storageBucket: "spud-93a30.appspot.com",
+        messagingSenderId: "111712193172",
+        appId: "1:111712193172:web:5a61fc378f4e2290"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+
+    <script>
+    	var id = localStorage.getItem("id");
+        var cookie = document.cookie;
+        console.log(cookie);
+        console.log(cookie.split("=")[1]);
+    	
+    	window.onload = function() {
+    		var ghostTrails = document.getElementById("ghostTrailsBox");
+    		var header = document.getElementById("header");
+    		var stats = document.getElementById("stats");
+        	console.log("nancy: ", ghostTrails);
+        	
+        	var headerText = "Signing in with Facebook will save you some time, but also means that your account will be accessible by anyone who could have access to your Facebook account as well.\n";
+
+        	db.collection("ghostTrails").where("id", "==", id).get()
+            .then((snapshot) => {
+            	console.log(snapshot);
+                snapshot.docs.forEach(doc => {
+                	console.log("here",doc);
+                    var data = doc.data()["social"];
+                    if (data != "control") {
+                    	ghostTrails.style.visibility = "visible";
+                    	console.log(data[0]);
+                        if (data[0] == "s") {
+                            headerText += "Here's what other users did: \n";
+                            header.innerHTML = headerText;
+                        } else if (data[0] == "c") {
+                            headerText += "Here's what happened to other users: \n";
+                            header.innerHTML = headerText;
+                        }
+                        stats.innerHTML = data[1];
+                        console.log(stats);
+                    }
+                });
+        	});
+    	}
+      
+    </script>
+
+</head>
+
+<body>
+		<div id="fb-root"></div>
+		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=360488078129585&autoLogAppEvents=1"></script>
+	<!-- header -->
+	<header>
+		<div class="container">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<a class="navbar-brand" href="index.html">
+					Music Buzz
+				</a>
+				<button class="navbar-toggler ml-lg-auto ml-sm-5" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<ul class="social-iconsv2 agileinfo ml-lg-5 mx-auto text-center">
+					<li class="ml-lg-5">
+						<a href="#">
+							<i class="fab fa-facebook-f"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fab fa-twitter"></i>
+						</a>
+					</li>
+				
+				</ul>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav text-center ml-auto">
+						<li class="nav-item active  mr-3">
+							<a class="nav-link" href="index.html">Home
+								<span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item  mr-3">
+							<a class="nav-link scroll" href="#about">about</a>
+						</li>
+						<li class="nav-item dropdown mr-3">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+							    aria-expanded="false">
+								Dropdown
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item scroll" href="#services">Services</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item scroll" href="#more">Music</a>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link scroll" href="#contact">contact</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!-- //header -->
+	<!-- banner -->
+	<div class="banner" id="home">
+		<div class="container">
+			<div class="banner-text">
+				<div class="slider-info text-right">
+					<h1 class="text-uppercase">listen to music buzz anywhere.</h1>
+					<p class="text-white">Personalized music recommendations and more</p>
+					<div align="right">
+					<div class="fb-login-button" data-size="large" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
+		
+								<style>
+									body {font-family: Arial, Helvetica, sans-serif;}
+									* {box-sizing: border-box;}
+									
+									/* Full-width input fields */
+									input[type=text], input[type=password] {
+										width: 100%;
+										padding: 15px;
+										margin: 5px 0 22px 0;
+										display: inline-block;
+										border: none;
+										background: #f1f1f1;
+									}
+									
+									/* Add a background color when the inputs get focus */
+									input[type=text]:focus, input[type=password]:focus {
+										background-color: #ddd;
+										outline: none;
+									}
+									
+									/* Set a style for all buttons */
+									button {
+										background-color: #4CAF50;
+										color: white;
+										padding: 14px 20px;
+										margin: 8px 0;
+										border: none;
+										cursor: pointer;
+										width: 100%;
+										opacity: 0.9;
+									}
+									
+									button:hover {
+										opacity:1;
+									}
+									
+									/* Extra styles for the cancel button */
+									.cancelbtn {
+										padding: 14px 20px;
+										background-color: #f44336;
+									}
+									
+									/* Float cancel and signup buttons and add an equal width */
+									.cancelbtn, .signupbtn {
+										float: left;
+										width: 50%;
+									}
+									
+									/* Add padding to container elements */
+									.container {
+										padding: 16px;
+									}
+									
+									/* The Modal (background) */
+									.modal {
+										display: none; /* Hidden by default */
+										position: fixed; /* Stay in place */
+										z-index: 1; /* Sit on top */
+										left: 0;
+										top: 0;
+										width: 100%; /* Full width */
+										height: 100%; /* Full height */
+										overflow: auto; /* Enable scroll if needed */
+										background-color: #474e5d;
+										padding-top: 50px;
+									}
+									
+									/* Modal Content/Box */
+									.modal-content {
+										background-color: #fefefe;
+										margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+										border: 1px solid #888;
+										width: 80%; /* Could be more or less, depending on screen size */
+									}
+									
+									/* Style the horizontal ruler */
+									hr {
+										border: 1px solid #f1f1f1;
+										margin-bottom: 25px;
+									}
+									 
+									/* The Close Button (x) */
+									.close {
+										position: absolute;
+										right: 35px;
+										top: 15px;
+										font-size: 40px;
+										font-weight: bold;
+										color: #f1f1f1;
+									}
+									
+									.close:hover,
+									.close:focus {
+										color: #f44336;
+										cursor: pointer;
+									}
+
+									.button2 {border-radius: 4px;}
+									
+									/* Clear floats */
+									.clearfix::after {
+										content: "";
+										clear: both;
+										display: table;
+									}
+									
+									/* Change styles for cancel button and signup button on extra small screens */
+									@media screen and (max-width: 300px) {
+										.cancelbtn, .signupbtn {
+											 width: 100%;
+										}
+									}
+									</style>
+									<body>
+									
+									<button class="button button2" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+									
+									<div id="id01" class="modal">
+										<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+										<form class="modal-content" action="/music.html">
+											<div class="container">
+												<h1>Sign Up</h1>
+												<p>Please fill in this form to create an account.</p>
+												<hr>
+												<label for="email"><b>Email</b></label>
+												<input type="text" placeholder="Enter Email" name="email" required>
+									
+												<label for="psw"><b>Password</b></label>
+												<input type="password" placeholder="Enter Password" name="psw" required>
+									
+												<label for="psw-repeat"><b>Repeat Password</b></label>
+												<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+												
+												<label>
+													<input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+												</label>
+									
+												<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+									
+												<div class="clearfix">
+													<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+													<button type="submit" NAME="redirect" VALUE="music.html" class="signupbtn">Sign Up</button>
+												</div>
+											</div>
+										</form>
+									</div>
+									
+									<script>
+									// Get the modal
+									var modal = document.getElementById('id01');
+									
+									// When the user clicks anywhere outside of the modal, close it
+									window.onclick = function(event) {
+										if (event.target == modal) {
+											modal.style.display = "none";
+										}
+									}
+									</script>
+									
+									</body>
+				</div>
+			</div>
+			<div class="card bg-danger" id="ghostTrailsBox" style="visibility: hidden">
+					<div class="card-body text-center">
+							<strong id="header"></strong>
+							<p id="stats"></p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+	</div>
+	<!-- //banner -->
+	<!-- about-->
+	<section class="wthree-row" id="about">
+		<div class="row justify-content-center align-items-center no-gutters abbot-main">
+			
+			<!-- <div class="col-lg-6 abbot-right px-md-5  py-lg-0 py-3"> -->
+				
+						<h3 class="stat-title card-title align-self-center mb-sm-5 mb-3">music buzz
+							<br> get addicted to music</h3>
+						<span class="w3-line"></span>
+						
+						<a href="#choose" class="btn btn-agile abt_card_btn scroll">Know More</a>
+
+			<!-- </div> -->
+		</div>
+	</section>
+	<!-- //about -->
+	<!-- why chosse us -->
+	<!--  -->
+	<!-- //more -->
+	<!-- contact top -->
+	
+	<!-- //contact -->
+	<!-- copyright -->
+	<div class="cpy-right text-center">
+		<p>© 2018 Music Buzz. All rights reserved | Design by
+			<a href="http://w3layouts.com"> W3layouts.</a>
+		</p>
+	</div>
+	<!-- //copyright -->
+	<script>
+		// This is called with the results from from FB.getLoginStatus().
+		function statusChangeCallback(response) {
+		  console.log('statusChangeCallback');
+		  console.log(response);
+		  // The response object is returned with a status field that lets the
+		  // app know the current login status of the person.
+		  // Full docs on the response object can be found in the documentation
+		  // for FB.getLoginStatus().
+		  if (response.status === 'connected') {
+			// Logged into your app and Facebook.
+			testAPI();
+		  } else {
+			// The person is not logged into your app or we are unable to tell.
+			document.getElementById('status').innerHTML = 'Please log ' +
+			  'into this app.';
+		  }
+		}
+	  
+		// This function is called when someone finishes with the Login
+		// Button.  See the onlogin handler attached to it in the sample
+		// code below.
+		function checkLoginState() {
+		  FB.getLoginStatus(function(response) {
+			statusChangeCallback(response);
+		  });
+		}
+	  
+		window.fbAsyncInit = function() {
+		  FB.init({
+			appId      : '360488078129585',
+			cookie     : true,  // enable cookies to allow the server to access
+								// the session
+			xfbml      : true,  // parse social plugins on this page
+			version    : 'v3.2' // The Graph API version to use for the call
+		  });
+	  
+		  // Now that we've initialized the JavaScript SDK, we call
+		  // FB.getLoginStatus().  This function gets the state of the
+		  // person visiting this page and can return one of three states to
+		  // the callback you provide.  They can be:
+		  //
+		  // 1. Logged into your app ('connected')
+		  // 2. Logged into Facebook, but not your app ('not_authorized')
+		  // 3. Not logged into Facebook and can't tell if they are logged into
+		  //    your app or not.
+		  //
+		  // These three cases are handled in the callback function.
+	  
+		  FB.getLoginStatus(function(response) {
+			statusChangeCallback(response);
+		  });
+	  
+		};
+	  
+		// Load the SDK asynchronously
+		(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "https://connect.facebook.net/en_US/sdk.js";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	  
+		// Here we run a very simple test of the Graph API after login is
+		// successful.  See statusChangeCallback() for when this call is made.
+		function testAPI() {
+		  console.log('Welcome!  Fetching your information.... ');
+		  FB.api('/me', function(response) {
+			console.log('Successful login for: ' + response.name);
+			document.getElementById('status').innerHTML =
+			  'Thanks for logging in, ' + response.name + '!';
+		  });
+		}
+	  </script>
+	<!-- js-->
+	<script src="js/jquery-2.2.3.min.js"></script>
+	<!-- js-->
+	<!-- start-smooth-scrolling -->
+	<script src="js/move-top.js "></script>
+	<script src="js/easing.js "></script>
+	<script>
+		jQuery(document).ready(function ($) {
+			$(".scroll ").click(function (event) {
+				event.preventDefault();
+
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+	</script>
+	<!-- //end-smooth-scrolling -->
+	<!-- smooth-scrolling-of-move-up -->
+	<script>
+		$(document).ready(function () {
+			/*
+			 var defaults = {
+				 containerID: 'toTop', // fading element id
+				 containerHoverID: 'toTopHover', // fading element hover id
+				 scrollSpeed: 1200,
+				 easingType: 'linear' 
+			 };
+			 */
+
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+	</script>
+	<script src="js/SmoothScroll.min.js "></script>
+	<!-- //smooth-scrolling-of-move-up -->
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.js">
+	</script>
+	<!-- //Bootstrap Core JavaScript -->
+</body>
+
+</html>

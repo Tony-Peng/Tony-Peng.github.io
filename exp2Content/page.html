@@ -1,0 +1,278 @@
+<head>
+    <title> true facts that will SHOCK you</title>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAiah2Ftz0OLENUxvx9VaaojDJsa936NII",
+        authDomain: "spud-93a30.firebaseapp.com",
+        databaseURL: "https://spud-93a30.firebaseio.com",
+        projectId: "spud-93a30",
+        storageBucket: "spud-93a30.appspot.com",
+        messagingSenderId: "111712193172",
+        appId: "1:111712193172:web:5a61fc378f4e2290"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+    <script>
+        var id = localStorage.getItem("id");
+        var cookie = document.cookie;
+        console.log(cookie);
+        console.log(cookie.split("=")[1]);
+
+        var type = "";
+        var stats = "";
+        var statement = "";
+
+        db.collection("ghostTrails").where("id", "==", id).get()
+                .then((snapshot) => {
+                    snapshot.docs.forEach(doc => {
+                        var data = doc.data()["flash"];
+                        if (data != "control") {
+                            stats = data[1];
+                            if (data[0] == "s") {
+                                type = "Here's what other users did: \n";
+                                statement = data[2];
+                            } else if (data[0] == "c") {
+                                type = "Here's what happened to other users: \n";
+                                statement = data[2];
+                                statement2 = data[3];
+                            }
+                            console.log(type, " ", stats, " ", statement);
+
+                            document.getElementById("type-text").innerHTML = type;
+                            var statementtext = document.getElementById("statement-text")
+                            var statementHTML = "<u>" + stats + "</u>" + " " + statement;
+                            statementtext.innerHTML = statementHTML;
+
+                            document.getElementById("ghostTrails").style.display = "inline-block";
+                            document.getElementById("block").style.height = "180px";
+                        }
+                    });
+            });
+
+        function pause() {
+            document.shock.StopPlay();
+        }
+
+        function play() {
+            document.shock.Play();
+        }
+
+        function finish() {
+            window.location = "../exp2Survey.html"
+        }
+
+        function myFunction(x) {
+            x.classList.toggle("change");
+        }
+    </script>
+
+</head>
+
+
+<style>
+    /* Style the body */
+    body {
+        font-family: Arial;
+        margin: 0;
+    }
+
+    /* Header/Logo Title */
+    .header {
+        padding: 60px;
+        text-align: center;
+        background: #1abc9c;
+        color: white;
+        font-size: 30px;
+    }
+
+    /* Page Content */
+    .content {
+        padding: 20px;
+    }
+
+
+    body {
+        margin: 0;
+    }
+
+    .navbar {
+        overflow: hidden;
+        background-color: #2F4F4F;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .navbar a:hover {
+        background: #ddd;
+        color: black;
+    }
+
+    .main {
+        padding: 16px;
+        margin-top: 30px;
+        height: 1500px; /* Used in this example to enable scrolling */
+    }
+
+    .content {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .container {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: #222;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+
+    .change .bar2 {
+        opacity: 0;
+    }
+
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+    }
+</style>
+
+
+<body onload="pause()">
+
+
+<div class="navbar">
+    <div class="container" onclick="myFunction(this)" style="float: left;padding-left: 30px">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <img style="float: left; width:55px;height:50px;padding-left: 30px" src="resource/Word.png">
+    <h1 style="font-size: 20px;padding-left: 20px; color: white; float: left"> Fun News</h1>
+    <a style="padding-left: 100px" href="#home">Quizzes</a>
+    <a href="#news">Videos</a>
+    <a href="#contact">Animals</a>
+    <a href="#contact">Celebrity</a>
+    <a href="#contact">Shopping</a>
+    <a href="#contact">Do better 2019</a>
+</div>
+
+<div class="main">
+
+
+    <div class="content">
+        <!-- Page content -->
+        <h1 style="font-size: 40px">True facts that will SHOCK you! <span style="color: #2b2301;"></span></h1>
+        <h2 style="font-size: 15px">Note: You may choose to watch the video or read the text version of your choice. Both content contains the same information.</h2><br>
+        
+        <div id="block" style="background-color:#ffcccc; height: 120px; width: 550px">
+            <div style='padding:20px; font-family:"Arial"'>
+                <b style='font-size:20px;color:black'>NOTICE: Flash Agreement Detected</b><br/>
+                <p style='font-size:13px;color:black'>Enabling Flash will allow you watch this video, but could also increase your chances of being infected with malware.</p>
+                <div id="ghostTrails" style="display: none;">
+                    <b id="type-text" style='font-size:13px;color:black'></b>
+                    <ul>
+                        <li style='display:list-item;font-size:15px;color:black'>
+                            <b id="statement-text"></b>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="code_block">
+            <p>
+                <object width="550" height="400">
+            </p>
+            <p>
+                <param name="movie" value="shock.swf">
+            </p>
+            <p>
+                <embed src="resource/shock.swf" name="shock" width="550" height="400">
+            </p>
+            <p></embed></p>
+            <p></object></p>
+            <button onclick="play()"> play</button>&nbsp;&nbsp;
+
+            <button onclick="pause()"> pause</button>
+            <br>
+            <br>
+            <br>
+            Here's the text version:
+        </div>
+
+
+        <h2 style="color: #2e6c80;">1. Snails Has 14000 Thousand Teeth.<br> Yes! You seen that right, Snails!</h2>
+
+        <br>
+        <img src="resource/snails.png" alt="snails" style="width:700px;height:300px;">
+
+        <h2 style="color: #2e6c80;">2. The Immortal Food - Honey <br><br>
+
+            Honey never goes off, not after one year, never two, never. Archigologies have often found pots of honey
+            thousands of years that are yet still preserves. This food can last forever.</h2><br>
+
+        <img src="resource/honey.png" alt="honey" style="width:700px;height:300px">
+
+        <h2 style="color: #2e6c80;"> 3. Wonder Of Human Body -<br><br>
+            The human nose can remember 15000 difference scents. also human ears can differencitate millions of sounds
+            and our eyes can discriminate thousand of colors!</h2> <br>
+        <br>
+        <img src="resource/eyes.png" alt="eyes" style="width:700px;height:300px">
+        <h2 style="color: #2e6c80;"> 4. The Immortal -<br><br>
+            The Turritopsis Nutricula jellyfish is biologically immortal. They can live forever! The only way they can
+            die is to get consumed by other fish. </h2>
+        <br>
+        <img src="resource/jellyfish.png" alt="jellyfish" style="width:700px;height:300px">
+
+
+        <h2 style="color: #2e6c80;"> 5. The Biggest Heart On Earth -<br><br>
+            The heart of the blue whale is so massive that a human can swim through it's vein.
+            <br>
+            Also, blue whale is the largest animal that has ever lived. larger than the biggest dinosour.</h2>
+        <br>
+        <img src="resource/whale.png" alt="whale" style="width:700px;height:300px">
+        <img src="resource/whale2.png" alt="whale2" style="width:700px;height:300px">
+
+
+        <img src="resource/wrinkle.png" alt="eyes" style="width:700px;height:300px">
+        <img src="resource/wrinkle2.png" alt="eyes" style="width:700px;height:300px">
+        <h2 style="color: #2e6c80;"> 6. Just for kicks and giggles </h2>
+
+        <img src="resource/funfact.jpg" alt="eyes" style="width:700px;height:500px">
+
+    </div>
+</div>
+
+
+</body>
+
+

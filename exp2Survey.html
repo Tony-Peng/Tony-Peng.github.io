@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Web Study</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAiah2Ftz0OLENUxvx9VaaojDJsa936NII",
+        authDomain: "spud-93a30.firebaseapp.com",
+        databaseURL: "https://spud-93a30.firebaseio.com",
+        projectId: "spud-93a30",
+        storageBucket: "spud-93a30.appspot.com",
+        messagingSenderId: "111712193172",
+        appId: "1:111712193172:web:5a61fc378f4e2290"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+
+    <!-- Custom styles for this template -->
+    <script>
+        function submit() {
+            var id = localStorage.getItem("id");
+            var mod = id % 6;
+            db.collection("order").where("mod", "==", mod).get()
+                .then((snapshot) => {
+                    snapshot.docs.forEach(doc => {nextPage(doc)});
+                });
+        }
+
+        function nextPage(doc) {
+            var cur;
+            for (var key in doc.data()) {
+                if (doc.data()[key] == "flash") {
+                    cur = key;
+                }
+            }
+            if (cur == "first") {
+                jumpTo(doc.data().second);
+            } else if (cur == "second") {
+                jumpTo(doc.data().third);
+            } else {
+                window.location = "debreif.html";
+            }
+        }
+
+        function jumpTo(next) {
+            if (next == "card") {
+                window.location = "exp1.html";
+            } else if (next == "flash") {
+                window.location = "exp2.html";
+            } else {
+                window.location = "exp3.html";
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <h4><img id="logo" src="ghost.png" height="40px" width="40px"> &nbsp; | &nbsp; Web Study</h4></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+
+
+        </div>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="bg-light py-5 mb-5">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-lg-12">
+                <h1 class="display-4 text-black mt-5 mb-2">Web Study NEWS Evaluation</h1>
+                <p class="lead mb-5 text-black-50">
+                    Let's see how well you've remember the information. Don't worry, this will not be graded and will
+                    not affect your GPA.
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-8 mb-5">
+            <br>
+            <br>
+            <p>Please go to the survey page and fill out the questionare.</p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <button class="btn btn-primary" type="submit" onclick="submit()" class="btn btn-primary">Next</button>
+
+        </div>
+
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Web Study 2019</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

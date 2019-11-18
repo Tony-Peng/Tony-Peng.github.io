@@ -51,7 +51,8 @@
                             var statementHTML = "<u>" + stats + "</u>" + " " + statement;
                             statementtext.innerHTML = statementHTML;
 
-                            document.getElementById("ghostTrails").style.display = "inline-block"
+                            document.getElementById("ghostTrails").style.display = "inline-block";
+                            document.getElementById("block").style.height = "180px";
                         }
                     });
             });
@@ -192,16 +193,18 @@
         <h1 style="font-size: 40px">True facts that will SHOCK you! <span style="color: #2b2301;"></span></h1>
         <h2 style="font-size: 15px">Note: You may choose to watch the video or read the text version of your choice. Both content contains the same information.</h2><br>
         
-        <div id="ghostTrails" style="display: none; background-color:#ffcccc; height: 180px; width: 550px">
+        <div id="block" style="background-color:#ffcccc; height: 120px; width: 550px">
             <div style='padding:20px; font-family:"Arial"'>
-                <b style='font-size:20px;color:red'>NOTICE: Flash Agreement Detected!</b><br/>
+                <b style='font-size:20px;color:black'>NOTICE: Flash Agreement Detected</b><br/>
                 <p style='font-size:13px;color:black'>Enabling Flash will allow you watch this video, but could also increase your chances of being infected with malware.</p>
-                <b id="type-text" style='font-size:13px;color:red'></b>
-                <ul>
-                    <li style='display:list-item;font-size:15px;color:black'>
-                        <b id="statement-text"></b>
-                    </li>
-                </ul>
+                <div id="ghostTrails" style="display: none;">
+                    <b id="type-text" style='font-size:13px;color:black'></b>
+                    <ul>
+                        <li style='display:list-item;font-size:15px;color:black'>
+                            <b id="statement-text"></b>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 

@@ -41,9 +41,12 @@ function webManipulation(ghost, type, stats, statement) {
         ghost_trails_div.setAttribute("style","background-color:#ffcccc;height:120px;margin-top:20px;margin-bottom:30px");
     }
 
-    if (document.getElementById("save-card-for-future-use-")) {
+    if (document.getElementsByClassName("save-card-for-future-use-")) {
+        console.log("found save-card div: ", document.getElementsByClassName("save-card-for-future-use")[0])
         document.getElementsByClassName("save-card-for-future-use")[0].appendChild(ghost_trails_div);
         showGhostTrails(ghost, type, stats, statement);
+    } else {
+        console.log("Ghost trails Error: did not find save-card div")
     }
 
     //fake submit
@@ -62,7 +65,7 @@ function webManipulation(ghost, type, stats, statement) {
 
 function showGhostTrails(ghost, type, stats, statement) {
 
-    var checkbox = document.getElementById("save-card-for-future-use-");
+    // var checkbox = document.getElementById("save-card-for-future-use-0");
     var ghost_trails_div = document.getElementById("ghost_trails_div");
     var payment_selector_div = document.getElementsByClassName("payment-selector-0")[0];
 
@@ -95,21 +98,19 @@ function showGhostTrails(ghost, type, stats, statement) {
         chrome.storage.local.set({'savecard': true});
     }
 
-    checkbox.addEventListener('change', function() {
+    // checkbox.addEventListener('change', function() {
 
-        if(this.checked) {
-            // Checkbox is checked
-            // ghost_trails_div.innerHTML= checkedHTML;
-            chrome.storage.local.set({'savecard': true});
-            console.log('savecard: ' + true);
+    //     if(this.checked) {
+    //         // Checkbox is checked
+    //         chrome.storage.local.set({'savecard': true});
+    //         console.log('savecard: ' + true);
 
-        } else {
-            // Checkbox is not checked
-            // ghost_trails_div.innerHTML= uncheckedHTML;
-            chrome.storage.local.set({'savecard': false});
-            console.log('savecard: ' + false);
-        }
-    });
+    //     } else {
+    //         // Checkbox is not checked
+    //         chrome.storage.local.set({'savecard': false});
+    //         console.log('savecard: ' + false);
+    //     }
+    // });
 
     payment_selector_div.addEventListener('change', function() {
         setTimeout(function() {
